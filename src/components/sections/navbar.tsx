@@ -14,7 +14,8 @@ import {
   BarChart3Icon, 
   FileEditIcon, 
   BookOpenIcon, 
-  HelpCircleIcon 
+  HelpCircleIcon,
+  LogIn
 } from "lucide-react";
 import { AnimatePresence, motion, useScroll } from "motion/react";
 import Link from "next/link";
@@ -133,12 +134,19 @@ export function Navbar() {
             </div>
 
             <div className="flex flex-row items-center gap-1 md:gap-3 shrink-0">
-              <div className="flex items-center space-x-6">
+              <div className="flex items-center space-x-2">
                 <Link
                   className="bg-secondary h-8 hidden md:flex items-center justify-center text-sm font-normal tracking-wide rounded-md text-primary-foreground dark:text-secondary-foreground w-fit px-4 shadow-[inset_0_1px_2px_rgba(255,255,255,0.25),0_3px_3px_-1.5px_rgba(16,24,40,0.06),0_1px_1px_rgba(16,24,40,0.08)] border border-white/[0.12]"
-                  href="#"
+                  href="https://app.finseo.ai/signup"
                 >
                   Try for free
+                </Link>
+                <Link
+                  className="h-8 hidden md:flex items-center justify-center rounded-md border border-border hover:bg-accent transition-colors p-2"
+                  href="https://app.finseo.ai/signin"
+                  title="Sign In"
+                >
+                  <LogIn className="size-4" />
                 </Link>
               </div>
               <ThemeToggle />
@@ -347,7 +355,7 @@ export function Navbar() {
                 {/* Action buttons */}
                 <div className="flex flex-col gap-2">
                   <Link
-                    href="#"
+                    href="https://app.finseo.ai/signup"
                     className="bg-secondary h-8 flex items-center justify-center text-sm font-normal tracking-wide rounded-md text-primary-foreground dark:text-secondary-foreground w-full px-4 shadow-[inset_0_1px_2px_rgba(255,255,255,0.25),0_3px_3px_-1.5px_rgba(16,24,40,0.06),0_1px_1px_rgba(16,24,40,0.08)] border border-white/[0.12] hover:bg-secondary/80 transition-all ease-out active:scale-95"
                   >
                     Try for free

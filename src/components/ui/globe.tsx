@@ -19,9 +19,9 @@ const GLOBE_CONFIG: COBEOptions = {
   dark: 0,
   diffuse: 0.4,
   mapSamples: 16000,
-  mapBrightness: 1.2,
+  mapBrightness: 1.8,
   baseColor: [1, 1, 1],
-  markerColor: [251 / 255, 100 / 255, 21 / 255],
+  markerColor: [14 / 255, 202 / 255, 123 / 255], // #0eca7b - secondary color
   glowColor: [1, 1, 1],
   markers: [
     { location: [14.5995, 120.9842], size: 0.03 },
@@ -42,12 +42,12 @@ const COLORS = {
   light: {
     base: [1, 1, 1] as [number, number, number],
     glow: [1, 1, 1] as [number, number, number],
-    marker: [251 / 255, 100 / 255, 21 / 255] as [number, number, number],
+    marker: [14 / 255, 202 / 255, 123 / 255] as [number, number, number], // #0eca7b - secondary color
   },
   dark: {
-    base: [0.4, 0.4, 0.4] as [number, number, number],
-    glow: [0.24, 0.24, 0.27] as [number, number, number],
-    marker: [251 / 255, 100 / 255, 21 / 255] as [number, number, number],
+    base: [0.6, 0.6, 0.6] as [number, number, number],
+    glow: [0.4, 0.4, 0.4] as [number, number, number],
+    marker: [14 / 255, 202 / 255, 123 / 255] as [number, number, number], // #0eca7b - secondary color
   },
 };
 

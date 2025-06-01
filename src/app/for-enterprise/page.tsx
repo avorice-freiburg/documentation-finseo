@@ -106,12 +106,12 @@ export default function ForEnterprisePage() {
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-            <Button 
+          <Button 
               size="lg" 
-              className="bg-secondary text-white font-semibold px-8 hover:bg-secondary/90"
+              className="bg-secondary text-black font-semibold px-8 hover:bg-secondary/90"
               asChild
             >
-              <Link href="https://app.finseo.ai/enterprise-demo">
+              <Link href="https://app.finseo.ai/signup">
                 Request Enterprise Demo
               </Link>
             </Button>

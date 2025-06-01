@@ -7,6 +7,31 @@ const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
+// hCaptcha verification function
+async function verifyHcaptcha(token: string): Promise<boolean> {
+  if (!process.env.HCAPTCHA_SECRET_KEY) {
+    console.warn('HCAPTCHA_SECRET_KEY not configured, skipping verification');
+    return true; // Allow requests if hCaptcha is not configured
+  }
+
+  try {
+    const response = await fetch('https://hcaptcha.com/siteverify', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: `secret=${process.env.HCAPTCHA_SECRET_KEY}&response=${token}`,
+    });
+
+    const data = await response.json();
+    return data.success === true;
+  } catch (error: unknown) {
+    const errorMessage = error instanceof Error ? error.message : 'Unknown error occurred';
+    console.error('hCaptcha verification error:', errorMessage);
+    return false;
+  }
+}
+
 const CHART_TYPES = {
   linear: `You are a chart generation expert. Generate a Highcharts configuration object for a line chart based on the user's description.
     Return ONLY the raw JSON configuration object, without any markdown formatting or code block syntax, like this example, change the legends according to the prompt:
@@ -1818,8 +1843,9 @@ async function generateChart(prompt: string, systemPrompt: string): Promise<stri
     }
 
     return JSON.stringify(parsed);
-  } catch (error) {
-    console.error('JSON parsing error:', error);
+  } catch (error: unknown) {
+    const errorMessage = error instanceof Error ? error.message : 'Unknown error occurred';
+    console.error('JSON parsing error:', errorMessage);
     console.error('Received content:', chartConfig);
     
     // Attempt to fix common issues
@@ -1834,17 +1860,66 @@ async function generateChart(prompt: string, systemPrompt: string): Promise<stri
       
       const parsed = JSON.parse(fixedConfig);
       return JSON.stringify(parsed);
-    } catch (e) {
-      throw new Error('Invalid chart configuration: ' + error.message);
+    } catch (e: unknown) {
+      const fallbackErrorMessage = e instanceof Error ? e.message : 'Unknown parsing error';
+      throw new Error(`Invalid chart configuration: ${errorMessage} (${fallbackErrorMessage})`);
     }
   }
 }
 
 export async function POST(req: Request) {
   try {
-    const { prompt, chartType, detectChartType } = await req.json();
+    const { prompt, chartType, detectChartType, hcaptchaToken } = await req.json();
     
-    console.log('Received request:', { prompt, chartType, detectChartType });
+    console.log('Received request:', { prompt, chartType, detectChartType, hasHcaptcha: !!hcaptchaToken });
+
+    // Verify hCaptcha token
+    if (!await verifyHcaptcha(hcaptchaToken)) {
+      return new Response(
+        JSON.stringify({ 
+          error: 'Captcha verification failed',
+          details: 'Please complete the captcha verification'
+        }), 
+        { 
+          status: 400,
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        }
+      );
+    }
+
+    // Basic input validation
+    if (!prompt || typeof prompt !== 'string' || prompt.trim().length === 0) {
+      return new Response(
+        JSON.stringify({ 
+          error: 'Invalid input',
+          details: 'Prompt is required and must be a non-empty string'
+        }), 
+        { 
+          status: 400,
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        }
+      );
+    }
+
+    // Limit prompt length to prevent abuse
+    if (prompt.length > 2000) {
+      return new Response(
+        JSON.stringify({ 
+          error: 'Input too long',
+          details: 'Prompt must be less than 2000 characters'
+        }), 
+        { 
+          status: 400,
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        }
+      );
+    }
 
     // If detectChartType is true, first determine the best chart type
     let finalChartType = chartType;
@@ -1860,13 +1935,24 @@ export async function POST(req: Request) {
         max_completion_tokens: 16000,
       });
 
-      finalChartType = detection.choices[0]?.message?.content?.trim().toLowerCase() || 'line';
+      finalChartType = detection.choices[0]?.message?.content?.trim().toLowerCase() || 'linear';
       console.log('Detected chart type:', finalChartType);
     }
 
     const systemPrompt = CHART_TYPES[finalChartType as keyof typeof CHART_TYPES];
     if (!systemPrompt) {
-      throw new Error(`Invalid chart type: ${finalChartType}`);
+      return new Response(
+        JSON.stringify({ 
+          error: 'Invalid chart type',
+          details: `Chart type "${finalChartType}" is not supported`
+        }), 
+        { 
+          status: 400,
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        }
+      );
     }
 
     const chart = await generateChart(prompt, systemPrompt);
@@ -1881,12 +1967,13 @@ export async function POST(req: Request) {
       }
     );
 
-  } catch (error) {
-    console.error('Chart generation error:', error);
+  } catch (error: unknown) {
+    const errorMessage = error instanceof Error ? error.message : 'Unknown error occurred';
+    console.error('Chart generation error:', errorMessage);
     return new Response(
       JSON.stringify({ 
         error: 'Failed to generate chart',
-        details: error.message 
+        details: 'An internal error occurred while generating the chart'
       }), 
       { 
         status: 500,

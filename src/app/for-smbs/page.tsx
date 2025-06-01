@@ -11,6 +11,7 @@ import { CTASection } from "@/components/sections/cta-section";
 import { FourthBentoAnimation } from "@/components/fourth-bento-animation";
 import { AnimatedList } from "@/components/ui/animated-list";
 import Link from "next/link";
+import { Button } from '@/components/ui/button';
 
 // ROI progression data
 const roiProgressionData = [
@@ -97,12 +98,15 @@ export default function ForSMBsPage() {
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-            <Link
-              href="https://app.finseo.ai/signup"
-              className="bg-secondary text-black font-semibold text-sm h-12 px-8 rounded-full flex items-center justify-center shadow-lg hover:bg-secondary/90 transition-colors"
+          <Button 
+              size="lg" 
+              className="bg-secondary text-black font-semibold px-8 hover:bg-secondary/90"
+              asChild
             >
-              Start Growing Locally
-            </Link>
+              <Link href="https://app.finseo.ai/signup">
+                Start Growing Locally
+              </Link>
+            </Button>
             <span className="text-sm text-muted-foreground">
               7-day free trial • Local SEO included • No setup fees
             </span>

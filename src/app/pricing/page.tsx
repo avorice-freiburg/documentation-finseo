@@ -436,17 +436,17 @@ export default function PricingPage() {
         
         {/* AI Rank Tracker section */}
         <div className="w-full max-w-6xl mx-auto px-6 mt-8">
-          <div className="relative overflow-hidden rounded-xl bg-white p-8 md:p-10 border border-secondary/30 shadow-lg">
+          <div className="relative overflow-hidden rounded-xl bg-card dark:bg-card p-8 md:p-10 border border-secondary/30 shadow-lg">
             <div className="absolute inset-0"></div>
             
             <div className="relative z-10">
               <div className="flex flex-col md:flex-row justify-between gap-6">
                 {/* Content */}
                 <div className="md:w-1/2">
-                  <div className="inline-block bg-secondary/20 text-primary text-xs font-medium px-2.5 py-1 rounded-full mb-3">
+                  <div className="inline-block bg-secondary/20 text-secondary dark:text-secondary text-xs font-medium px-2.5 py-1 rounded-full mb-3">
                     ADD-ON
                   </div>
-                  <h2 className="text-3xl font-bold text-primary mb-4">AI Rank Tracker</h2>
+                  <h2 className="text-3xl font-bold text-foreground mb-4">AI Rank Tracker</h2>
                   <p className="text-muted-foreground mb-6">
                     Track your website's visibility in AI responses from ChatGPT, Claude, Perplexity and other AI platforms. Get insights into your AI rankings and improve your presence.
                   </p>
@@ -457,19 +457,19 @@ export default function PricingPage() {
                       <div className="mr-3 h-6 w-6 rounded-full bg-secondary/10 flex items-center justify-center">
                         <Check className="h-4 w-4 text-secondary" />
                       </div>
-                      <span className="text-sm text-primary">Full tracking analytics</span>
+                      <span className="text-sm text-foreground">Full tracking analytics</span>
                     </div>
                     <div className="flex items-center">
                       <div className="mr-3 h-6 w-6 rounded-full bg-secondary/10 flex items-center justify-center">
                         <Check className="h-4 w-4 text-secondary" />
                       </div>
-                      <span className="text-sm text-primary"><span className="font-medium">Daily tracking updates</span></span>
+                      <span className="text-sm text-foreground"><span className="font-medium">Daily tracking updates</span></span>
                     </div>
                     <div className="flex items-center">
                       <div className="mr-3 h-6 w-6 rounded-full bg-secondary/10 flex items-center justify-center">
                         <Check className="h-4 w-4 text-secondary" />
                       </div>
-                      <span className="text-sm text-primary">Support for all popular LLMs</span>
+                      <span className="text-sm text-foreground">Support for all popular LLMs</span>
                     </div>
                   </div>
                   
@@ -479,19 +479,19 @@ export default function PricingPage() {
                     <div className="flex flex-wrap gap-3">
                       <div className="flex items-center gap-2 bg-background border border-border px-3 py-2 rounded-lg">
                         <img src="/chatgpt.png" alt="ChatGPT" className="h-5 w-5" />
-                        <span className="text-sm text-primary">ChatGPT</span>
+                        <span className="text-sm text-foreground">ChatGPT</span>
                       </div>
                       <div className="flex items-center gap-2 bg-background border border-border px-3 py-2 rounded-lg">
                         <img src="/claude.png" alt="Claude" className="h-5 w-5" />
-                        <span className="text-sm text-primary">Claude</span>
+                        <span className="text-sm text-foreground">Claude</span>
                       </div>
                       <div className="flex items-center gap-2 bg-background border border-border px-3 py-2 rounded-lg">
                         <img src="/perplexity.png" alt="Perplexity" className="h-5 w-5" />
-                        <span className="text-sm text-primary">Perplexity</span>
+                        <span className="text-sm text-foreground">Perplexity</span>
                       </div>
                       <div className="flex items-center gap-2 bg-background border border-border px-3 py-2 rounded-lg">
                         <img src="/gemini.png" alt="Gemini" className="h-5 w-5" />
-                        <span className="text-sm text-primary">Gemini</span>
+                        <span className="text-sm text-foreground">Gemini</span>
                       </div>
                     </div>
                   </div>
@@ -500,90 +500,90 @@ export default function PricingPage() {
                 {/* Pricing Cards */}
                 <div className="md:w-1/2">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    <div className="bg-background rounded-xl p-4 shadow-md hover:shadow-lg transition-all">
+                    <div className="bg-background border border-border rounded-xl p-4 shadow-md hover:shadow-lg transition-all">
                       <div className="flex items-center gap-3 mb-3">
                         <div className="h-10 w-10 rounded-full bg-secondary/10 flex items-center justify-center">
                           <Rocket className="h-5 w-5 text-secondary" />
                         </div>
-                        <h3 className="font-medium text-primary">Starter</h3>
+                        <h3 className="font-medium text-foreground">Starter</h3>
                       </div>
                       <div className="mb-4">
                         <div className="flex items-baseline">
-                          <span className="text-3xl font-bold text-primary">$14.99</span>
+                          <span className="text-3xl font-bold text-foreground">$14.99</span>
                           <span className="text-sm text-muted-foreground ml-1">/month</span>
                         </div>
                         <p className="text-muted-foreground text-sm mt-1">25 tracking prompts</p>
                       </div>
                       <a 
                         href="https://app.finseo.ai/signup"
-                        className="w-full bg-[#0A2F2A] hover:bg-secondary hover:text-[#0A2F2A] text-white h-9 rounded-md transition-colors flex items-center justify-center"
+                        className="w-full bg-secondary hover:bg-secondary/90 text-white h-9 rounded-md transition-colors flex items-center justify-center"
                       >
                         Get started
                       </a>
                     </div>
                     
-                    <div className="bg-background rounded-xl p-4 shadow-md hover:shadow-lg transition-all relative">
+                    <div className="bg-background border border-border rounded-xl p-4 shadow-md hover:shadow-lg transition-all relative">
                       <div className="absolute -top-2 right-2 bg-secondary text-white text-xs px-2 py-0.5 rounded-full">POPULAR</div>
                       <div className="flex items-center gap-3 mb-3">
                         <div className="h-10 w-10 rounded-full bg-secondary/10 flex items-center justify-center">
                           <Briefcase className="h-5 w-5 text-secondary" />
                         </div>
-                        <h3 className="font-medium text-primary">Professional</h3>
+                        <h3 className="font-medium text-foreground">Professional</h3>
                       </div>
                       <div className="mb-4">
                         <div className="flex items-baseline">
-                          <span className="text-3xl font-bold text-primary">$39.99</span>
+                          <span className="text-3xl font-bold text-foreground">$39.99</span>
                           <span className="text-sm text-muted-foreground ml-1">/month</span>
                         </div>
                         <p className="text-muted-foreground text-sm mt-1">100 tracking prompts</p>
                       </div>
                       <a 
                         href="https://app.finseo.ai/signup"
-                        className="w-full bg-[#0A2F2A] hover:bg-secondary hover:text-[#0A2F2A] text-white h-9 rounded-md transition-colors flex items-center justify-center"
+                        className="w-full bg-secondary hover:bg-secondary/90 text-white h-9 rounded-md transition-colors flex items-center justify-center"
                       >
                         Get started
                       </a>
                     </div>
                     
-                    <div className="bg-background rounded-xl p-4 shadow-md hover:shadow-lg transition-all">
+                    <div className="bg-background border border-border rounded-xl p-4 shadow-md hover:shadow-lg transition-all">
                       <div className="flex items-center gap-3 mb-3">
                         <div className="h-10 w-10 rounded-full bg-secondary/10 flex items-center justify-center">
                           <LineChart className="h-5 w-5 text-secondary" />
                         </div>
-                        <h3 className="font-medium text-primary">Growth</h3>
+                        <h3 className="font-medium text-foreground">Growth</h3>
                       </div>
                       <div className="mb-4">
                         <div className="flex items-baseline">
-                          <span className="text-3xl font-bold text-primary">$89.99</span>
+                          <span className="text-3xl font-bold text-foreground">$89.99</span>
                           <span className="text-sm text-muted-foreground ml-1">/month</span>
                         </div>
                         <p className="text-muted-foreground text-sm mt-1">250 tracking prompts</p>
                       </div>
                       <a 
                         href="https://app.finseo.ai/signup"
-                        className="w-full bg-[#0A2F2A] hover:bg-secondary hover:text-[#0A2F2A] text-white h-9 rounded-md transition-colors flex items-center justify-center"
+                        className="w-full bg-secondary hover:bg-secondary/90 text-white h-9 rounded-md transition-colors flex items-center justify-center"
                       >
                         Get started
                       </a>
                     </div>
                     
-                    <div className="bg-background rounded-xl p-4 shadow-md hover:shadow-lg transition-all">
+                    <div className="bg-background border border-border rounded-xl p-4 shadow-md hover:shadow-lg transition-all">
                       <div className="flex items-center gap-3 mb-3">
                         <div className="h-10 w-10 rounded-full bg-secondary/10 flex items-center justify-center">
                           <Building className="h-5 w-5 text-secondary" />
                         </div>
-                        <h3 className="font-medium text-primary">Enterprise</h3>
+                        <h3 className="font-medium text-foreground">Enterprise</h3>
                       </div>
                       <div className="mb-4">
                         <div className="flex items-baseline">
-                          <span className="text-3xl font-bold text-primary">$299.99</span>
+                          <span className="text-3xl font-bold text-foreground">$299.99</span>
                           <span className="text-sm text-muted-foreground ml-1">/month</span>
                         </div>
                         <p className="text-muted-foreground text-sm mt-1">1,000 tracking prompts</p>
                       </div>
                       <a 
                         href="https://app.finseo.ai/signup"
-                        className="w-full bg-[#0A2F2A] hover:bg-secondary hover:text-[#0A2F2A] text-white h-9 rounded-md transition-colors flex items-center justify-center"
+                        className="w-full bg-secondary hover:bg-secondary/90 text-white h-9 rounded-md transition-colors flex items-center justify-center"
                       >
                         Get started
                       </a>

@@ -4,8 +4,11 @@ import { useEffect, useState } from "react";
 
 export function useMediaQuery(query: string) {
   const [value, setValue] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
+    
     // Handle initial check and subsequent changes
     function checkQuery() {
       const result = window.matchMedia(query);
@@ -29,5 +32,6 @@ export function useMediaQuery(query: string) {
     };
   }, [query]);
 
-  return value;
+  // Return false during SSR to prevent hydration mismatch
+  return mounted ? value : false;
 }

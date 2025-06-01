@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useRef, useEffect, useCallback } from 'react';
+import HCaptcha from '@hcaptcha/react-hcaptcha';
 
 // Suppress console errors - wrap this in a try/catch to prevent it from breaking
 if (typeof window !== 'undefined') {
@@ -69,6 +70,7 @@ import { Download, Share2, FileCode, Upload, X, Bot, LineChart } from "lucide-re
 import { cn } from "@/lib/utils";
 import { DotPattern } from "@/components/ui/dot-pattern";
 import { Label } from "@/components/ui/label";
+import { FooterSection } from "@/components/sections/footer-section";
 import { 
   Sheet,
   SheetContent,
@@ -234,6 +236,8 @@ export default function ChartGenerator() {
   const [csvError, setCsvError] = useState<string | null>(null);
   const [isDataSheetOpen, setIsDataSheetOpen] = useState(false);
   const [currentChart, setCurrentChart] = useState<Highcharts.Chart | null>(null);
+  const [hcaptchaToken, setHcaptchaToken] = useState<string | null>(null);
+  const hcaptchaRef = useRef<HCaptcha>(null);
 
   const parseCSV = (text: string): string[][] => {
     // Basic CSV parsing (can be enhanced for more complex cases)
@@ -398,6 +402,12 @@ export default function ChartGenerator() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
+    // Check if hCaptcha token is available
+    if (!hcaptchaToken) {
+      setError('Please complete the captcha verification');
+      return;
+    }
+    
     setIsLoading(true);
     setError(null);
     setChartConfig(null);
@@ -414,7 +424,8 @@ export default function ChartGenerator() {
         body: JSON.stringify({ 
           prompt: openAIPrompt, 
           chartType: chartType === 'auto' ? undefined : chartType,
-          detectChartType: chartType === 'auto'
+          detectChartType: chartType === 'auto',
+          hcaptchaToken: hcaptchaToken
         }),
       });
 
@@ -464,6 +475,11 @@ export default function ChartGenerator() {
       setError('Could not generate your chart. Please specify your data and chart type more clearly.');
     } finally {
       setIsLoading(false);
+      // Reset hCaptcha for next use
+      setHcaptchaToken(null);
+      if (hcaptchaRef.current) {
+        hcaptchaRef.current.resetCaptcha();
+      }
     }
   };
 
@@ -523,7 +539,7 @@ export default function ChartGenerator() {
                     value={chartType}
                     onValueChange={(value: ChartType) => setChartType(value)}
                   >
-                    <SelectTrigger id="chartType" className="w-full mt-1">
+                    <SelectTrigger id="chartType" className="w-full mt-1 border-0">
                       <SelectValue placeholder="Select chart type" />
                     </SelectTrigger>
                     <SelectContent>
@@ -567,7 +583,7 @@ export default function ChartGenerator() {
                     <SheetTrigger asChild>
                       <Button 
                         variant="outline" 
-                        className="w-full mt-1 flex gap-2 items-center"
+                        className="w-full mt-1 flex gap-2 items-center h-10"
                         type="button"
                         id="dataUpload"
                       >
@@ -650,15 +666,26 @@ export default function ChartGenerator() {
                   placeholder={CHART_PLACEHOLDERS[chartType]}
                   value={prompt}
                   onChange={(e: React.ChangeEvent<HTMLInputElement>) => setPrompt(e.target.value)}
-                  className="w-full mt-1"
+                  className="w-full mt-1 bg-background h-10"
                   disabled={isLoading}
+                />
+              </div>
+              
+              {/* hCaptcha Verification */}
+              <div className="flex justify-begin">
+                <HCaptcha
+                  ref={hcaptchaRef}
+                  sitekey={process.env.NEXT_PUBLIC_HCAPTCHA_SITE_KEY || "10000000-ffff-ffff-ffff-000000000001"}
+                  onVerify={(token) => setHcaptchaToken(token)}
+                  onExpire={() => setHcaptchaToken(null)}
+                  onError={() => setHcaptchaToken(null)}
                 />
               </div>
               
               <Button 
                 type="submit" 
-                disabled={isLoading} 
-                className="w-full md:w-auto bg-secondary text-white hover:bg-secondary/90"
+                disabled={isLoading || !hcaptchaToken} 
+                className="w-full md:w-auto bg-secondary text-black hover:bg-secondary/90"
               >
                 {isLoading ? 'Generating...' : 'Generate Chart'}
               </Button>
@@ -687,9 +714,8 @@ export default function ChartGenerator() {
                   </Button>
                   <Button 
                     onClick={handleSaveAndEmbed} 
-                    variant="outline" 
                     size="sm"
-                    className="bg-black text-white hover:bg-black/80 hover:text-white"
+                    className="bg-secondary text-black hover:bg-secondary/90"
                   >
                     <Share2 className="mr-2 h-4 w-4" />
                     Save & Embed
@@ -716,49 +742,39 @@ export default function ChartGenerator() {
         </div>
       </section>
 
-      {/* Examples section */}
-      {!hasGenerated && !isLoading && (
-        <section id="examples" className="w-full py-12 md:py-24 bg-background">
-          <div className="container px-4 md:px-6 mx-auto">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center mb-8">
-              <h2 className="text-3xl font-bold tracking-tighter">Example Charts</h2>
-              <p className="max-w-[700px] text-muted-foreground mx-auto">
-                Take a look at what you can create with our AI chart generator.
-              </p>
-            </div>
-
-          </div>
-        </section>
-      )}
-
       <AlertDialog open={showEmbedDialog} onOpenChange={setShowEmbedDialog}>
         <AlertDialogContent>
           <AlertDialogHeader>
             <AlertDialogTitle>Chart Saved Successfully!</AlertDialogTitle>
-            <AlertDialogDescription className="space-y-4">
-              <p>Your chart has been saved and is ready to embed. Use the code below to embed this chart on your website:</p>
-              <div className="relative">
-                <Input
-                  value={embedCode}
-                  readOnly
-                  className="pr-20 font-mono text-sm"
-                />
-                <Button
-                  className={`absolute right-1 top-1 h-7 w-16 ${hasCopied ? 'bg-green-500 hover:bg-green-600 text-white' : ''}`}
-                  size="sm"
-                  onClick={handleCopyEmbedCode}
-                  variant={hasCopied ? "default" : "default"}
-                >
-                  {hasCopied ? 'Copied!' : 'Copy'}
-                </Button>
-              </div>
+            <AlertDialogDescription>
+              Your chart has been saved and is ready to embed. Use the code below to embed this chart on your website:
             </AlertDialogDescription>
           </AlertDialogHeader>
+          <div className="space-y-4">
+            <div className="relative">
+              <Input
+                value={embedCode}
+                readOnly
+                className="pr-20 font-mono text-sm"
+              />
+              <Button
+                className={`absolute right-1 top-1 h-7 w-16 ${hasCopied ? 'bg-green-500 hover:bg-green-600 text-white' : ''}`}
+                size="sm"
+                onClick={handleCopyEmbedCode}
+                variant={hasCopied ? "default" : "default"}
+              >
+                {hasCopied ? 'Copied!' : 'Copy'}
+              </Button>
+            </div>
+          </div>
           <AlertDialogFooter>
             <AlertDialogAction>Close</AlertDialogAction>
           </AlertDialogFooter>
         </AlertDialogContent>
       </AlertDialog>
+
+      {/* Footer Section */}
+      <FooterSection />
     </main>
   );
 }

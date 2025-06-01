@@ -116,16 +116,6 @@ export function NavMenu() {
                   <ul className="space-y-1">
                     <li>
                       <NavigationMenuLink asChild>
-                        <Link href="#" className="group inline-flex cursor-pointer items-center justify-start gap-1 text-sm leading-tight text-muted-foreground hover:text-primary transition-colors">
-                          About Finseo
-                          <div className="flex size-4 items-center justify-center border border-border rounded translate-x-0 transform opacity-0 transition-all duration-300 ease-out group-hover:translate-x-1 group-hover:opacity-100">
-                            <ChevronRightIcon className="h-4 w-4" />
-                          </div>
-                        </Link>
-                      </NavigationMenuLink>
-                    </li>
-                    <li>
-                      <NavigationMenuLink asChild>
                         <Link href="/careers" className="group inline-flex cursor-pointer items-center justify-start gap-1 text-sm leading-tight text-muted-foreground hover:text-primary transition-colors">
                           Careers
                           <div className="flex size-4 items-center justify-center border border-border rounded translate-x-0 transform opacity-0 transition-all duration-300 ease-out group-hover:translate-x-1 group-hover:opacity-100">
@@ -248,18 +238,8 @@ export function NavMenu() {
                     </li>
                     <li>
                       <NavigationMenuLink asChild>
-                        <Link href="/chart-generator" className="group inline-flex cursor-pointer items-center justify-start gap-1 text-sm leading-tight text-muted-foreground hover:text-primary transition-colors">
-                          Chart Generator
-                          <div className="flex size-4 items-center justify-center border border-border rounded translate-x-0 transform opacity-0 transition-all duration-300 ease-out group-hover:translate-x-1 group-hover:opacity-100">
-                            <ChevronRightIcon className="h-4 w-4" />
-                          </div>
-                        </Link>
-                      </NavigationMenuLink>
-                    </li>
-                    <li>
-                      <NavigationMenuLink asChild>
-                        <Link href="#" className="group inline-flex cursor-pointer items-center justify-start gap-1 text-sm leading-tight text-muted-foreground hover:text-primary transition-colors">
-                          Image Generation
+                        <Link href="/ai-chart-generator" className="group inline-flex cursor-pointer items-center justify-start gap-1 text-sm leading-tight text-muted-foreground hover:text-primary transition-colors">
+                          AI Chart Generator
                           <div className="flex size-4 items-center justify-center border border-border rounded translate-x-0 transform opacity-0 transition-all duration-300 ease-out group-hover:translate-x-1 group-hover:opacity-100">
                             <ChevronRightIcon className="h-4 w-4" />
                           </div>
