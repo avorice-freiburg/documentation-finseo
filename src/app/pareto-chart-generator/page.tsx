@@ -376,7 +376,7 @@ export default function ParetoChartGenerator() {
       const { chartId } = await response.json();
       
       // Create embed code
-      const code = `<iframe src="${window.location.origin}/embed/chart/${chartId}" width="100%" height="400" frameborder="0"></iframe>`;
+      const code = `<iframe src="https://app.finseo.ai/embed/chart/${chartId}" width="100%" height="400" frameborder="0"></iframe>`;
       setEmbedCode(code);
       setShowEmbedDialog(true);
     } catch (err) {
