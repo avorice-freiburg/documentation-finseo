@@ -1,10 +1,14 @@
 import { Navbar } from "@/components/sections/navbar";
 import { ThemeProvider } from "@/components/theme-provider";
-import { siteConfig } from "@/lib/site";
+import { siteConfig } from "@/lib/config";
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
+import localFont from "next/font/local";
+import { generateMetadata as getPageMetadata } from "@/lib/metadata";
+import { SchemaMarkup } from "@/components/schema-markup";
+import { organizationSchema, websiteSchema } from "@/lib/schemas";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -22,11 +26,11 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
+  ...getPageMetadata('home'),
   title: {
-    default: siteConfig.name,
-    template: `%s - ${siteConfig.name}`,
+    default: "Finseo - AI-Powered SEO Tools for Next-Gen Search Optimization",
+    template: `%s | Finseo`,
   },
-  description: siteConfig.description,
 };
 
 export default function RootLayout({
@@ -37,6 +41,9 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        {/* Schema Markup */}
+        <SchemaMarkup schema={[organizationSchema, websiteSchema]} />
+
         {/* Google Tag Manager */}
         <Script id="google-tag-manager" strategy="afterInteractive">
           {`
