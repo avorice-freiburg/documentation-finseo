@@ -1056,6 +1056,9 @@ export const siteConfig = {
         { id: 12, title: "For SMBs", url: "/for-smbs" },
         { id: 13, title: "For Entrepreneurs", url: "/for-entrepreneurs" },
         { id: 14, title: "Careers", url: "/careers" },
+        { id: 15, title: "Imprint", url: "/imprint" },
+        { id: 16, title: "Privacy Policy", url: "/privacy-policy" },
+        { id: 17, title: "Terms & Conditions", url: "/terms-conditions" },
       ],
     },
     {
