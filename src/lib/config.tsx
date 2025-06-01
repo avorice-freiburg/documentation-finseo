@@ -52,7 +52,7 @@ export const siteConfig = {
       { id: 1, name: "Home", href: "#hero" },
       { id: 2, name: "Features", href: "#bento" },
       { id: 3, name: "Solutions", href: "#features" },
-      { id: 4, name: "Pricing", href: "#pricing" },
+      { id: 4, title: "Pricing", href: "#pricing" },
     ],
   },
   hero: {
@@ -704,7 +704,7 @@ export const siteConfig = {
     pricingItems: [
       {
         name: "Creator",
-        href: "#",
+        href: "https://app.finseo.ai/signup",
         price: "$29",
         period: "month",
         yearlyPrice: "$19",
@@ -733,7 +733,7 @@ export const siteConfig = {
       },
       {
         name: "Professional",
-        href: "#",
+        href: "https://app.finseo.ai/signup",
         price: "$49",
         period: "month",
         yearlyPrice: "$39",
@@ -763,7 +763,7 @@ export const siteConfig = {
       },
       {
         name: "Growth",
-        href: "#",
+        href: "https://app.finseo.ai/signup",
         price: "$99",
         period: "month",
         yearlyPrice: "$79",
@@ -1031,7 +1031,7 @@ export const siteConfig = {
     backgroundImage: "/agent-cta-background.png",
     button: {
       text: "Start Your Free Trial Today",
-      href: "#",
+      href: "https://app.finseo.ai/signup",
     },
     subtext: "No credit card required",
   },
