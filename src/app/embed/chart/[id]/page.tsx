@@ -4,14 +4,25 @@ import React, { useEffect, useState } from 'react';
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 
-export default function EmbeddedChart({ params }: { params: { id: string } }) {
+export default function EmbeddedChart({ params }: { params: Promise<{ id: string }> }) {
   const [chartConfig, setChartConfig] = useState<any>(null);
   const [error, setError] = useState<string | null>(null);
+  const [chartId, setChartId] = useState<string | null>(null);
 
   useEffect(() => {
+    const getParams = async () => {
+      const { id } = await params;
+      setChartId(id);
+    };
+    getParams();
+  }, [params]);
+
+  useEffect(() => {
+    if (!chartId) return;
+
     const fetchChart = async () => {
       try {
-        const response = await fetch(`/api/charts/${params.id}`);
+        const response = await fetch(`/api/charts/${chartId}`);
         if (!response.ok) {
           throw new Error('Failed to load chart');
         }
@@ -24,7 +35,7 @@ export default function EmbeddedChart({ params }: { params: { id: string } }) {
     };
 
     fetchChart();
-  }, [params.id]);
+  }, [chartId]);
 
   if (error) {
     return <div>Error: {error}</div>;
