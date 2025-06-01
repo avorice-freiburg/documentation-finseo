@@ -5,7 +5,7 @@ import { Building2, Users, TrendingUp, Zap, Shield, Clock, BarChart3, Eye, Targe
 import { cn } from "@/lib/utils";
 import { DotPattern } from "@/components/ui/dot-pattern";
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
-import { Bar, BarChart, XAxis, YAxis, Area, AreaChart } from "recharts";
+import { Bar, BarChart, XAxis, YAxis, Area, AreaChart, ResponsiveContainer } from "recharts";
 import { FooterSection } from "@/components/sections/footer-section";
 import { CTASection } from "@/components/sections/cta-section";
 import { Button } from "@/components/ui/button";
@@ -125,29 +125,31 @@ export default function ForEnterprisePage() {
       {/* Main Visualization Section */}
       <section className="w-full max-w-6xl mx-auto -mt-8 mb-16 z-10 px-6">
         <div className="rounded-xl bg-card shadow-xl border border-border overflow-hidden">
-          <div className="p-6 md:p-8">
+          <div className="p-4 md:p-8">
             <div className="flex items-center justify-between mb-4">
               <div>
                 <h3 className="text-lg font-medium">Enterprise Command Center</h3>
-                <p className="text-sm text-muted-foreground">Global SEO operations at scale</p>
+                <p className="text-sm text-muted-foreground hidden sm:block">Global SEO operations at scale</p>
               </div>
               <div className="flex items-center gap-2 text-sm text-green-500">
                 <Globe className="h-4 w-4" />
-                58 Domains Managed
+                <span className="hidden sm:inline">58 Domains Managed</span>
+                <span className="sm:hidden">58 Domains</span>
               </div>
             </div>
-            <div className="h-[350px] w-full relative rounded-lg border border-border overflow-hidden bg-gradient-to-br from-background to-muted/20">
+            <div className="h-[300px] md:h-[350px] w-full relative rounded-lg border border-border overflow-hidden bg-gradient-to-br from-background to-muted/20">
               {/* Custom Enterprise SEO Command Center */}
-              <div className="absolute inset-0 p-4">
+              <div className="absolute inset-0 p-3 md:p-4">
                 {/* Header Bar */}
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 bg-secondary rounded-lg flex items-center justify-center">
-                      <BarChart3 className="h-4 w-4 text-white" />
+                <div className="flex items-center justify-between mb-3 md:mb-4">
+                  <div className="flex items-center gap-2 md:gap-3">
+                    <div className="w-6 h-6 md:w-8 md:h-8 bg-secondary rounded-lg flex items-center justify-center">
+                      <BarChart3 className="h-3 w-3 md:h-4 md:w-4 text-white" />
                     </div>
                     <div>
-                      <h4 className="text-sm font-semibold text-foreground">Enterprise SEO Analytics</h4>
-                      <p className="text-xs text-muted-foreground">Multi-client SEO performance dashboard</p>
+                      <h4 className="text-xs md:text-sm font-semibold text-foreground">Enterprise SEO Analytics</h4>
+                      <p className="text-xs text-muted-foreground hidden md:block">Multi-client SEO performance dashboard</p>
+                      <p className="text-xs text-muted-foreground md:hidden">Multi-client dashboard</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-2">
@@ -156,32 +158,32 @@ export default function ForEnterprisePage() {
                   </div>
                 </div>
 
-                {/* SEO Metrics Row */}
-                <div className="grid grid-cols-4 gap-3 mb-4">
-                  <div className="bg-card rounded-lg p-3 border border-border shadow-sm">
-                    <div className="text-xs text-muted-foreground mb-1">Keyword Rankings</div>
-                    <div className="text-lg font-bold text-secondary">3,847</div>
-                    <div className="text-xs text-secondary/80">tracked keywords</div>
+                {/* SEO Metrics Row - Responsive Grid */}
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-3 mb-3 md:mb-4">
+                  <div className="bg-card rounded-lg p-2 md:p-3 border border-border shadow-sm">
+                    <div className="text-xs text-muted-foreground mb-1">Keywords</div>
+                    <div className="text-sm md:text-lg font-bold text-secondary">3,847</div>
+                    <div className="text-xs text-secondary/80 hidden md:block">tracked keywords</div>
                   </div>
-                  <div className="bg-card rounded-lg p-3 border border-border shadow-sm">
-                    <div className="text-xs text-muted-foreground mb-1">Organic Growth</div>
-                    <div className="text-lg font-bold text-secondary">+47%</div>
-                    <div className="text-xs text-secondary/80">this quarter</div>
+                  <div className="bg-card rounded-lg p-2 md:p-3 border border-border shadow-sm">
+                    <div className="text-xs text-muted-foreground mb-1">Growth</div>
+                    <div className="text-sm md:text-lg font-bold text-secondary">+47%</div>
+                    <div className="text-xs text-secondary/80 hidden md:block">this quarter</div>
                   </div>
-                  <div className="bg-card rounded-lg p-3 border border-border shadow-sm">
-                    <div className="text-xs text-muted-foreground mb-1">Backlinks Built</div>
-                    <div className="text-lg font-bold text-secondary">9,234</div>
-                    <div className="text-xs text-secondary/80">high quality</div>
+                  <div className="bg-card rounded-lg p-2 md:p-3 border border-border shadow-sm">
+                    <div className="text-xs text-muted-foreground mb-1">Backlinks</div>
+                    <div className="text-sm md:text-lg font-bold text-secondary">9,234</div>
+                    <div className="text-xs text-secondary/80 hidden md:block">high quality</div>
                   </div>
-                  <div className="bg-card rounded-lg p-3 border border-border shadow-sm">
-                    <div className="text-xs text-muted-foreground mb-1">Page Speed</div>
-                    <div className="text-lg font-bold text-secondary">94/100</div>
-                    <div className="text-xs text-secondary/80">avg score</div>
+                  <div className="bg-card rounded-lg p-2 md:p-3 border border-border shadow-sm">
+                    <div className="text-xs text-muted-foreground mb-1">Speed</div>
+                    <div className="text-sm md:text-lg font-bold text-secondary">94/100</div>
+                    <div className="text-xs text-secondary/80 hidden md:block">avg score</div>
                   </div>
                 </div>
 
-                {/* Client SEO Performance Grid */}
-                <div className="grid grid-cols-3 gap-3">
+                {/* Client SEO Performance Grid - Hide on mobile, show simplified version */}
+                <div className="hidden md:grid md:grid-cols-3 gap-3">
                   {/* Client 1 */}
                   <div className="bg-card rounded-lg p-3 border border-border shadow-sm hover:shadow-md transition-shadow">
                     <div className="flex items-center justify-between mb-2">
@@ -261,17 +263,51 @@ export default function ForEnterprisePage() {
                   </div>
                 </div>
 
+                {/* Mobile simplified client list */}
+                <div className="md:hidden space-y-2">
+                  <div className="bg-card rounded-lg p-2 border border-border shadow-sm">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2">
+                        <div className="w-5 h-5 bg-secondary rounded-full flex items-center justify-center">
+                          <span className="text-xs text-white font-bold">TC</span>
+                        </div>
+                        <div>
+                          <div className="text-xs font-medium">TechCorp</div>
+                          <div className="text-xs text-muted-foreground">+45% growth</div>
+                        </div>
+                      </div>
+                      <div className="text-xs text-secondary font-medium">+23</div>
+                    </div>
+                  </div>
+                  <div className="bg-card rounded-lg p-2 border border-border shadow-sm">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2">
+                        <div className="w-5 h-5 bg-secondary rounded-full flex items-center justify-center">
+                          <span className="text-xs text-white font-bold">MS</span>
+                        </div>
+                        <div>
+                          <div className="text-xs font-medium">MedSpa</div>
+                          <div className="text-xs text-muted-foreground">DA: 67 (+5)</div>
+                        </div>
+                      </div>
+                      <div className="text-xs text-secondary font-medium">+142</div>
+                    </div>
+                  </div>
+                </div>
+
                 {/* Bottom Action Bar */}
-                <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between">
+                <div className="absolute bottom-3 md:bottom-4 left-3 md:left-4 right-3 md:right-4 flex items-center justify-between">
                   <div className="flex items-center gap-2 text-xs text-muted-foreground">
                     <TrendingUp className="h-3 w-3" />
-                    <span>SEO analysis: Real-time monitoring</span>
+                    <span className="hidden sm:inline">SEO analysis: Real-time monitoring</span>
+                    <span className="sm:hidden">Real-time</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <button className="bg-secondary text-white text-xs px-3 py-1 rounded-md hover:bg-secondary/90 transition-colors">
-                      SEO Report
+                    <button className="bg-secondary text-white text-xs px-2 md:px-3 py-1 rounded-md hover:bg-secondary/90 transition-colors">
+                      <span className="hidden sm:inline">SEO Report</span>
+                      <span className="sm:hidden">Report</span>
                     </button>
-                    <button className="bg-muted text-muted-foreground text-xs px-3 py-1 rounded-md hover:bg-muted/80 transition-colors">
+                    <button className="bg-muted text-muted-foreground text-xs px-2 md:px-3 py-1 rounded-md hover:bg-muted/80 transition-colors hidden sm:block">
                       View Details
                     </button>
                   </div>
@@ -324,16 +360,16 @@ export default function ForEnterprisePage() {
           </div>
 
           {/* Right Visualization - Overlapping Charts */}
-          <div className="h-[500px] bg-card border border-border rounded-xl p-6 shadow-xl overflow-hidden">
+          <div className="h-[400px] md:h-[500px] bg-card border border-border rounded-xl p-4 md:p-6 shadow-xl overflow-hidden">
             <div className="flex items-center justify-between mb-4">
               <div>
-                <h3 className="text-lg font-medium">Competitive SEO Analysis</h3>
-                <p className="text-sm text-muted-foreground">Enterprise visibility comparison</p>
+                <h3 className="text-base md:text-lg font-medium">Competitive SEO Analysis</h3>
+                <p className="text-sm text-muted-foreground hidden md:block">Enterprise visibility comparison</p>
               </div>
               <Users className="h-5 w-5 text-secondary" />
             </div>
             
-            <div className="h-[392px] space-y-6 overflow-hidden">
+            <div className="h-[340px] md:h-[392px] space-y-6 overflow-hidden">
               {/* Brand Headers */}
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
@@ -388,8 +424,8 @@ export default function ForEnterprisePage() {
               </div>
 
               {/* Overlapping Area Charts Visualization */}
-              <div className="relative h-80 bg-black/5 rounded-lg border border-border overflow-hidden">
-                <ChartContainer config={chartConfig} className="h-full w-full">
+              <div className="relative h-60 md:h-80 bg-black/5 rounded-lg border border-border overflow-hidden">
+                <ResponsiveContainer width="100%" height="100%">
                   <AreaChart data={competitiveChartData} margin={{ top: 20, right: 20, left: 20, bottom: 60 }}>
                     <defs>
                       <linearGradient id="fillAudi" x1="0" y1="0" x2="0" y2="1">
@@ -406,12 +442,14 @@ export default function ForEnterprisePage() {
                       axisLine={false}
                       tickLine={false}
                       tick={{ fontSize: 12, fill: '#6b7280' }}
+                      interval={0}
                     />
                     <YAxis 
                       axisLine={false}
                       tickLine={false}
                       tick={{ fontSize: 12, fill: '#6b7280' }}
                       domain={[60, 95]}
+                      width={40}
                     />
                     <ChartTooltip 
                       content={({ active, payload, label }) => {
@@ -495,7 +533,7 @@ export default function ForEnterprisePage() {
                       fillOpacity={0.6}
                     />
                   </AreaChart>
-                </ChartContainer>
+                </ResponsiveContainer>
 
                 {/* Elegant Chart Legend */}
                 <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
@@ -565,20 +603,34 @@ export default function ForEnterprisePage() {
       <section className="w-full max-w-7xl mx-auto px-6 py-16">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Visualization */}
-          <div className="h-[400px] bg-card border border-border rounded-xl p-6 shadow-xl">
+          <div className="h-[350px] md:h-[400px] bg-card border border-border rounded-xl p-4 md:p-6 shadow-xl overflow-hidden">
             <div className="flex items-center justify-between mb-4">
               <div>
-                <h3 className="text-lg font-medium">Enterprise Performance</h3>
-                <p className="text-sm text-muted-foreground">Enterprise vs Standard plan metrics</p>
+                <h3 className="text-base md:text-lg font-medium">Enterprise Performance</h3>
+                <p className="text-sm text-muted-foreground hidden md:block">Enterprise vs Standard plan metrics</p>
               </div>
               <Monitor className="h-5 w-5 text-secondary" />
             </div>
             
-            <div className="h-[320px]">
-              <ChartContainer config={chartConfig} className="h-full w-full">
-                <BarChart data={seoComparisonData} margin={{ top: 20, right: 30, left: 20, bottom: 20 }}>
-                  <XAxis dataKey="metric" axisLine={false} tickLine={false} tick={{ fontSize: 10 }} />
-                  <YAxis axisLine={false} tickLine={false} tick={{ fontSize: 12 }} />
+            <div className="h-[270px] md:h-[320px] w-full">
+              <ResponsiveContainer width="100%" height="100%">
+                <BarChart data={seoComparisonData} margin={{ top: 20, right: 20, left: 10, bottom: 40 }}>
+                  <XAxis 
+                    dataKey="metric" 
+                    axisLine={false} 
+                    tickLine={false} 
+                    tick={{ fontSize: 10 }} 
+                    angle={-45}
+                    textAnchor="end"
+                    height={60}
+                    interval={0}
+                  />
+                  <YAxis 
+                    axisLine={false} 
+                    tickLine={false} 
+                    tick={{ fontSize: 12 }} 
+                    width={40}
+                  />
                   <ChartTooltip 
                     content={({ active, payload, label }) => {
                       if (active && payload && payload.length) {
@@ -621,7 +673,7 @@ export default function ForEnterprisePage() {
                   <Bar dataKey="enterprise" fill="#0eca7b" radius={[4, 4, 0, 0]} />
                   <Bar dataKey="standard" fill="#94a3b8" radius={[4, 4, 0, 0]} />
                 </BarChart>
-              </ChartContainer>
+              </ResponsiveContainer>
             </div>
           </div>
 

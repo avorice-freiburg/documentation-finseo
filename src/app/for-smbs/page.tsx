@@ -5,7 +5,7 @@ import { Building, Users, TrendingUp, Zap, Shield, Clock, BarChart3, Eye, Target
 import { cn } from "@/lib/utils";
 import { DotPattern } from "@/components/ui/dot-pattern";
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
-import { Bar, BarChart, XAxis, YAxis, Area, AreaChart } from "recharts";
+import { Bar, BarChart, XAxis, YAxis, Area, AreaChart, ResponsiveContainer } from "recharts";
 import { FooterSection } from "@/components/sections/footer-section";
 import { CTASection } from "@/components/sections/cta-section";
 import { FourthBentoAnimation } from "@/components/fourth-bento-animation";
@@ -177,18 +177,18 @@ export default function ForSMBsPage() {
           </div>
 
           {/* Right Visualization */}
-          <div className="h-[400px] bg-card border border-border rounded-xl p-6 shadow-xl">
+          <div className="h-[350px] md:h-[400px] bg-card border border-border rounded-xl p-4 md:p-6 shadow-xl overflow-hidden">
             <div className="flex items-center justify-between mb-4">
               <div>
-                <h3 className="text-lg font-medium">ROI Progression</h3>
-                <p className="text-sm text-muted-foreground">Investment vs returns over 6 months</p>
+                <h3 className="text-base md:text-lg font-medium">ROI Progression</h3>
+                <p className="text-sm text-muted-foreground hidden md:block">Investment vs returns over 6 months</p>
               </div>
               <DollarSign className="h-5 w-5 text-secondary" />
             </div>
             
-            <div className="h-[320px]">
-              <ChartContainer config={chartConfig} className="h-full w-full">
-                <AreaChart data={roiProgressionData} margin={{ top: 20, right: 30, left: 20, bottom: 20 }}>
+            <div className="h-[270px] md:h-[320px] w-full">
+              <ResponsiveContainer width="100%" height="100%">
+                <AreaChart data={roiProgressionData} margin={{ top: 20, right: 20, left: 10, bottom: 40 }}>
                   <defs>
                     <linearGradient id="fillReturns" x1="0" y1="0" x2="0" y2="1">
                       <stop offset="5%" stopColor="#0eca7b" stopOpacity={0.8}/>
@@ -199,8 +199,22 @@ export default function ForSMBsPage() {
                       <stop offset="95%" stopColor="#ef4444" stopOpacity={0.1}/>
                     </linearGradient>
                   </defs>
-                  <XAxis dataKey="month" axisLine={false} tickLine={false} tick={{ fontSize: 10 }} />
-                  <YAxis axisLine={false} tickLine={false} tick={{ fontSize: 12 }} />
+                  <XAxis 
+                    dataKey="month" 
+                    axisLine={false} 
+                    tickLine={false} 
+                    tick={{ fontSize: 10 }} 
+                    angle={-45}
+                    textAnchor="end"
+                    height={60}
+                    interval={0}
+                  />
+                  <YAxis 
+                    axisLine={false} 
+                    tickLine={false} 
+                    tick={{ fontSize: 12 }} 
+                    width={40}
+                  />
                   <ChartTooltip 
                     content={({ active, payload, label }) => {
                       if (active && payload && payload.length) {
@@ -262,7 +276,7 @@ export default function ForSMBsPage() {
                     fillOpacity={0.6}
                   />
                 </AreaChart>
-              </ChartContainer>
+              </ResponsiveContainer>
             </div>
           </div>
         </div>
@@ -272,16 +286,16 @@ export default function ForSMBsPage() {
       <section className="w-full max-w-7xl mx-auto px-6 py-16">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Visualization - Animated List */}
-          <div className="h-[500px] bg-card border border-border rounded-xl p-6 shadow-xl overflow-hidden">
+          <div className="h-[400px] md:h-[500px] bg-card border border-border rounded-xl p-4 md:p-6 shadow-xl overflow-hidden">
             <div className="flex items-center justify-between mb-4">
               <div>
-                <h3 className="text-lg font-medium">Local SEO Features</h3>
-                <p className="text-sm text-muted-foreground">Dominate your local market</p>
+                <h3 className="text-base md:text-lg font-medium">Local SEO Features</h3>
+                <p className="text-sm text-muted-foreground hidden md:block">Dominate your local market</p>
               </div>
               <MapPin className="h-5 w-5 text-secondary" />
             </div>
             
-            <div className="h-[420px] flex items-center justify-center overflow-hidden">
+            <div className="h-[320px] md:h-[420px] flex items-center justify-center overflow-hidden">
               <div className="w-full max-h-full overflow-hidden">
                 <AnimatedList className="w-full" delay={4000}>
                   {localSeoFeatures.map((feature) => (
@@ -384,20 +398,34 @@ export default function ForSMBsPage() {
           </div>
 
           {/* Right Visualization */}
-          <div className="h-[400px] bg-card border border-border rounded-xl p-6 shadow-xl">
+          <div className="h-[350px] md:h-[400px] bg-card border border-border rounded-xl p-4 md:p-6 shadow-xl overflow-hidden">
             <div className="flex items-center justify-between mb-4">
               <div>
-                <h3 className="text-lg font-medium">Local SEO Performance</h3>
-                <p className="text-sm text-muted-foreground">Before vs after Finseo implementation</p>
+                <h3 className="text-base md:text-lg font-medium">Local SEO Performance</h3>
+                <p className="text-sm text-muted-foreground hidden md:block">Before vs after Finseo implementation</p>
               </div>
               <Globe className="h-5 w-5 text-secondary" />
             </div>
             
-            <div className="h-[320px]">
-              <ChartContainer config={chartConfig} className="h-full w-full">
-                <BarChart data={localSeoData} margin={{ top: 20, right: 30, left: 20, bottom: 20 }}>
-                  <XAxis dataKey="metric" axisLine={false} tickLine={false} tick={{ fontSize: 10 }} />
-                  <YAxis axisLine={false} tickLine={false} tick={{ fontSize: 12 }} />
+            <div className="h-[270px] md:h-[320px] w-full">
+              <ResponsiveContainer width="100%" height="100%">
+                <BarChart data={localSeoData} margin={{ top: 20, right: 20, left: 10, bottom: 40 }}>
+                  <XAxis 
+                    dataKey="metric" 
+                    axisLine={false} 
+                    tickLine={false} 
+                    tick={{ fontSize: 10 }} 
+                    angle={-45}
+                    textAnchor="end"
+                    height={60}
+                    interval={0}
+                  />
+                  <YAxis 
+                    axisLine={false} 
+                    tickLine={false} 
+                    tick={{ fontSize: 12 }} 
+                    width={40}
+                  />
                   <ChartTooltip 
                     content={({ active, payload, label }) => {
                       if (active && payload && payload.length) {
@@ -440,7 +468,7 @@ export default function ForSMBsPage() {
                   <Bar dataKey="before" fill="#ef4444" radius={[4, 4, 0, 0]} />
                   <Bar dataKey="after" fill="#0eca7b" radius={[4, 4, 0, 0]} />
                 </BarChart>
-              </ChartContainer>
+              </ResponsiveContainer>
             </div>
           </div>
         </div>

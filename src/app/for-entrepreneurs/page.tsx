@@ -5,7 +5,7 @@ import { Rocket, Users, TrendingUp, Zap, Shield, Clock, BarChart3, Eye, Target, 
 import { cn } from "@/lib/utils";
 import { DotPattern } from "@/components/ui/dot-pattern";
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
-import { Bar, BarChart, XAxis, YAxis, Area, AreaChart } from "recharts";
+import { Bar, BarChart, XAxis, YAxis, Area, AreaChart, ResponsiveContainer } from "recharts";
 import { FooterSection } from "@/components/sections/footer-section";
 import { CTASection } from "@/components/sections/cta-section";
 import { ThirdBentoAnimation } from "@/components/third-bento-animation";
@@ -165,77 +165,78 @@ export default function ForEntrepreneursPage() {
       {/* Main Visualization Section */}
       <section className="w-full max-w-6xl mx-auto -mt-8 mb-16 z-10 px-6">
         <div className="rounded-xl bg-card shadow-xl border border-border overflow-hidden">
-          <div className="p-6 md:p-8">
+          <div className="p-4 md:p-6 lg:p-8">
             <div className="flex items-center justify-between mb-4">
               <div>
-                <h3 className="text-lg font-medium">Startup Growth Command Center</h3>
-                <p className="text-sm text-muted-foreground">Real-time SEO performance tracking</p>
+                <h3 className="text-base md:text-lg font-medium">Startup Growth Command Center</h3>
+                <p className="text-sm text-muted-foreground hidden md:block">Real-time SEO performance tracking</p>
               </div>
               <div className="flex items-center gap-2 text-sm text-green-500">
                 <TrendingUp className="h-4 w-4" />
-                6,176% ROI Average
+                <span className="hidden sm:inline">6,176% ROI Average</span>
+                <span className="sm:hidden">6,176% ROI</span>
               </div>
             </div>
-            <div className="h-[350px] w-full relative rounded-lg border border-border overflow-hidden">
+            <div className="h-[300px] md:h-[350px] w-full relative rounded-lg border border-border overflow-hidden">
               {/* Custom Startup Dashboard */}
-              <div className="absolute inset-0 p-6">
+              <div className="absolute inset-0 p-3 md:p-6">
                 {/* Header Bar */}
-                <div className="flex items-center justify-between mb-6">
-                  <div className="flex items-center gap-4">
-                    <div className="w-10 h-10 bg-secondary rounded-xl flex items-center justify-center">
-                      <TrendingUp className="h-5 w-5 text-white" />
+                <div className="flex items-center justify-between mb-3 md:mb-6">
+                  <div className="flex items-center gap-2 md:gap-4">
+                    <div className="w-6 h-6 md:w-10 md:h-10 bg-secondary rounded-lg md:rounded-xl flex items-center justify-center">
+                      <TrendingUp className="h-3 w-3 md:h-5 md:w-5 text-white" />
                     </div>
                     <div>
-                      <h4 className="text-lg font-semibold text-foreground">SEO Performance Dashboard</h4>
-                      <p className="text-sm text-muted-foreground">Real-time optimization tracking</p>
+                      <h4 className="text-sm md:text-lg font-semibold text-foreground">SEO Performance Dashboard</h4>
+                      <p className="text-xs md:text-sm text-muted-foreground hidden md:block">Real-time optimization tracking</p>
                     </div>
                   </div>
-                  <div className="flex items-center gap-3">
-                    <div className="flex items-center gap-2 bg-secondary/10 px-3 py-1.5 rounded-full">
-                      <div className="w-2 h-2 bg-secondary rounded-full animate-pulse"></div>
+                  <div className="flex items-center gap-2 md:gap-3">
+                    <div className="flex items-center gap-1 md:gap-2 bg-secondary/10 px-2 md:px-3 py-1 md:py-1.5 rounded-full">
+                      <div className="w-1.5 h-1.5 md:w-2 md:h-2 bg-secondary rounded-full animate-pulse"></div>
                       <span className="text-xs font-medium text-secondary">Live</span>
                     </div>
                   </div>
                 </div>
 
-                {/* Key SEO Metrics Row */}
-                <div className="grid grid-cols-4 gap-4 mb-6">
-                  <div className="bg-background/60 rounded-lg p-4 border border-border/30">
-                    <div className="flex items-center justify-between mb-2">
-                      <div className="text-xs font-medium text-muted-foreground uppercase tracking-wide">Keywords Tracked</div>
-                      <Target className="h-4 w-4 text-secondary" />
+                {/* Key SEO Metrics Row - Responsive Grid */}
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4 mb-3 md:mb-6">
+                  <div className="bg-background/60 rounded-lg p-2 md:p-4 border border-border/30">
+                    <div className="flex items-center justify-between mb-1 md:mb-2">
+                      <div className="text-xs font-medium text-muted-foreground uppercase tracking-wide">Keywords</div>
+                      <Target className="h-3 w-3 md:h-4 md:w-4 text-secondary" />
                     </div>
-                    <div className="text-2xl font-bold text-foreground">2,847</div>
-                    <div className="text-xs text-secondary font-medium">+342 this month</div>
+                    <div className="text-lg md:text-2xl font-bold text-foreground">2,847</div>
+                    <div className="text-xs text-secondary font-medium hidden md:block">+342 this month</div>
                   </div>
-                  <div className="bg-background/60 rounded-lg p-4 border border-border/30">
-                    <div className="flex items-center justify-between mb-2">
-                      <div className="text-xs font-medium text-muted-foreground uppercase tracking-wide">Avg Position</div>
-                      <BarChart3 className="h-4 w-4 text-secondary" />
+                  <div className="bg-background/60 rounded-lg p-2 md:p-4 border border-border/30">
+                    <div className="flex items-center justify-between mb-1 md:mb-2">
+                      <div className="text-xs font-medium text-muted-foreground uppercase tracking-wide">Position</div>
+                      <BarChart3 className="h-3 w-3 md:h-4 md:w-4 text-secondary" />
                     </div>
-                    <div className="text-2xl font-bold text-foreground">12.4</div>
-                    <div className="text-xs text-secondary font-medium">-2.1 improved</div>
+                    <div className="text-lg md:text-2xl font-bold text-foreground">12.4</div>
+                    <div className="text-xs text-secondary font-medium hidden md:block">-2.1 improved</div>
                   </div>
-                  <div className="bg-background/60 rounded-lg p-4 border border-border/30">
-                    <div className="flex items-center justify-between mb-2">
-                      <div className="text-xs font-medium text-muted-foreground uppercase tracking-wide">Page Speed</div>
-                      <Zap className="h-4 w-4 text-secondary" />
+                  <div className="bg-background/60 rounded-lg p-2 md:p-4 border border-border/30">
+                    <div className="flex items-center justify-between mb-1 md:mb-2">
+                      <div className="text-xs font-medium text-muted-foreground uppercase tracking-wide">Speed</div>
+                      <Zap className="h-3 w-3 md:h-4 md:w-4 text-secondary" />
                     </div>
-                    <div className="text-2xl font-bold text-foreground">94</div>
-                    <div className="text-xs text-secondary font-medium">+8 optimized</div>
+                    <div className="text-lg md:text-2xl font-bold text-foreground">94</div>
+                    <div className="text-xs text-secondary font-medium hidden md:block">+8 optimized</div>
                   </div>
-                  <div className="bg-background/60 rounded-lg p-4 border border-border/30">
-                    <div className="flex items-center justify-between mb-2">
-                      <div className="text-xs font-medium text-muted-foreground uppercase tracking-wide">Last Crawl</div>
-                      <Clock className="h-4 w-4 text-secondary" />
+                  <div className="bg-background/60 rounded-lg p-2 md:p-4 border border-border/30">
+                    <div className="flex items-center justify-between mb-1 md:mb-2">
+                      <div className="text-xs font-medium text-muted-foreground uppercase tracking-wide">Crawl</div>
+                      <Clock className="h-3 w-3 md:h-4 md:w-4 text-secondary" />
                     </div>
-                    <div className="text-2xl font-bold text-foreground">2h</div>
-                    <div className="text-xs text-secondary font-medium">ago</div>
+                    <div className="text-lg md:text-2xl font-bold text-foreground">2h</div>
+                    <div className="text-xs text-secondary font-medium hidden md:block">ago</div>
                   </div>
                 </div>
 
-                {/* SEO Performance Grid */}
-                <div className="grid grid-cols-3 gap-4">
+                {/* SEO Performance Grid - Hide on mobile, show simplified version */}
+                <div className="hidden md:grid md:grid-cols-3 gap-4">
                   {/* Rankings Metric */}
                   <div className="bg-background/60 rounded-lg p-4 border border-border/30 group">
                     <div className="flex items-center justify-between mb-3">
@@ -314,6 +315,39 @@ export default function ForEntrepreneursPage() {
                     </div>
                   </div>
                 </div>
+
+                {/* Mobile simplified performance summary */}
+                <div className="md:hidden space-y-2">
+                  <div className="bg-background/60 rounded-lg p-2 border border-border/30">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2">
+                        <div className="w-5 h-5 bg-secondary rounded-lg flex items-center justify-center">
+                          <Target className="h-3 w-3 text-white" />
+                        </div>
+                        <div>
+                          <div className="text-xs font-medium">Top 10 Rankings</div>
+                          <div className="text-xs text-muted-foreground">847 keywords</div>
+                        </div>
+                      </div>
+                      <div className="text-xs text-secondary font-medium">+127</div>
+                    </div>
+                  </div>
+                  <div className="bg-background/60 rounded-lg p-2 border border-border/30">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2">
+                        <div className="w-5 h-5 bg-secondary rounded-lg flex items-center justify-center">
+                          <Award className="h-3 w-3 text-white" />
+                        </div>
+                        <div>
+                          <div className="text-xs font-medium">Content Score</div>
+                          <div className="text-xs text-muted-foreground">87% optimized</div>
+                        </div>
+                      </div>
+                      <div className="text-xs text-secondary font-medium">156 pages</div>
+                    </div>
+                  </div>
+                </div>
+
               </div>
             </div>
           </div>
@@ -362,43 +396,43 @@ export default function ForEntrepreneursPage() {
           </div>
 
           {/* Right Visualization - Overlapping Charts */}
-          <div className="h-[500px] bg-card border border-border rounded-xl p-6 shadow-xl overflow-hidden">
+          <div className="h-[400px] md:h-[500px] bg-card border border-border rounded-xl p-4 md:p-6 shadow-xl overflow-hidden">
             <div className="flex items-center justify-between mb-4">
               <div>
-                <h3 className="text-lg font-medium">Startup vs Competitor</h3>
-                <p className="text-sm text-muted-foreground">SEO visibility comparison</p>
+                <h3 className="text-base md:text-lg font-medium">Startup vs Competitor</h3>
+                <p className="text-sm text-muted-foreground hidden md:block">SEO visibility comparison</p>
               </div>
               <Users className="h-5 w-5 text-secondary" />
             </div>
             
-            <div className="h-[392px] space-y-6 overflow-hidden">
+            <div className="h-[320px] md:h-[392px] space-y-4 md:space-y-6 overflow-hidden">
               {/* Brand Headers */}
               <div className="flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-full bg-secondary border border-border flex items-center justify-center">
-                    <Rocket className="h-4 w-4 text-white" />
+                <div className="flex items-center gap-2 md:gap-3">
+                  <div className="w-6 h-6 md:w-8 md:h-8 rounded-full bg-secondary border border-border flex items-center justify-center">
+                    <Rocket className="h-3 w-3 md:h-4 md:w-4 text-white" />
                   </div>
                   <div>
                     <div className="font-medium text-sm">Your Startup</div>
                     <div className="text-xs text-muted-foreground">98% visibility</div>
                   </div>
                 </div>
-                <div className="text-lg font-bold text-muted-foreground">VS</div>
-                <div className="flex items-center gap-3">
+                <div className="text-sm md:text-lg font-bold text-muted-foreground">VS</div>
+                <div className="flex items-center gap-2 md:gap-3">
                   <div>
                     <div className="font-medium text-sm text-right">Competitor</div>
                     <div className="text-xs text-muted-foreground text-right">55% visibility</div>
                   </div>
-                  <div className="w-8 h-8 rounded-full bg-orange-500 border border-border flex items-center justify-center">
-                    <Briefcase className="h-4 w-4 text-white" />
+                  <div className="w-6 h-6 md:w-8 md:h-8 rounded-full bg-orange-500 border border-border flex items-center justify-center">
+                    <Briefcase className="h-3 w-3 md:h-4 md:w-4 text-white" />
                   </div>
                 </div>
               </div>
 
               {/* Overlapping Area Charts Visualization */}
-              <div className="relative h-80 bg-black/5 rounded-lg border border-border overflow-hidden">
-                <ChartContainer config={chartConfig} className="h-full w-full">
-                  <AreaChart data={competitiveStartupData} margin={{ top: 20, right: 20, left: 20, bottom: 60 }}>
+              <div className="relative h-60 md:h-80 bg-black/5 rounded-lg border border-border overflow-hidden">
+                <ResponsiveContainer width="100%" height="100%">
+                  <AreaChart data={competitiveStartupData} margin={{ top: 20, right: 20, left: 10, bottom: 60 }}>
                     <defs>
                       <linearGradient id="fillYourStartup" x1="0" y1="0" x2="0" y2="1">
                         <stop offset="5%" stopColor="#0eca7b" stopOpacity={0.8}/>
@@ -414,12 +448,14 @@ export default function ForEntrepreneursPage() {
                       axisLine={false}
                       tickLine={false}
                       tick={{ fontSize: 12, fill: '#6b7280' }}
+                      interval={0}
                     />
                     <YAxis 
                       axisLine={false}
                       tickLine={false}
                       tick={{ fontSize: 12, fill: '#6b7280' }}
                       domain={[30, 100]}
+                      width={40}
                     />
                     <ChartTooltip 
                       content={({ active, payload, label }) => {
@@ -484,10 +520,10 @@ export default function ForEntrepreneursPage() {
                       fillOpacity={0.6}
                     />
                   </AreaChart>
-                </ChartContainer>
+                </ResponsiveContainer>
 
-                {/* Elegant Chart Legend */}
-                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
+                {/* Elegant Chart Legend - Hidden on mobile */}
+                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 hidden md:block">
                   <div className="bg-white/95 backdrop-blur-md border border-border/50 rounded-xl px-6 py-3 shadow-lg">
                     <div className="flex items-center gap-8">
                       <div className="flex items-center gap-3">
@@ -536,26 +572,40 @@ export default function ForEntrepreneursPage() {
       <section className="w-full max-w-7xl mx-auto px-6 py-16">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Visualization */}
-          <div className="h-[500px] bg-card border border-border rounded-xl p-6 shadow-xl overflow-hidden">
+          <div className="h-[400px] md:h-[500px] bg-card border border-border rounded-xl p-4 md:p-6 shadow-xl overflow-hidden">
             <div className="flex items-center justify-between mb-4">
               <div>
-                <h3 className="text-lg font-medium">Bootstrap ROI Calculator</h3>
-                <p className="text-sm text-muted-foreground">$29/month investment returns</p>
+                <h3 className="text-base md:text-lg font-medium">Bootstrap ROI Calculator</h3>
+                <p className="text-sm text-muted-foreground hidden md:block">$29/month investment returns</p>
               </div>
               <DollarSign className="h-5 w-5 text-secondary" />
             </div>
             
-            <div className="h-[392px]">
-              <ChartContainer config={chartConfig} className="h-full w-full">
-                <AreaChart data={bootstrapROIData} margin={{ top: 20, right: 30, left: 20, bottom: 20 }}>
+            <div className="h-[320px] md:h-[392px] w-full">
+              <ResponsiveContainer width="100%" height="100%">
+                <AreaChart data={bootstrapROIData} margin={{ top: 20, right: 20, left: 10, bottom: 40 }}>
                   <defs>
                     <linearGradient id="fillReturns" x1="0" y1="0" x2="0" y2="1">
                       <stop offset="5%" stopColor="#0eca7b" stopOpacity={0.8}/>
                       <stop offset="95%" stopColor="#0eca7b" stopOpacity={0.1}/>
                     </linearGradient>
                   </defs>
-                  <XAxis dataKey="month" axisLine={false} tickLine={false} tick={{ fontSize: 10 }} />
-                  <YAxis axisLine={false} tickLine={false} tick={{ fontSize: 12 }} />
+                  <XAxis 
+                    dataKey="month" 
+                    axisLine={false} 
+                    tickLine={false} 
+                    tick={{ fontSize: 10 }} 
+                    angle={-45}
+                    textAnchor="end"
+                    height={60}
+                    interval={0}
+                  />
+                  <YAxis 
+                    axisLine={false} 
+                    tickLine={false} 
+                    tick={{ fontSize: 12 }} 
+                    width={40}
+                  />
                   <ChartTooltip 
                     content={({ active, payload, label }) => {
                       if (active && payload && payload.length) {
@@ -609,7 +659,7 @@ export default function ForEntrepreneursPage() {
                     fillOpacity={0.6}
                   />
                 </AreaChart>
-              </ChartContainer>
+              </ResponsiveContainer>
             </div>
           </div>
 
@@ -695,20 +745,34 @@ export default function ForEntrepreneursPage() {
           </div>
 
           {/* Right Visualization */}
-          <div className="h-[500px] bg-card border border-border rounded-xl p-6 shadow-xl overflow-hidden">
+          <div className="h-[400px] md:h-[500px] bg-card border border-border rounded-xl p-4 md:p-6 shadow-xl overflow-hidden">
             <div className="flex items-center justify-between mb-4">
               <div>
-                <h3 className="text-lg font-medium">Startup vs Enterprise</h3>
-                <p className="text-sm text-muted-foreground">Why startups win with Finseo</p>
+                <h3 className="text-base md:text-lg font-medium">Startup vs Enterprise</h3>
+                <p className="text-sm text-muted-foreground hidden md:block">Why startups win with Finseo</p>
               </div>
               <Rocket className="h-5 w-5 text-secondary" />
             </div>
             
-            <div className="h-[392px]">
-              <ChartContainer config={chartConfig} className="h-full w-full">
-                <BarChart data={startupVsEnterpriseData} margin={{ top: 20, right: 30, left: 20, bottom: 20 }}>
-                  <XAxis dataKey="metric" axisLine={false} tickLine={false} tick={{ fontSize: 10 }} />
-                  <YAxis axisLine={false} tickLine={false} tick={{ fontSize: 12 }} />
+            <div className="h-[320px] md:h-[392px] w-full">
+              <ResponsiveContainer width="100%" height="100%">
+                <BarChart data={startupVsEnterpriseData} margin={{ top: 20, right: 20, left: 10, bottom: 40 }}>
+                  <XAxis 
+                    dataKey="metric" 
+                    axisLine={false} 
+                    tickLine={false} 
+                    tick={{ fontSize: 10 }} 
+                    angle={-45}
+                    textAnchor="end"
+                    height={60}
+                    interval={0}
+                  />
+                  <YAxis 
+                    axisLine={false} 
+                    tickLine={false} 
+                    tick={{ fontSize: 12 }} 
+                    width={40}
+                  />
                   <ChartTooltip 
                     content={({ active, payload, label }) => {
                       if (active && payload && payload.length) {
@@ -751,7 +815,7 @@ export default function ForEntrepreneursPage() {
                   <Bar dataKey="startup" fill="#0eca7b" radius={[4, 4, 0, 0]} />
                   <Bar dataKey="enterprise" fill="#94a3b8" radius={[4, 4, 0, 0]} />
                 </BarChart>
-              </ChartContainer>
+              </ResponsiveContainer>
             </div>
           </div>
         </div>

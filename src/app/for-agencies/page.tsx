@@ -5,7 +5,7 @@ import { Building2, Users, TrendingUp, Zap, Shield, Clock, BarChart3, Eye, Targe
 import { cn } from "@/lib/utils";
 import { DotPattern } from "@/components/ui/dot-pattern";
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
-import { Bar, BarChart, XAxis, YAxis, Area, AreaChart } from "recharts";
+import { Bar, BarChart, XAxis, YAxis, Area, AreaChart, ResponsiveContainer } from "recharts";
 import { FooterSection } from "@/components/sections/footer-section";
 import { CTASection } from "@/components/sections/cta-section";
 import { ThirdBentoAnimation } from "@/components/third-bento-animation";
@@ -91,29 +91,31 @@ export default function ForAgenciesPage() {
       {/* Main Visualization Section */}
       <section className="w-full max-w-6xl mx-auto -mt-8 mb-16 z-10 px-6">
         <div className="rounded-xl bg-card shadow-xl border border-border overflow-hidden">
-          <div className="p-6 md:p-8">
+          <div className="p-4 md:p-8">
             <div className="flex items-center justify-between mb-4">
               <div>
                 <h3 className="text-lg font-medium">Agency Performance Dashboard</h3>
-                <p className="text-sm text-muted-foreground">Real-time client performance metrics</p>
+                <p className="text-sm text-muted-foreground hidden sm:block">Real-time client performance metrics</p>
               </div>
               <div className="flex items-center gap-2 text-sm text-green-500">
                 <BarChart3 className="h-4 w-4" />
-                Live Data Visualization
+                <span className="hidden sm:inline">Live Data Visualization</span>
+                <span className="sm:hidden">Live</span>
               </div>
             </div>
-            <div className="h-[350px] w-full relative rounded-lg border border-border overflow-hidden bg-gradient-to-br from-background to-muted/20">
+            <div className="h-[300px] md:h-[350px] w-full relative rounded-lg border border-border overflow-hidden bg-gradient-to-br from-background to-muted/20">
               {/* Custom Agency Dashboard UI */}
-              <div className="absolute inset-0 p-4">
+              <div className="absolute inset-0 p-3 md:p-4">
                 {/* Header Bar */}
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 bg-secondary rounded-lg flex items-center justify-center">
-                      <Building2 className="h-4 w-4 text-white" />
+                <div className="flex items-center justify-between mb-3 md:mb-4">
+                  <div className="flex items-center gap-2 md:gap-3">
+                    <div className="w-6 h-6 md:w-8 md:h-8 bg-secondary rounded-lg flex items-center justify-center">
+                      <Building2 className="h-3 w-3 md:h-4 md:w-4 text-white" />
                     </div>
                     <div>
-                      <h4 className="text-sm font-semibold text-foreground">Agency Dashboard</h4>
-                      <p className="text-xs text-muted-foreground">Managing 47 active clients</p>
+                      <h4 className="text-xs md:text-sm font-semibold text-foreground">Agency Dashboard</h4>
+                      <p className="text-xs text-muted-foreground hidden md:block">Managing 47 active clients</p>
+                      <p className="text-xs text-muted-foreground md:hidden">47 clients</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-2">
@@ -122,32 +124,32 @@ export default function ForAgenciesPage() {
                   </div>
                 </div>
 
-                {/* Stats Row */}
-                <div className="grid grid-cols-4 gap-3 mb-4">
-                  <div className="bg-card rounded-lg p-3 border border-border shadow-sm">
-                    <div className="text-xs text-muted-foreground mb-1">Keyword Rankings</div>
-                    <div className="text-lg font-bold text-secondary">2,847</div>
-                    <div className="text-xs text-secondary/80">+156 this week</div>
+                {/* Stats Row - Responsive Grid */}
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-3 mb-3 md:mb-4">
+                  <div className="bg-card rounded-lg p-2 md:p-3 border border-border shadow-sm">
+                    <div className="text-xs text-muted-foreground mb-1">Keywords</div>
+                    <div className="text-sm md:text-lg font-bold text-secondary">2,847</div>
+                    <div className="text-xs text-secondary/80 hidden md:block">+156 this week</div>
                   </div>
-                  <div className="bg-card rounded-lg p-3 border border-border shadow-sm">
-                    <div className="text-xs text-muted-foreground mb-1">Organic Traffic</div>
-                    <div className="text-lg font-bold text-blue-600">+47%</div>
-                    <div className="text-xs text-blue-500">vs last month</div>
+                  <div className="bg-card rounded-lg p-2 md:p-3 border border-border shadow-sm">
+                    <div className="text-xs text-muted-foreground mb-1">Traffic</div>
+                    <div className="text-sm md:text-lg font-bold text-blue-600">+47%</div>
+                    <div className="text-xs text-blue-500 hidden md:block">vs last month</div>
                   </div>
-                  <div className="bg-card rounded-lg p-3 border border-border shadow-sm">
-                    <div className="text-xs text-muted-foreground mb-1">Backlinks Built</div>
-                    <div className="text-lg font-bold text-purple-600">1,234</div>
-                    <div className="text-xs text-purple-500">+89 this month</div>
+                  <div className="bg-card rounded-lg p-2 md:p-3 border border-border shadow-sm">
+                    <div className="text-xs text-muted-foreground mb-1">Backlinks</div>
+                    <div className="text-sm md:text-lg font-bold text-purple-600">1,234</div>
+                    <div className="text-xs text-purple-500 hidden md:block">+89 this month</div>
                   </div>
-                  <div className="bg-card rounded-lg p-3 border border-border shadow-sm">
-                    <div className="text-xs text-muted-foreground mb-1">Page Speed Score</div>
-                    <div className="text-lg font-bold text-orange-600">94/100</div>
-                    <div className="text-xs text-orange-500">Avg. across clients</div>
+                  <div className="bg-card rounded-lg p-2 md:p-3 border border-border shadow-sm">
+                    <div className="text-xs text-muted-foreground mb-1">Speed</div>
+                    <div className="text-sm md:text-lg font-bold text-orange-600">94/100</div>
+                    <div className="text-xs text-orange-500 hidden md:block">Avg. score</div>
                   </div>
                 </div>
 
-                {/* Client Cards Grid */}
-                <div className="grid grid-cols-3 gap-3">
+                {/* Client Cards Grid - Hide on mobile, show simplified version */}
+                <div className="hidden md:grid md:grid-cols-3 gap-3">
                   {/* Client 1 */}
                   <div className="bg-card rounded-lg p-3 border border-border shadow-sm hover:shadow-md transition-shadow">
                     <div className="flex items-center justify-between mb-2">
@@ -227,21 +229,38 @@ export default function ForAgenciesPage() {
                   </div>
                 </div>
 
-                {/* Bottom Action Bar */}
-                <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between">
-                  <div className="flex items-center gap-2 text-xs text-muted-foreground">
-                    <Clock className="h-3 w-3" />
-                    <span>Last updated: 2 min ago</span>
+                {/* Mobile simplified client list */}
+                <div className="md:hidden space-y-2">
+                  <div className="bg-card rounded-lg p-2 border border-border shadow-sm">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2">
+                        <div className="w-5 h-5 bg-blue-500 rounded-full flex items-center justify-center">
+                          <span className="text-xs text-white font-bold">TC</span>
+                        </div>
+                        <div>
+                          <div className="text-xs font-medium">TechCorp</div>
+                          <div className="text-xs text-muted-foreground">+45% traffic</div>
+                        </div>
+                      </div>
+                      <div className="text-xs text-secondary font-medium">↗ +23</div>
+                    </div>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <button className="bg-secondary text-white text-xs px-3 py-1 rounded-md hover:bg-secondary/90 transition-colors">
-                      Generate Reports
-                    </button>
-                    <button className="bg-muted text-muted-foreground text-xs px-3 py-1 rounded-md hover:bg-muted/80 transition-colors">
-                      View All
-                    </button>
+                  <div className="bg-card rounded-lg p-2 border border-border shadow-sm">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2">
+                        <div className="w-5 h-5 bg-purple-500 rounded-full flex items-center justify-center">
+                          <span className="text-xs text-white font-bold">MS</span>
+                        </div>
+                        <div>
+                          <div className="text-xs font-medium">MedSpa</div>
+                          <div className="text-xs text-muted-foreground">DA: 67 (+5)</div>
+                        </div>
+                      </div>
+                      <div className="text-xs text-purple-600 font-medium">+142</div>
+                    </div>
                   </div>
                 </div>
+
               </div>
             </div>
           </div>
@@ -290,16 +309,16 @@ export default function ForAgenciesPage() {
           </div>
 
           {/* Right Visualization - Detailed White-Label UI Customization */}
-          <div className="h-[500px] bg-card border border-border rounded-xl p-6 shadow-xl overflow-hidden">
+          <div className="h-[400px] md:h-[500px] bg-card border border-border rounded-xl p-4 md:p-6 shadow-xl overflow-hidden">
             <div className="flex items-center justify-between mb-3">
               <div>
-                <h3 className="text-lg font-medium">White-Label Customization Studio</h3>
-                <p className="text-sm text-muted-foreground">Complete branding control</p>
+                <h3 className="text-base md:text-lg font-medium">White-Label Customization Studio</h3>
+                <p className="text-sm text-muted-foreground hidden md:block">Complete branding control</p>
               </div>
               <Award className="h-5 w-5 text-secondary" />
             </div>
             
-            <div className="h-[430px] space-y-3 overflow-hidden">
+            <div className="h-[350px] md:h-[430px] space-y-3 overflow-hidden">
               {/* Live Preview Section */}
               <div className="bg-gray-50 border border-gray-200 rounded-lg p-3">
                 <div className="text-xs text-gray-500 mb-2 flex items-center justify-between">
@@ -409,11 +428,11 @@ export default function ForAgenciesPage() {
       <section className="w-full max-w-7xl mx-auto px-6 py-16">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Visualization */}
-          <div className="h-[400px] bg-card border border-border rounded-xl p-6 shadow-xl">
+          <div className="h-[350px] md:h-[400px] bg-card border border-border rounded-xl p-4 md:p-6 shadow-xl overflow-hidden">
             <div className="flex items-center justify-between mb-4">
               <div>
-                <h3 className="text-lg font-medium">Agency Growth Metrics</h3>
-                <p className="text-sm text-muted-foreground">Client and revenue progression</p>
+                <h3 className="text-base md:text-lg font-medium">Agency Growth Metrics</h3>
+                <p className="text-sm text-muted-foreground hidden md:block">Client and revenue progression</p>
               </div>
               <div className="flex items-center gap-2">
                 <span className="bg-orange-100 text-orange-700 text-xs px-2 py-1 rounded-full font-medium">
@@ -423,17 +442,28 @@ export default function ForAgenciesPage() {
               </div>
             </div>
             
-            <div className="h-[320px]">
-              <ChartContainer config={chartConfig} className="h-full w-full">
-                <AreaChart data={agencyGrowthData} margin={{ top: 20, right: 30, left: 20, bottom: 20 }}>
+            <div className="h-[270px] md:h-[320px] w-full">
+              <ResponsiveContainer width="100%" height="100%">
+                <AreaChart data={agencyGrowthData} margin={{ top: 20, right: 20, left: 10, bottom: 20 }}>
                   <defs>
                     <linearGradient id="fillClients" x1="0" y1="0" x2="0" y2="1">
                       <stop offset="5%" stopColor="#0eca7b" stopOpacity={0.8}/>
                       <stop offset="95%" stopColor="#0eca7b" stopOpacity={0.1}/>
                     </linearGradient>
                   </defs>
-                  <XAxis dataKey="month" axisLine={false} tickLine={false} tick={{ fontSize: 12 }} />
-                  <YAxis axisLine={false} tickLine={false} tick={{ fontSize: 12 }} />
+                  <XAxis 
+                    dataKey="month" 
+                    axisLine={false} 
+                    tickLine={false} 
+                    tick={{ fontSize: 12 }} 
+                    interval={0}
+                  />
+                  <YAxis 
+                    axisLine={false} 
+                    tickLine={false} 
+                    tick={{ fontSize: 12 }} 
+                    width={40}
+                  />
                   <ChartTooltip 
                     content={({ active, payload, label }) => {
                       if (active && payload && payload.length) {
@@ -478,7 +508,7 @@ export default function ForAgenciesPage() {
                     fillOpacity={0.6}
                   />
                 </AreaChart>
-              </ChartContainer>
+              </ResponsiveContainer>
             </div>
           </div>
 
@@ -566,20 +596,34 @@ export default function ForAgenciesPage() {
           </div>
 
           {/* Right Visualization */}
-          <div className="h-[400px] bg-card border border-border rounded-xl p-6 shadow-xl">
+          <div className="h-[350px] md:h-[400px] bg-card border border-border rounded-xl p-4 md:p-6 shadow-xl overflow-hidden">
             <div className="flex items-center justify-between mb-4">
               <div>
-                <h3 className="text-lg font-medium">Performance Comparison</h3>
-                <p className="text-sm text-muted-foreground">Finseo agencies vs industry average</p>
+                <h3 className="text-base md:text-lg font-medium">Performance Comparison</h3>
+                <p className="text-sm text-muted-foreground hidden md:block">Finseo agencies vs industry average</p>
               </div>
               <Target className="h-5 w-5 text-secondary" />
             </div>
             
-            <div className="h-[320px]">
-              <ChartContainer config={chartConfig} className="h-full w-full">
-                <BarChart data={whitelabelPerformanceData} margin={{ top: 20, right: 30, left: 20, bottom: 20 }}>
-                  <XAxis dataKey="metric" axisLine={false} tickLine={false} tick={{ fontSize: 10 }} />
-                  <YAxis axisLine={false} tickLine={false} tick={{ fontSize: 12 }} />
+            <div className="h-[270px] md:h-[320px] w-full">
+              <ResponsiveContainer width="100%" height="100%">
+                <BarChart data={whitelabelPerformanceData} margin={{ top: 20, right: 20, left: 10, bottom: 40 }}>
+                  <XAxis 
+                    dataKey="metric" 
+                    axisLine={false} 
+                    tickLine={false} 
+                    tick={{ fontSize: 10 }} 
+                    angle={-45}
+                    textAnchor="end"
+                    height={60}
+                    interval={0}
+                  />
+                  <YAxis 
+                    axisLine={false} 
+                    tickLine={false} 
+                    tick={{ fontSize: 12 }} 
+                    width={40}
+                  />
                   <ChartTooltip 
                     content={({ active, payload, label }) => {
                       if (active && payload && payload.length) {
@@ -622,7 +666,7 @@ export default function ForAgenciesPage() {
                   <Bar dataKey="withFinseo" fill="#0eca7b" radius={[4, 4, 0, 0]} />
                   <Bar dataKey="industry" fill="#94a3b8" radius={[4, 4, 0, 0]} />
                 </BarChart>
-              </ChartContainer>
+              </ResponsiveContainer>
             </div>
           </div>
         </div>
