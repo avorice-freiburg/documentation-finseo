@@ -8,12 +8,11 @@ export const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "Finseo.ai",
-  "alternateName": ["Finseo", "FinSEO"],
+  "alternateName": ["Finseo"],
   "url": "https://finseo.ai",
   "logo": "https://finseo.ai/logo.png",
   "description": "AI-powered platform designed to enhance your SEO and content creation efforts. Offers tools for keyword research, content generation, and on-page SEO optimization.",
   "foundingDate": "2025",
-  "industry": "Technology, Information and Internet",
   "numberOfEmployees": "2-10",
   "address": {
     "@type": "PostalAddress",
@@ -31,12 +30,7 @@ export const organizationSchema = {
   "sameAs": [
     "https://www.linkedin.com/company/finseo/",
     "https://www.instagram.com/finseo.ai/"
-  ],
-  "offers": {
-    "@type": "Offer",
-    "category": "SaaS",
-    "description": "AI-powered SEO tools and content creation services"
-  }
+  ]
 };
 
 // Website schema
@@ -298,4 +292,52 @@ export function generateSchemaScript(schema: any): string {
 // Helper function to create multiple schemas
 export function combineSchemas(...schemas: any[]): any[] {
   return schemas;
-} 
+}
+
+// Specific Chart Generator Software Application Schema
+export const chartGeneratorSoftwareSchema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "AI Chart Generator",
+  "description": "Create stunning charts and visualizations with AI. Generate professional charts from data or descriptions in seconds.",
+  "url": "https://finseo.ai/ai-chart-generator",
+  "applicationCategory": "BusinessApplication",
+  "applicationSubCategory": "Data Visualization Software",
+  "operatingSystem": "Web Browser",
+  "browserRequirements": "Requires JavaScript. Requires HTML5.",
+  "softwareVersion": "1.0",
+  "datePublished": "2025-01-01",
+  "author": {
+    "@type": "Organization",
+    "name": "Finseo.ai",
+    "url": "https://finseo.ai"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Finseo.ai",
+    "url": "https://finseo.ai"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock",
+    "category": "Free Tool"
+  },
+  "featureList": [
+    "AI-powered chart generation",
+    "Multiple chart types (pie, line, bar, etc.)",
+    "CSV data import",
+    "Export to PNG and SVG",
+    "Real-time chart customization",
+    "No registration required"
+  ],
+  "screenshot": "https://finseo.ai/images/chart-generator-screenshot.png",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "ratingCount": "150",
+    "bestRating": "5",
+    "worstRating": "1"
+  }
+}; 

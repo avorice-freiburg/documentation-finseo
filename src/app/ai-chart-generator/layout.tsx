@@ -1,15 +1,8 @@
 import { generateMetadata as getPageMetadata } from "@/lib/metadata";
 import { SchemaMarkup } from "@/components/schema-markup";
-import { createSoftwareApplicationSchema, createHowToSchema } from "@/lib/schemas";
+import { chartGeneratorSoftwareSchema, createHowToSchema } from "@/lib/schemas";
 
 export const metadata = getPageMetadata("ai-chart-generator");
-
-const chartGeneratorAppSchema = createSoftwareApplicationSchema(
-  "AI Chart Generator",
-  "Create stunning charts and visualizations with AI. Generate professional charts from data or descriptions in seconds.",
-  "https://finseo.ai/ai-chart-generator",
-  true
-);
 
 const chartGeneratorHowToSchema = createHowToSchema(
   "How to Generate Charts with AI",
@@ -37,7 +30,7 @@ export default function AIChartGeneratorLayout({
 }) {
   return (
     <>
-      <SchemaMarkup schema={[chartGeneratorAppSchema, chartGeneratorHowToSchema]} />
+      <SchemaMarkup schema={[chartGeneratorSoftwareSchema, chartGeneratorHowToSchema]} />
       {children}
     </>
   );
