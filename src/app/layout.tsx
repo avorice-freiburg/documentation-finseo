@@ -31,10 +31,6 @@ export const metadata: Metadata = {
     default: "Finseo - AI-Powered SEO Tools for Next-Gen Search Optimization",
     template: `%s | Finseo`,
   },
-  icons: {
-    icon: '/favicon.ico',
-    shortcut: '/favicon.ico',
-  },
 };
 
 export default function RootLayout({
