@@ -41,31 +41,31 @@ const tiers: Tier[] = [
     monthlyPrice: "29",
     yearlyPrice: "19",
     description: "Best for individual creators",
-    suitableFor: "Perfect for bloggers, freelancers, and small websites with up to 50 pages",
+    suitableFor: "Perfect for bloggers, freelancers, and small websites with up to 75 pages",
     buttonColor: "bg-accent text-primary",
     features: [
       { 
         name: "Credits per Month", 
-        value: "75,000",
+        value: "50,000",
         available: true,
         highlight: true,
         primary: true
       },
       { 
         name: "Articles", 
-        value: "20",
+        value: "15",
         available: true,
         highlight: true 
       },
       { 
         name: "Brand Voices", 
-        value: "3",
+        value: "2",
         available: true,
         highlight: true 
       },
       { 
         name: "Global Summaries", 
-        value: "25",
+        value: "15",
         available: true,
         highlight: true 
       },
@@ -77,7 +77,7 @@ const tiers: Tier[] = [
       },
       { 
         name: "Site Audit Pages", 
-        value: "100",
+        value: "75",
         available: true,
         highlight: true 
       },
@@ -89,9 +89,9 @@ const tiers: Tier[] = [
       { name: "Keyword Research", available: true },
       { name: "Chart Generator (Basic)", available: true },
       { name: "Chart Generator (Embed)", available: true },
-      { name: "WordPress Integration", available: false },
-      { name: "Webflow CMS Publishing", available: false },
-      { name: "Priority Support", available: false },
+      { name: "WordPress Integration", available: true },
+      { name: "Webflow CMS Publishing", available: true },
+      { name: "Priority Support", available: true },
     ],
   },
   {
@@ -106,14 +106,14 @@ const tiers: Tier[] = [
     features: [
       { 
         name: "Credits per Month", 
-        value: "250,000",
+        value: "200,000",
         available: true,
         highlight: true,
         primary: true
       },
       { 
         name: "Articles", 
-        value: "75",
+        value: "50",
         available: true,
         highlight: true 
       },
@@ -125,19 +125,19 @@ const tiers: Tier[] = [
       },
       { 
         name: "Global Summaries", 
-        value: "50",
+        value: "30",
         available: true,
         highlight: true 
       },
       { 
         name: "Tracked Keywords", 
-        value: "250",
+        value: "150",
         available: true,
         highlight: true 
       },
       { 
         name: "Site Audit Pages", 
-        value: "250",
+        value: "150",
         available: true,
         highlight: true 
       },
@@ -151,7 +151,7 @@ const tiers: Tier[] = [
       { name: "Chart Generator (Embed)", available: true },
       { name: "WordPress Integration", available: true },
       { name: "Webflow CMS Publishing", available: true },
-      { name: "Priority Support", available: false },
+      { name: "Priority Support", available: true },
     ],
   },
   {
@@ -160,43 +160,43 @@ const tiers: Tier[] = [
     monthlyPrice: "99",
     yearlyPrice: "79",
     description: "Best for large organizations",
-    suitableFor: "Perfect for larger businesses, e-commerce sites, and websites with up to 250 pages",
+    suitableFor: "Perfect for larger businesses, e-commerce sites, and websites with up to 500 pages",
     buttonColor: "bg-primary text-primary-foreground",
     features: [
       { 
         name: "Credits per Month", 
-        value: "1,000,000",
+        value: "500,000",
         available: true,
         highlight: true,
         primary: true
       },
       { 
         name: "Articles", 
-        value: "200",
-        available: true,
-        highlight: true 
-      },
-      { 
-        name: "Brand Voices", 
-        value: "25",
-        available: true,
-        highlight: true 
-      },
-      { 
-        name: "Global Summaries", 
         value: "100",
         available: true,
         highlight: true 
       },
       { 
+        name: "Brand Voices", 
+        value: "15",
+        available: true,
+        highlight: true 
+      },
+      { 
+        name: "Global Summaries", 
+        value: "50",
+        available: true,
+        highlight: true 
+      },
+      { 
         name: "Tracked Keywords", 
-        value: "500",
+        value: "300",
         available: true,
         highlight: true 
       },
       { 
         name: "Site Audit Pages", 
-        value: "1000",
+        value: "500",
         available: true,
         highlight: true 
       },
