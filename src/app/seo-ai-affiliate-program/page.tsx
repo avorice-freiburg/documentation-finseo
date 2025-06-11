@@ -35,7 +35,7 @@ export default function AffiliateProgram() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
               >
-                Earn <span className="text-secondary">30% Revenue</span> for everyone you refer!
+                Earn <span className="text-secondary">25% Revenue</span> for everyone you refer!
               </motion.h1>
               <motion.p 
                 className="text-base md:text-lg text-center text-muted-foreground font-medium text-balance leading-relaxed tracking-tight"
@@ -43,7 +43,7 @@ export default function AffiliateProgram() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 }}
               >
-                Bring Friends or colleagues to Finseo.ai via your Link and earn a lifetime revenue of 30% of their subscription.
+                Bring Friends or colleagues to Finseo.ai via your Link and earn a lifetime revenue of 25% of their subscription.
               </motion.p>
             </div>
             <div className="flex items-center gap-2.5 flex-wrap justify-center">
@@ -131,7 +131,7 @@ export default function AffiliateProgram() {
               <div className="space-y-6">
                 <div className="flex items-center gap-4">
                   <div className="size-10 flex items-center justify-center">
-                    <span className="text-secondary text-2xl font-medium">30%</span>
+                    <span className="text-secondary text-2xl font-medium">25%</span>
                   </div>
                   <div>
                     <h4 className="font-medium">Lifetime Commission</h4>
