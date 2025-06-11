@@ -38,6 +38,32 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Finseo",
+    "description": "AI-powered SEO tools for next-generation search optimization. Optimize for Google, ChatGPT, Claude & AI platforms with advanced keyword research, rank tracking, and content generation.",
+    "url": "https://finseo.ai",
+    "applicationCategory": "SEO Software",
+    "operatingSystem": "Web",
+    "offers": {
+      "@type": "Offer",
+      "price": "29",
+      "priceCurrency": "USD",
+      "priceValidUntil": "2024-12-31"
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "Finseo",
+      "url": "https://finseo.ai"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "ratingCount": "15"
+    }
+  };
+
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
@@ -119,6 +145,11 @@ export default function RootLayout({
             }(window, document, 'ttq');
           `}
         </Script>
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
       </head>
 
       <body

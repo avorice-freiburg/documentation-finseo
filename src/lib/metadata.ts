@@ -20,6 +20,12 @@ export const pageMetadata: Record<string, PageMetadata> = {
     keywords: ["SEO pricing", "AI SEO plans", "affordable SEO tools", "SEO software pricing", "content generation pricing"]
   },
 
+  about: {
+    title: "About Finseo - The Future of AI-Powered SEO",
+    description: "Learn about Finseo's mission to revolutionize SEO with AI. Discover how we're helping businesses optimize for both traditional and generative search engines.",
+    keywords: ["about Finseo", "AI SEO company", "SEO innovation", "generative search optimization", "SEO technology"]
+  },
+
   // Company Pages
   "for-agencies": {
     title: "Finseo for Agencies - White-Label AI SEO Tools & Reports",
