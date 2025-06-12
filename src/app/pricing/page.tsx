@@ -509,7 +509,7 @@ export default function PricingPage() {
                       </div>
                       <div className="mb-4">
                         <div className="flex items-baseline">
-                          <span className="text-3xl font-bold text-foreground">$14.99</span>
+                          <span className="text-3xl font-bold text-foreground">$49</span>
                           <span className="text-sm text-muted-foreground ml-1">/month</span>
                         </div>
                         <p className="text-muted-foreground text-sm mt-1">25 tracking prompts</p>
@@ -532,7 +532,7 @@ export default function PricingPage() {
                       </div>
                       <div className="mb-4">
                         <div className="flex items-baseline">
-                          <span className="text-3xl font-bold text-foreground">$39.99</span>
+                          <span className="text-3xl font-bold text-foreground">$129</span>
                           <span className="text-sm text-muted-foreground ml-1">/month</span>
                         </div>
                         <p className="text-muted-foreground text-sm mt-1">100 tracking prompts</p>
@@ -554,7 +554,7 @@ export default function PricingPage() {
                       </div>
                       <div className="mb-4">
                         <div className="flex items-baseline">
-                          <span className="text-3xl font-bold text-foreground">$89.99</span>
+                          <span className="text-3xl font-bold text-foreground">$299</span>
                           <span className="text-sm text-muted-foreground ml-1">/month</span>
                         </div>
                         <p className="text-muted-foreground text-sm mt-1">250 tracking prompts</p>
@@ -576,7 +576,7 @@ export default function PricingPage() {
                       </div>
                       <div className="mb-4">
                         <div className="flex items-baseline">
-                          <span className="text-3xl font-bold text-foreground">$299.99</span>
+                          <span className="text-3xl font-bold text-foreground">$499</span>
                           <span className="text-sm text-muted-foreground ml-1">/month</span>
                         </div>
                         <p className="text-muted-foreground text-sm mt-1">1,000 tracking prompts</p>
