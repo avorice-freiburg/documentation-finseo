@@ -59,9 +59,9 @@ export const pageMetadata: Record<string, PageMetadata> = {
 
   // Feature Pages
   "ai-visibility-tracking": {
-    title: "AI Visibility Tracking - Monitor Rankings Across AI Platforms",
-    description: "Track your content visibility across Google, ChatGPT, Claude, and AI platforms. Real-time monitoring, competitive analysis, and actionable insights.",
-    keywords: ["AI visibility tracking", "AI rank tracking", "ChatGPT ranking", "AI platform monitoring", "generative search tracking"]
+    title: "AI Visibility Tracking - Monitor Brand Rankings Across ChatGPT, Claude & AI Platforms",
+    description: "Track your brand mentions and visibility across ChatGPT, Claude, Gemini, and Perplexity. Monitor AI search results, analyze competitor performance, track sentiment, and understand search intent behind every mention. Real-time AI platform monitoring with competitive analysis.",
+    keywords: ["AI visibility tracking", "AI rank tracking", "ChatGPT ranking", "AI platform monitoring", "generative search tracking", "brand mention tracking", "AI search monitoring", "Claude visibility", "Gemini tracking", "Perplexity monitoring", "AI sentiment analysis", "competitor AI analysis"]
   },
 
   "ai-article-writer": {
@@ -172,7 +172,7 @@ export const pageMetadata: Record<string, PageMetadata> = {
 
   "seo-ai-affiliate-program": {
     title: "Finseo Affiliate Program - Earn 30% Commission on AI SEO Tools",
-    description: "Join Finseo's affiliate program and earn 30% lifetime commission. Promote the best AI SEO tools and generate passive income with our affiliate program.",
+    description: "Join Finseo's affiliate program and earn 25% commission. Promote the best AI SEO tools and generate passive income with our affiliate program.",
     keywords: ["SEO affiliate program", "AI tools affiliate", "Finseo affiliate", "SEO commission", "affiliate marketing"]
   },
 

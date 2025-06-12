@@ -43,7 +43,7 @@ export default function AffiliateProgram() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 }}
               >
-                Bring Friends or colleagues to Finseo.ai via your Link and earn a lifetime revenue of 25% of their subscription.
+                Bring Friends or colleagues to Finseo.ai via your Link and earn a revenue of 25% of their subscription.
               </motion.p>
             </div>
             <div className="flex items-center gap-2.5 flex-wrap justify-center">
@@ -84,8 +84,8 @@ export default function AffiliateProgram() {
               },
               {
                 id: 3,
-                title: "Earn 30% Revenue",
-                description: "Get lifetime commissions for every referred customer"
+                title: "Earn 25% Revenue",
+                description: "Get commissions for every referred customer"
               }
             ].map((step) => (
               <motion.div

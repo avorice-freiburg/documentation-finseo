@@ -56,6 +56,17 @@ export async function POST(request: NextRequest) {
     const results = [];
 
     console.log('IndexNow response status:', indexNowResponse.status);
+    
+    // Log response headers and body for debugging
+    if (!indexNowResponse.ok) {
+      try {
+        const responseText = await indexNowResponse.text();
+        console.log('IndexNow error response:', responseText);
+        console.log('IndexNow response headers:', Object.fromEntries(indexNowResponse.headers.entries()));
+      } catch (e) {
+        console.log('Could not read IndexNow error response');
+      }
+    }
 
     if (indexNowResponse.ok) {
       // Success - all URLs submitted
@@ -74,16 +85,16 @@ export async function POST(request: NextRequest) {
       
       switch (errorStatus) {
         case 400:
-          errorMessage = 'Bad request - Invalid format';
+          errorMessage = 'Bad request - Invalid format or missing required fields';
           break;
         case 403:
-          errorMessage = 'Forbidden - Invalid API key or key not found';
+          errorMessage = 'Forbidden - API key validation failed. Check if key file is accessible at the specified location';
           break;
         case 422:
           errorMessage = 'Unprocessable Entity - URLs don\'t belong to host or key mismatch';
           break;
         case 429:
-          errorMessage = 'Too Many Requests - Rate limited';
+          errorMessage = 'Too Many Requests - Rate limited (max 10,000 URLs per day)';
           break;
       }
 
@@ -108,6 +119,15 @@ export async function POST(request: NextRequest) {
         body: JSON.stringify(indexNowPayload),
       });
       console.log('Bing IndexNow response status:', bingResponse.status);
+      
+      if (!bingResponse.ok) {
+        try {
+          const bingResponseText = await bingResponse.text();
+          console.log('Bing IndexNow error response:', bingResponseText);
+        } catch (e) {
+          console.log('Could not read Bing IndexNow error response');
+        }
+      }
     } catch (error) {
       console.log('Bing IndexNow submission failed:', error);
     }

@@ -104,11 +104,12 @@ export default function AIVisibilityTrackingPage() {
             </p>
           </div>
           <h1 className="text-3xl md:text-5xl font-medium tracking-tighter mb-4">
-            Track your mentions and visibility in AI LLMs
+            AI Visibility Tracking: Monitor Your Brand Across ChatGPT, Claude & AI Platforms
           </h1>
           <p className="text-muted-foreground text-base md:text-lg mb-8">
-            Monitor your brand mentions across ChatGPT, Claude, Gemini, Perplexity and more. 
-            Compare visibility with competitors, analyze sentiment, and understand search intent behind every mention.
+            Advanced AI visibility tracking tool to monitor your brand mentions across ChatGPT, Claude, Gemini, Perplexity and all major AI platforms. 
+            Track AI search rankings, compare competitor visibility, analyze sentiment of AI responses, and understand search intent behind every mention. 
+            Real-time AI platform monitoring with comprehensive analytics and reporting.
           </p>
           
           {/* Signup Button */}
@@ -153,10 +154,11 @@ export default function AIVisibilityTrackingPage() {
           {/* Left Content */}
           <div className="space-y-6 pl-4">
             <h2 className="text-3xl font-medium tracking-tight">
-              Compare your visibility against competitors
+              AI Visibility Tracking: Compare Your Brand Performance Against Competitors
             </h2>
             <p className="text-muted-foreground text-lg">
-              See how your brand performs against competitors across all AI platforms with detailed comparison charts and competitive intelligence.
+              See how your brand performs against competitors across all AI platforms with detailed comparison charts and competitive intelligence. 
+              Combine with our <Link href="/keyword-research" className="text-primary hover:underline">AI keyword research tool</Link> for comprehensive SEO strategy.
             </p>
             
             {/* Comparison Features */}
@@ -502,7 +504,7 @@ export default function AIVisibilityTrackingPage() {
           {/* Right Content */}
           <div className="space-y-6 pl-4">
             <h2 className="text-3xl font-medium tracking-tight">
-              AI sentiment analysis for your brand
+              AI Sentiment Analysis & Brand Visibility Tracking
             </h2>
             <p className="text-muted-foreground text-lg">
               Understand how AI platforms speak about your brand with detailed sentiment analysis across all mentions and responses.
@@ -545,7 +547,7 @@ export default function AIVisibilityTrackingPage() {
           {/* Left Content */}
           <div className="space-y-6 pl-4">
             <h2 className="text-3xl font-medium tracking-tight">
-              Understand search intent behind every mention
+              AI Platform Search Intent Analysis & Visibility Tracking
             </h2>
             <p className="text-muted-foreground text-lg">
               Analyze the search intent behind queries that mention your brand to understand user motivation and optimize your content strategy.
@@ -703,7 +705,7 @@ export default function AIVisibilityTrackingPage() {
           {/* Right Content */}
           <div className="space-y-6 pl-4">
             <h2 className="text-3xl font-medium tracking-tight">
-              Real-time monitoring and alerts
+              Real-time AI Visibility Tracking & Monitoring Alerts
             </h2>
             <p className="text-muted-foreground text-lg">
               Stay informed with instant notifications about new mentions, sentiment changes, and competitive movements across all AI platforms.
@@ -740,13 +742,62 @@ export default function AIVisibilityTrackingPage() {
         </div>
       </section>
 
+      {/* FAQ Section */}
+      <section className="w-full max-w-4xl mx-auto px-6 py-16">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-medium tracking-tight mb-4">
+            Frequently Asked Questions About AI Visibility Tracking
+          </h2>
+          <p className="text-muted-foreground text-lg">
+            Everything you need to know about monitoring your brand across AI platforms
+          </p>
+        </div>
+
+        <div className="space-y-6">
+          <div className="bg-card border border-border rounded-xl p-6">
+            <h3 className="text-lg font-medium mb-3">What is AI visibility tracking?</h3>
+            <p className="text-muted-foreground">
+              AI visibility tracking is the process of monitoring how often and in what context your brand appears in AI platform responses like ChatGPT, Claude, Gemini, and Perplexity. It helps you understand your brand's presence in the new era of AI-powered search and conversation.
+            </p>
+          </div>
+
+          <div className="bg-card border border-border rounded-xl p-6">
+            <h3 className="text-lg font-medium mb-3">Which AI platforms can I track?</h3>
+            <p className="text-muted-foreground">
+              Our AI visibility tracking tool monitors mentions across ChatGPT, Claude, Gemini, Perplexity, and other major AI platforms. We continuously add support for new AI platforms as they gain popularity.
+            </p>
+          </div>
+
+          <div className="bg-card border border-border rounded-xl p-6">
+            <h3 className="text-lg font-medium mb-3">How does AI brand monitoring differ from traditional SEO tracking?</h3>
+            <p className="text-muted-foreground">
+              Traditional SEO tracking focuses on search engine rankings, while AI visibility tracking monitors how AI platforms mention and recommend your brand in conversational responses. This is crucial as more users rely on AI for research and recommendations.
+            </p>
+          </div>
+
+          <div className="bg-card border border-border rounded-xl p-6">
+            <h3 className="text-lg font-medium mb-3">Can I track competitor performance in AI platforms?</h3>
+            <p className="text-muted-foreground">
+              Yes, our AI visibility tracking includes comprehensive competitor analysis. Monitor how competitors appear in AI responses, compare mention frequency, sentiment, and identify opportunities to improve your own AI visibility.
+            </p>
+          </div>
+
+          <div className="bg-card border border-border rounded-xl p-6">
+            <h3 className="text-lg font-medium mb-3">What metrics does AI visibility tracking provide?</h3>
+            <p className="text-muted-foreground">
+              We track mention frequency, sentiment analysis, search intent classification, competitive positioning, and visibility trends over time. You'll also get alerts for significant changes in your AI platform presence.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Custom CTA Section */}
       <section id="cta" className="flex flex-col items-center justify-center w-full">
         <div className="w-full">
           <div className="h-[400px] md:h-[400px] overflow-hidden shadow-xl w-full border border-border rounded-xl bg-secondary relative z-20">
             <Image
               src="/agent-cta-background.png"
-              alt="AI Visibility CTA Background"
+              alt="AI Visibility Tracking Dashboard - Monitor Brand Mentions Across ChatGPT, Claude, and AI Platforms"
               className="absolute inset-0 w-full h-full object-cover object-right md:object-center"
               fill
               priority
