@@ -4,96 +4,159 @@ import { SectionHeader } from "@/components/section-header";
 import { siteConfig } from "@/lib/config";
 import { cn } from "@/lib/utils";
 import { motion } from "motion/react";
-import { useState } from "react";
 import Link from "next/link";
+import { 
+  Check, 
+  X, 
+  Search, 
+  FileText, 
+  Target, 
+  LineChart, 
+  TrendingUp, 
+  Bot, 
+  Shield, 
+  BarChart3, 
+  Image, 
+  MapPin, 
+  Link as LinkIcon 
+} from "lucide-react";
+import React from "react";
 
-interface TabsProps {
-  activeTab: "yearly" | "monthly";
-  setActiveTab: (tab: "yearly" | "monthly") => void;
-  className?: string;
+// Define feature structure with categories
+interface Feature {
+  name: string;
+  icon: any;
+  values: (string | boolean)[];
+  subtitle?: string;
 }
 
-function PricingTabs({ activeTab, setActiveTab, className }: TabsProps) {
-  return (
-    <div
-      className={cn(
-        "relative flex w-fit items-center rounded-full border p-0.5 backdrop-blur-sm cursor-pointer h-9 flex-row bg-muted",
-        className,
-      )}
-    >
-      {["monthly", "yearly"].map((tab) => (
-        <button
-          key={tab}
-          onClick={() => setActiveTab(tab as "yearly" | "monthly")}
-          className={cn(
-            "relative z-[1] px-2 h-8 flex items-center justify-center cursor-pointer",
-            {
-              "z-0": activeTab === tab,
-            },
-          )}
-        >
-          {activeTab === tab && (
-            <motion.div
-              layoutId="active-tab"
-              className="absolute inset-0 rounded-full bg-white dark:bg-[#3F3F46]  shadow-md border border-border"
-              transition={{
-                duration: 0.2,
-                type: "spring",
-                stiffness: 300,
-                damping: 25,
-                velocity: 2,
-              }}
-            />
-          )}
-          <span
-            className={cn(
-              "relative block text-sm font-medium duration-200 shrink-0",
-              activeTab === tab ? "text-primary" : "text-muted-foreground",
-            )}
-          >
-            {tab.charAt(0).toUpperCase() + tab.slice(1)}
-            {tab === "yearly" && (
-              <span className="ml-2 text-xs font-semibold text-secondary bg-secondary/15 py-0.5 w-[calc(100%+1rem)] px-1 rounded-full">
-                -20%
-              </span>
-            )}
-          </span>
-        </button>
-      ))}
-    </div>
-  );
+interface FeatureCategory {
+  name: string;
+  features: Feature[];
 }
+
+const featureCategories: FeatureCategory[] = [
+  {
+    name: "SEO & Content Operations",
+    features: [
+      {
+        name: "Keyword Research",
+        icon: Search,
+        values: ["150 searches", "750 searches", "2,000 searches", "Unlimited searches"]
+      },
+      {
+        name: "Article Generator", 
+        icon: FileText,
+        values: ["5 articles", "20 articles", "50 articles", "Unlimited articles"]
+      },
+      {
+        name: "Site Audit",
+        icon: Target,
+        values: ["10 audits", "50 audits", "100 audits", "Unlimited audits"]
+      },
+      {
+        name: "Global Summary",
+        icon: LineChart,
+        values: ["4 summaries", "20 summaries", "50 summaries", "Unlimited summaries"]
+      },
+      {
+        name: "Ranking Keywords",
+        icon: TrendingUp,
+        values: ["50 runs", "200 runs", "500 runs", "Unlimited runs"]
+      }
+    ]
+  },
+  {
+    name: "AI SEO Features", 
+    features: [
+      {
+        name: "Rank Tracker",
+        icon: Bot,
+        values: ["20 keywords", "150 keywords", "300 keywords", "Unlimited keywords"]
+      },
+      {
+        name: "Competitor Analysis",
+        icon: Target,
+        values: [true, true, true, true]
+      },
+      {
+        name: "AI SEO Audit",
+        icon: Shield,
+        values: ["40 audits", "100 audits", "Custom audits", "Unlimited audits"]
+      },
+      {
+        name: "Prompt Research",
+        icon: Search,
+        values: ["50 researches", "200 researches", "500 researches", "Unlimited researches"]
+      }
+    ]
+  },
+  {
+    name: "Content Creation",
+    features: [
+      {
+        name: "Chart Generator",
+        icon: BarChart3,
+        values: ["50 charts", "200 charts", "300 charts", "Unlimited charts"]
+      },
+      {
+        name: "Image Generator",
+        icon: Image,
+        values: ["20 images", "100 images", "250 images", "Unlimited images"]
+      }
+    ]
+  },
+  {
+    name: "Local SEO & Backlinks",
+    features: [
+      {
+        name: "Local SEO Maps",
+        icon: MapPin,
+        values: ["200 points", "1,000 points", "5,000 points", "Unlimited points"]
+      },
+      {
+        name: "Backlink Explorer",
+        icon: LinkIcon,
+        values: ["25 searches", "200 searches", "500 searches", "Unlimited searches"]
+      },
+      {
+        name: "Backlink Summary",
+        icon: FileText,
+        values: ["25 summaries", "200 summaries", "500 summaries", "Unlimited summaries"]
+      },
+      {
+        name: "Keyword Overlap",
+        icon: Target,
+        values: ["25 analyses", "100 analyses", "250 analyses", "Unlimited analyses"]
+      }
+    ]
+  },
+  {
+    name: "Premium Features",
+    features: [
+      {
+        name: "Whitelabel Reports",
+        subtitle: "Professional branding",
+        icon: Shield,
+        values: [false, true, true, true]
+      },
+      {
+        name: "Priority Support",
+        subtitle: "24/7 premium support",
+        icon: Bot,
+        values: [false, false, true, true]
+      },
+      {
+        name: "Article Integration",
+        subtitle: "Webflow & WordPress publishing",
+        icon: FileText,
+        values: [false, true, true, true]
+      }
+    ]
+  }
+];
 
 export function PricingSection() {
-  const [billingCycle, setBillingCycle] = useState<"monthly" | "yearly">(
-    "monthly",
-  );
-
-  // Update price animation
-  const PriceDisplay = ({
-    tier,
-  }: {
-    tier: (typeof siteConfig.pricing.pricingItems)[0];
-  }) => {
-    const price = billingCycle === "yearly" ? tier.yearlyPrice : tier.price;
-
-    return (
-      <motion.span
-        key={price}
-        className="text-4xl font-semibold"
-        initial={{
-          opacity: 0,
-          x: billingCycle === "yearly" ? -10 : 10,
-          filter: "blur(5px)",
-        }}
-        animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
-        transition={{ duration: 0.25, ease: [0.4, 0, 0.2, 1] }}
-      >
-        {price}
-      </motion.span>
-    );
-  };
-
   return (
     <section
       id="pricing"
@@ -107,116 +170,143 @@ export function PricingSection() {
           {siteConfig.pricing.description}
         </p>
       </SectionHeader>
-      <div className="relative w-full h-full">
-        <div className="absolute -top-14 left-1/2 -translate-x-1/2">
-          <PricingTabs
-            activeTab={billingCycle}
-            setActiveTab={setBillingCycle}
-            className="mx-auto"
-          />
-        </div>
 
-        <div className="grid min-[650px]:grid-cols-2 min-[900px]:grid-cols-3 gap-4 w-full max-w-6xl mx-auto px-6">
-          {siteConfig.pricing.pricingItems.map((tier) => (
-            <div
-              key={tier.name}
-              className={cn(
-                "rounded-xl grid grid-rows-[180px_auto_1fr] relative h-fit min-[650px]:h-full min-[900px]:h-fit",
-                tier.isPopular
-                  ? "md:shadow-[0px_61px_24px_-10px_rgba(0,0,0,0.01),0px_34px_20px_-8px_rgba(0,0,0,0.05),0px_15px_15px_-6px_rgba(0,0,0,0.09),0px_4px_8px_-2px_rgba(0,0,0,0.10),0px_0px_0px_1px_rgba(0,0,0,0.08)] bg-accent"
-                  : "bg-[#F3F4F6] dark:bg-[#F9FAFB]/[0.02] border border-border",
-              )}
-            >
-              <div className="flex flex-col gap-4 p-4">
-                <p className="text-sm">
-                  {tier.name}
-                  {tier.isPopular && (
-                    <span className="bg-gradient-to-b from-secondary/50 from-[1.92%] to-secondary to-[100%] text-white h-6 inline-flex w-fit items-center justify-center px-2 rounded-md text-sm ml-2 shadow-[0px_6px_6px_-3px_rgba(0,0,0,0.08),0px_3px_3px_-1.5px_rgba(0,0,0,0.08),0px_1px_1px_-0.5px_rgba(0,0,0,0.08),0px_0px_0px_1px_rgba(255,255,255,0.12)_inset,0px_1px_0px_0px_rgba(255,255,255,0.12)_inset]">
-                      Popular
-                    </span>
-                  )}
-                </p>
-                <div className="flex items-baseline mt-2">
-                  <PriceDisplay tier={tier} />
-                  <span className="ml-2">
-                    /{billingCycle === "yearly" ? "year" : "month"}
-                  </span>
-                </div>
-                <p className="text-sm mt-2">{tier.description}</p>
-              </div>
-
-              <div className="flex flex-col gap-2 p-4">
-                <Link
-                  href={tier.href}
-                  className={`h-10 w-full flex items-center justify-center text-sm font-normal tracking-wide rounded-md px-4 cursor-pointer transition-all ease-out active:scale-95 ${
-                    tier.isPopular
-                      ? `${tier.buttonColor} shadow-[inset_0_1px_2px_rgba(255,255,255,0.25),0_3px_3px_-1.5px_rgba(16,24,40,0.06),0_1px_1px_rgba(16,24,40,0.08)]`
-                      : `${tier.buttonColor} shadow-[0px_1px_2px_0px_rgba(255,255,255,0.16)_inset,0px_3px_3px_-1.5px_rgba(16,24,40,0.24),0px_1px_1px_-0.5px_rgba(16,24,40,0.20)]`
-                  }`}
-                >
-                  {tier.buttonText}
-                </Link>
-              </div>
-              <hr className="border-border dark:border-white/20" />
-              <div className="p-4">
-                {tier.name !== "Basic" && (
-                  <p className="text-sm mb-4">
-                    Everything in {tier.name === "Pro" ? "Basic" : "Pro"} +
-                  </p>
-                )}
-                <ul className="space-y-3">
-                  {tier.features.map((feature) => (
-                    <li key={feature} className="flex items-center gap-2">
-                      <div
-                        className={cn(
-                          "size-5 rounded-full border border-primary/20 flex items-center justify-center",
-                          tier.isPopular &&
-                            "bg-muted-foreground/40 border-border",
-                        )}
-                      >
-                        <div className="size-3 flex items-center justify-center">
-                          <svg
-                            width="8"
-                            height="7"
-                            viewBox="0 0 8 7"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                            className="block dark:hidden"
-                          >
-                            <path
-                              d="M1.5 3.48828L3.375 5.36328L6.5 0.988281"
-                              stroke="#101828"
-                              strokeWidth="1.5"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            />
-                          </svg>
-
-                          <svg
-                            width="8"
-                            height="7"
-                            viewBox="0 0 8 7"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                            className="hidden dark:block"
-                          >
-                            <path
-                              d="M1.5 3.48828L3.375 5.36328L6.5 0.988281"
-                              stroke="#FAFAFA"
-                              strokeWidth="1.5"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            />
-                          </svg>
+      {/* Comprehensive Feature Comparison Table */}
+      <div className="w-full max-w-7xl mx-auto px-6">
+        <div className="bg-background rounded-2xl shadow-xl border border-border overflow-hidden">
+          <div className="overflow-x-auto">
+            <table className="w-full">
+              {/* Header */}
+              <thead>
+                <tr className="border-b border-border">
+                  <th className="w-1/5 px-6 py-4 text-left font-semibold text-sm text-foreground bg-muted/50">
+                    Features
+                  </th>
+                  {siteConfig.pricing.pricingItems.map((tier, index) => (
+                    <th key={tier.name} className={cn(
+                      "w-1/5 px-4 py-4 text-center relative",
+                      tier.isPopular ? "bg-gradient-to-b from-secondary/5 to-secondary/10" : "bg-background",
+                      index % 2 === 1 && "bg-muted/30"
+                    )}>
+                      <div className="flex flex-col items-center gap-2">
+                        <div className="flex items-center justify-center gap-2 mt-2">
+                          <span className="font-bold text-lg text-foreground">{tier.name}</span>
                         </div>
+                        <div className="flex items-baseline justify-center">
+                          <span className="text-2xl font-bold text-foreground">
+                            {tier.price}
+                          </span>
+                          {tier.period && (
+                            <span className="text-sm text-muted-foreground ml-1">/{tier.period}</span>
+                          )}
+                        </div>
+                        <Link
+                          href={tier.href}
+                          className={cn(
+                            "w-full px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 flex items-center justify-center",
+                            tier.isPopular
+                              ? "bg-secondary text-secondary-foreground hover:bg-secondary/90"
+                              : "bg-primary text-primary-foreground hover:bg-primary/90"
+                          )}
+                        >
+                          {tier.buttonText}
+                        </Link>
                       </div>
-                      <span className="text-sm">{feature}</span>
-                    </li>
+                    </th>
                   ))}
-                </ul>
-              </div>
-            </div>
-          ))}
+                </tr>
+              </thead>
+
+              {/* Feature Categories */}
+              <tbody>
+                {featureCategories.map((category, categoryIndex) => (
+                  <React.Fragment key={category.name}>
+                                         {/* Category Header */}
+                     <tr className="bg-muted/50">
+                       <td colSpan={5} className="px-6 py-3 font-medium text-foreground text-left text-sm border-b border-border">
+                         <div className="flex items-center gap-2">
+                           <div className="w-1 h-4 bg-secondary rounded-full"></div>
+                           {category.name}
+                         </div>
+                       </td>
+                     </tr>
+
+                                         {/* Category Features */}
+                     {category.features.map((feature, featureIndex) => (
+                       <tr key={feature.name} className={cn(
+                         "hover:bg-muted/30 transition-colors border-b border-border/50",
+                         featureIndex === category.features.length - 1 && categoryIndex !== featureCategories.length - 1 && "border-b-2 border-border"
+                       )}>
+                         <td className="px-6 py-3">
+                           <div className="flex flex-col">
+                             <div className="flex items-center gap-2">
+                               <feature.icon className="h-4 w-4 text-secondary" />
+                               <span className="text-foreground font-medium text-sm">{feature.name}</span>
+                             </div>
+                             {feature.subtitle && (
+                               <span className="text-xs text-muted-foreground ml-6">{feature.subtitle}</span>
+                             )}
+                           </div>
+                         </td>
+                         {feature.values.map((value, tierIndex) => (
+                           <td key={tierIndex} className={cn(
+                             "px-4 py-3 text-center",
+                             tierIndex % 2 === 1 && "bg-muted/30"
+                           )}>
+                             {typeof value === 'boolean' ? (
+                               <div className="flex items-center justify-center">
+                                 {value ? (
+                                   <Check className="h-4 w-4 text-green-600" />
+                                 ) : (
+                                   <X className="h-4 w-4 text-destructive" />
+                                 )}
+                               </div>
+                             ) : (
+                               <div className="flex flex-col items-center">
+                                 <span className="text-lg font-semibold text-foreground">
+                                   {value.split(' ')[0]}
+                                 </span>
+                                 {value.split(' ').slice(1).length > 0 && (
+                                   <span className="text-xs text-muted-foreground">
+                                     {value.split(' ').slice(1).join(' ')}
+                                   </span>
+                                 )}
+                               </div>
+                             )}
+                           </td>
+                         ))}
+                       </tr>
+                     ))}
+                  </React.Fragment>
+                ))}
+
+                                 {/* Final CTA Row */}
+                 <tr className="bg-gradient-to-r from-muted/50 to-background border-t-2 border-secondary/20">
+                   <td className="px-6 py-4 font-medium text-foreground text-sm">
+                     Ready to get started?
+                   </td>
+                   {siteConfig.pricing.pricingItems.map((tier, index) => (
+                     <td key={tier.name} className={cn(
+                       "px-4 py-4 text-center",
+                       index % 2 === 1 && "bg-muted/30"
+                     )}>
+                       <Link
+                         href={tier.href}
+                         className={cn(
+                           "w-full px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 flex items-center justify-center",
+                           tier.isPopular
+                             ? "bg-secondary text-secondary-foreground hover:bg-secondary/90"
+                             : "bg-primary text-primary-foreground hover:bg-primary/90"
+                         )}
+                       >
+                         {tier.buttonText}
+                       </Link>
+                     </td>
+                   ))}
+                 </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </section>
