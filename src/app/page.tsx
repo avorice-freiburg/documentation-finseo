@@ -1,4 +1,5 @@
 import { BentoSection } from "@/components/sections/bento-section";
+import { BookingSection } from "@/components/sections/booking-section";
 import { CompanyShowcase } from "@/components/sections/company-showcase";
 import { CTASection } from "@/components/sections/cta-section";
 import { FAQSection } from "@/components/sections/faq-section";
@@ -21,6 +22,7 @@ export default function Home() {
       <GrowthSection />
       <PricingSection />
       {/* <TestimonialSection /> */}
+      {/* <BookingSection /> */}
       <FAQSection />
       <CTASection />
       <FooterSection />

@@ -758,7 +758,7 @@ export const siteConfig = {
         description: "Ideal for growing businesses and agencies with professional SEO needs",
         buttonText: "Choose Professional",
         buttonColor: "bg-secondary text-white",
-        isPopular: true,
+        isPopular: false,
       },
       {
         name: "Growth",
@@ -792,7 +792,7 @@ export const siteConfig = {
         description: "Perfect for large businesses and enterprises with advanced SEO requirements",
         buttonText: "Choose Growth",
         buttonColor: "bg-primary text-primary-foreground",
-        isPopular: false,
+        isPopular: true,
       },
       {
         name: "Enterprise",
@@ -828,7 +828,7 @@ export const siteConfig = {
         description: "Tailored solutions for large enterprises with unlimited usage and custom features",
         buttonText: "Contact Sales",
         buttonColor: "bg-muted text-foreground border border-border",
-        isPopular: false,
+        isPopular: true,
       },
     ],
   },

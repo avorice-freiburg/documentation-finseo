@@ -18,9 +18,10 @@ import {
   BarChart3, 
   Image, 
   MapPin, 
-  Link as LinkIcon 
+  Link as LinkIcon,
+  UserIcon
 } from "lucide-react";
-import React from "react";
+import React, { useEffect } from "react";
 
 // Define feature structure with categories
 interface Feature {
@@ -36,6 +37,47 @@ interface FeatureCategory {
 }
 
 const featureCategories: FeatureCategory[] = [
+  {
+    name: "AI SEO Features",
+    features: [
+      {
+        name: "Projects",
+        icon: FileText,
+        values: ["1 project", "3 projects", "10 projects", "Unlimited projects"],
+        subtitle: "Organize work"
+      },
+      {
+        name: "Success Manager",
+        icon: UserIcon,
+        values: [false, false, true, true],
+        subtitle: "Expert guidance"
+      },
+      {
+        name: "AI Visibility Tracking",
+        icon: Bot,
+        values: ["20 prompts", "150 prompts", "300 prompts", "Unlimited prompts"],
+        subtitle: "AI platform rank"
+      },
+      {
+        name: "Competitor Analysis",
+        icon: Target,
+        values: [true, true, true, true],
+        subtitle: "Beat competition"
+      },
+      {
+        name: "Intelligent SEO Audit",
+        icon: Shield,
+        values: ["40 audits", "100 audits", "200 audits", "Unlimited audits"],
+        subtitle: "Smart insights"
+      },
+      {
+        name: "AI Prompt Research",
+        icon: Search,
+        values: ["50 researches", "200 researches", "500 researches", "Unlimited researches"],
+        subtitle: "AI optimization"
+      }
+    ]
+  },
   {
     name: "SEO & Content Operations",
     features: [
@@ -63,31 +105,6 @@ const featureCategories: FeatureCategory[] = [
         name: "Ranking Keywords",
         icon: TrendingUp,
         values: ["50 runs", "200 runs", "500 runs", "Unlimited runs"]
-      }
-    ]
-  },
-  {
-    name: "AI SEO Features", 
-    features: [
-      {
-        name: "Rank Tracker",
-        icon: Bot,
-        values: ["20 keywords", "150 keywords", "300 keywords", "Unlimited keywords"]
-      },
-      {
-        name: "Competitor Analysis",
-        icon: Target,
-        values: [true, true, true, true]
-      },
-      {
-        name: "AI SEO Audit",
-        icon: Shield,
-        values: ["40 audits", "100 audits", "Custom audits", "Unlimited audits"]
-      },
-      {
-        name: "Prompt Research",
-        icon: Search,
-        values: ["50 researches", "200 researches", "500 researches", "Unlimited researches"]
       }
     ]
   },
@@ -157,6 +174,103 @@ const featureCategories: FeatureCategory[] = [
 ];
 
 export function PricingSection() {
+  useEffect(() => {
+    // Cal.com popup embed script
+    const script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.innerHTML = `
+      (function (C, A, L) { 
+        let p = function (a, ar) { a.q.push(ar); }; 
+        let d = C.document; 
+        C.Cal = C.Cal || function () { 
+          let cal = C.Cal; 
+          let ar = arguments; 
+          if (!cal.loaded) { 
+            cal.ns = {}; 
+            cal.q = cal.q || []; 
+            d.head.appendChild(d.createElement("script")).src = A; 
+            cal.loaded = true; 
+          } 
+          if (ar[0] === L) { 
+            const api = function () { p(api, arguments); }; 
+            const namespace = ar[1]; 
+            api.q = api.q || []; 
+            if(typeof namespace === "string"){
+              cal.ns[namespace] = cal.ns[namespace] || api;
+              p(cal.ns[namespace], ar);
+              p(cal, ["initNamespace", namespace]);
+            } else p(cal, ar); 
+            return;
+          } 
+          p(cal, ar); 
+        }; 
+      })(window, "https://app.cal.com/embed/embed.js", "init");
+      
+      Cal("init", "30min", {origin:"https://app.cal.com"});
+
+      Cal.ns["30min"]("ui", {
+        "cssVarsPerTheme":{
+          "light":{"cal-brand":"#0eca7b"},
+          "dark":{"cal-brand":"#fafafa"}
+        },
+        "hideEventTypeDetails":false,
+        "layout":"month_view"
+      });
+    `;
+    
+    document.head.appendChild(script);
+
+    return () => {
+      // Cleanup script on unmount
+      if (document.head.contains(script)) {
+        document.head.removeChild(script);
+      }
+    };
+  }, []);
+
+  // Function to determine if a plan should show "Book a Demo" - only Growth and Enterprise
+  const shouldShowBookDemo = (tierName: string) => {
+    const lowerName = tierName.toLowerCase();
+    return lowerName.includes('growth') || lowerName.includes('enterprise');
+  };
+
+  // Function to render the appropriate button
+  const renderPlanButton = (tier: any, isInHeader: boolean = false) => {
+    const isBookDemo = shouldShowBookDemo(tier.name);
+    
+    if (isBookDemo) {
+      return (
+        <button
+          data-cal-link="finseo/30min"
+          data-cal-namespace="30min"
+          data-cal-config='{"layout":"month_view"}'
+          className={cn(
+            "w-full px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 flex items-center justify-center cursor-pointer",
+            tier.isPopular
+              ? "bg-secondary text-secondary-foreground hover:bg-secondary/90"
+              : "bg-primary text-primary-foreground hover:bg-primary/90"
+          )}
+        >
+          Book a Demo
+        </button>
+      );
+    }
+
+    return (
+      <Link
+        href={tier.href}
+        className={cn(
+          "w-full px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 flex items-center justify-center",
+          tier.isPopular
+            ? "bg-secondary text-secondary-foreground hover:bg-secondary/90"
+            : "bg-primary text-primary-foreground hover:bg-primary/90"
+        )}
+      >
+        {tier.buttonText}
+      </Link>
+    );
+  };
+
   return (
     <section
       id="pricing"
@@ -185,7 +299,7 @@ export function PricingSection() {
                   {siteConfig.pricing.pricingItems.map((tier, index) => (
                     <th key={tier.name} className={cn(
                       "w-1/5 px-4 py-4 text-center relative",
-                      tier.isPopular ? "bg-gradient-to-b from-secondary/5 to-secondary/10" : "bg-background",
+                      (tier.isPopular && tier.name !== "Growth") ? "bg-gradient-to-b from-secondary/5 to-secondary/10" : "bg-background",
                       index % 2 === 1 && "bg-muted/30"
                     )}>
                       <div className="flex flex-col items-center gap-2">
@@ -200,17 +314,7 @@ export function PricingSection() {
                             <span className="text-sm text-muted-foreground ml-1">/{tier.period}</span>
                           )}
                         </div>
-                        <Link
-                          href={tier.href}
-                          className={cn(
-                            "w-full px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 flex items-center justify-center",
-                            tier.isPopular
-                              ? "bg-secondary text-secondary-foreground hover:bg-secondary/90"
-                              : "bg-primary text-primary-foreground hover:bg-primary/90"
-                          )}
-                        >
-                          {tier.buttonText}
-                        </Link>
+                        {renderPlanButton(tier, true)}
                       </div>
                     </th>
                   ))}
@@ -221,89 +325,100 @@ export function PricingSection() {
               <tbody>
                 {featureCategories.map((category, categoryIndex) => (
                   <React.Fragment key={category.name}>
-                                         {/* Category Header */}
-                     <tr className="bg-muted/50">
-                       <td colSpan={5} className="px-6 py-3 font-medium text-foreground text-left text-sm border-b border-border">
-                         <div className="flex items-center gap-2">
-                           <div className="w-1 h-4 bg-secondary rounded-full"></div>
-                           {category.name}
-                         </div>
-                       </td>
-                     </tr>
+                    {/* Category Header */}
+                    <tr className={cn(
+                      "bg-muted/50",
+                      categoryIndex === 0 && "bg-gradient-to-r from-secondary/20 to-secondary/10"
+                    )}>
+                      <td colSpan={5} className="px-6 py-3 font-medium text-foreground text-left text-sm border-b border-border">
+                        <div className="flex items-center gap-2">
+                          <div className={cn(
+                            "w-1 h-4 rounded-full",
+                            categoryIndex === 0 ? "bg-secondary" : "bg-secondary"
+                          )}></div>
+                          <span className={cn(
+                            categoryIndex === 0 && "font-bold text-secondary"
+                          )}>
+                            {category.name}
+                          </span>
+                        </div>
+                      </td>
+                    </tr>
 
-                                         {/* Category Features */}
-                     {category.features.map((feature, featureIndex) => (
-                       <tr key={feature.name} className={cn(
-                         "hover:bg-muted/30 transition-colors border-b border-border/50",
-                         featureIndex === category.features.length - 1 && categoryIndex !== featureCategories.length - 1 && "border-b-2 border-border"
-                       )}>
-                         <td className="px-6 py-3">
-                           <div className="flex flex-col">
-                             <div className="flex items-center gap-2">
-                               <feature.icon className="h-4 w-4 text-secondary" />
-                               <span className="text-foreground font-medium text-sm">{feature.name}</span>
-                             </div>
-                             {feature.subtitle && (
-                               <span className="text-xs text-muted-foreground ml-6">{feature.subtitle}</span>
-                             )}
-                           </div>
-                         </td>
-                         {feature.values.map((value, tierIndex) => (
-                           <td key={tierIndex} className={cn(
-                             "px-4 py-3 text-center",
-                             tierIndex % 2 === 1 && "bg-muted/30"
-                           )}>
-                             {typeof value === 'boolean' ? (
-                               <div className="flex items-center justify-center">
-                                 {value ? (
-                                   <Check className="h-4 w-4 text-green-600" />
-                                 ) : (
-                                   <X className="h-4 w-4 text-destructive" />
-                                 )}
-                               </div>
-                             ) : (
-                               <div className="flex flex-col items-center">
-                                 <span className="text-lg font-semibold text-foreground">
-                                   {value.split(' ')[0]}
-                                 </span>
-                                 {value.split(' ').slice(1).length > 0 && (
-                                   <span className="text-xs text-muted-foreground">
-                                     {value.split(' ').slice(1).join(' ')}
-                                   </span>
-                                 )}
-                               </div>
-                             )}
-                           </td>
-                         ))}
-                       </tr>
-                     ))}
+                    {/* Category Features */}
+                    {category.features.map((feature, featureIndex) => (
+                      <tr key={feature.name} className={cn(
+                        "hover:bg-muted/30 transition-colors border-b border-border/50",
+                        featureIndex === category.features.length - 1 && categoryIndex !== featureCategories.length - 1 && "border-b-2 border-border",
+                        categoryIndex === 0 && "bg-secondary/5"
+                      )}>
+                        <td className="px-6 py-3">
+                          <div className="flex flex-col">
+                            <div className="flex items-center gap-2">
+                              <feature.icon className={cn(
+                                "h-4 w-4",
+                                categoryIndex === 0 ? "text-secondary" : "text-secondary"
+                              )} />
+                              <span className={cn(
+                                "text-foreground font-medium text-sm",
+                                categoryIndex === 0 && "font-semibold"
+                              )}>{feature.name}</span>
+                            </div>
+                            {feature.subtitle && (
+                              <span className={cn(
+                                "text-xs ml-6",
+                                categoryIndex === 0 ? "text-secondary/80 font-medium" : "text-muted-foreground"
+                              )}>{feature.subtitle}</span>
+                            )}
+                          </div>
+                        </td>
+                        {feature.values.map((value, tierIndex) => (
+                          <td key={tierIndex} className={cn(
+                            "px-4 py-3 text-center",
+                            tierIndex % 2 === 1 && "bg-muted/30",
+                            categoryIndex === 0 && "bg-secondary/5"
+                          )}>
+                            {typeof value === 'boolean' ? (
+                              <div className="flex items-center justify-center">
+                                {value ? (
+                                  <Check className="h-4 w-4 text-green-600" />
+                                ) : (
+                                  <X className="h-4 w-4 text-destructive" />
+                                )}
+                              </div>
+                            ) : (
+                              <div className="flex flex-col items-center">
+                                <span className="text-lg font-semibold text-foreground">
+                                  {value.split(' ')[0]}
+                                </span>
+                                {value.split(' ').slice(1).length > 0 && (
+                                  <span className="text-xs text-muted-foreground">
+                                    {value.split(' ').slice(1).join(' ')}
+                                  </span>
+                                )}
+                              </div>
+                            )}
+                          </td>
+                        ))}
+                      </tr>
+                    ))}
                   </React.Fragment>
                 ))}
 
-                                 {/* Final CTA Row */}
-                 <tr className="bg-gradient-to-r from-muted/50 to-background border-t-2 border-secondary/20">
-                   <td className="px-6 py-4 font-medium text-foreground text-sm">
-                     Ready to get started?
-                   </td>
-                   {siteConfig.pricing.pricingItems.map((tier, index) => (
-                     <td key={tier.name} className={cn(
-                       "px-4 py-4 text-center",
-                       index % 2 === 1 && "bg-muted/30"
-                     )}>
-                       <Link
-                         href={tier.href}
-                         className={cn(
-                           "w-full px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 flex items-center justify-center",
-                           tier.isPopular
-                             ? "bg-secondary text-secondary-foreground hover:bg-secondary/90"
-                             : "bg-primary text-primary-foreground hover:bg-primary/90"
-                         )}
-                       >
-                         {tier.buttonText}
-                       </Link>
-                     </td>
-                   ))}
-                 </tr>
+                {/* Final CTA Row */}
+                <tr className="bg-gradient-to-r from-muted/50 to-background border-t-2 border-secondary/20">
+                  <td className="px-6 py-4 font-medium text-foreground text-sm">
+                    Ready to get started?
+                  </td>
+                  {siteConfig.pricing.pricingItems.map((tier, index) => (
+                    <td key={tier.name} className={cn(
+                      "px-4 py-4 text-center",
+                      index % 2 === 1 && "bg-muted/30"
+                    )}>
+                      {renderPlanButton(tier, false)}
+                    </td>
+                  ))}
+                </tr>
               </tbody>
             </table>
           </div>
