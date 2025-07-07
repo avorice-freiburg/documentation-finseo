@@ -1,27 +1,21 @@
 "use client";
 
 import { SectionHeader } from "@/components/section-header";
-import { siteConfig } from "@/lib/config";
 import { cn } from "@/lib/utils";
-import { motion } from "motion/react";
 import Link from "next/link";
 import { 
   Check, 
   X, 
-  Search, 
-  FileText, 
   Target, 
-  LineChart, 
-  TrendingUp, 
+  Users, 
   Bot, 
+  Briefcase, 
+  FileText, 
   Shield, 
-  BarChart3, 
-  Image, 
-  MapPin, 
-  Link as LinkIcon,
-  UserIcon
+  Zap,
+  User
 } from "lucide-react";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 // Define feature structure with categories
 interface Feature {
@@ -36,144 +30,113 @@ interface FeatureCategory {
   features: Feature[];
 }
 
+// New pricing structure
+const pricingPlans = [
+  {
+    name: "Creator",
+    monthlyPrice: "€99",
+    yearlyPrice: "€79",
+    period: "month",
+    description: "Perfect for freelancers and small businesses",
+    href: "https://app.finseo.ai/signup",
+    buttonText: "Start Free Trial",
+    isPopular: false,
+    actionType: 'checkout'
+  },
+  {
+    name: "Business", 
+    monthlyPrice: "€299",
+    yearlyPrice: "€239",
+    period: "month",
+    description: "Best for agencies and growing businesses",
+    href: "https://app.finseo.ai/signup",
+    buttonText: "Start Free Trial",
+    isPopular: true,
+    actionType: 'checkout'
+  },
+  {
+    name: "Agency",
+    monthlyPrice: "€599", 
+    yearlyPrice: "€479",
+    period: "month",
+    description: "Best for agencies and heavy users",
+    href: "https://app.finseo.ai/signup",
+    buttonText: "Get a Demo",
+    isPopular: true,
+    actionType: 'demo'
+  },
+  {
+    name: "Enterprise",
+    monthlyPrice: "Custom",
+    yearlyPrice: "Custom", 
+    period: "",
+    description: "Best for enterprise and unlimited usage",
+    href: "/contact",
+    buttonText: "Get a Demo",
+    isPopular: true,
+    actionType: 'demo'
+  }
+];
+
 const featureCategories: FeatureCategory[] = [
   {
     name: "AI SEO Features",
     features: [
       {
         name: "Projects",
-        icon: FileText,
-        values: ["1 project", "3 projects", "10 projects", "Unlimited projects"],
+        icon: Target,
+        values: ["1 project", "1 project", "10 projects", "Unlimited projects"],
         subtitle: "Organize work"
       },
       {
-        name: "Success Manager",
-        icon: UserIcon,
-        values: [false, false, true, true],
-        subtitle: "Expert guidance"
+        name: "Workspace Access",
+        icon: Users,
+        values: ["No workspace", "3 users", "5 users", "Unlimited users"],
+        subtitle: "Team collaboration"
       },
       {
-        name: "AI Visibility Tracking",
+        name: "AI Rank Tracker",
         icon: Bot,
         values: ["20 prompts", "150 prompts", "300 prompts", "Unlimited prompts"],
         subtitle: "AI platform rank"
       },
       {
-        name: "Competitor Analysis",
-        icon: Target,
+        name: "AI Competitor Analysis",
+        icon: Briefcase,
         values: [true, true, true, true],
         subtitle: "Beat competition"
       },
       {
-        name: "Intelligent SEO Audit",
+        name: "AI SEO Audit",
         icon: Shield,
-        values: ["40 audits", "100 audits", "200 audits", "Unlimited audits"],
+        values: [true, true, true, true],
         subtitle: "Smart insights"
       },
       {
         name: "AI Prompt Research",
-        icon: Search,
-        values: ["50 researches", "200 researches", "500 researches", "Unlimited researches"],
+        icon: FileText,
+        values: [true, true, true, true],
         subtitle: "AI optimization"
-      }
-    ]
-  },
-  {
-    name: "SEO & Content Operations",
-    features: [
-      {
-        name: "Keyword Research",
-        icon: Search,
-        values: ["150 searches", "750 searches", "2,000 searches", "Unlimited searches"]
       },
       {
-        name: "Article Generator", 
-        icon: FileText,
-        values: ["5 articles", "20 articles", "50 articles", "Unlimited articles"]
+        name: "Customer Success Manager",
+        icon: User,
+        values: [false, false, true, true],
+        subtitle: "Expert guidance"
       },
       {
-        name: "Site Audit",
-        icon: Target,
-        values: ["10 audits", "50 audits", "100 audits", "Unlimited audits"]
-      },
-      {
-        name: "Global Summary",
-        icon: LineChart,
-        values: ["4 summaries", "20 summaries", "50 summaries", "Unlimited summaries"]
-      },
-      {
-        name: "Ranking Keywords",
-        icon: TrendingUp,
-        values: ["50 runs", "200 runs", "500 runs", "Unlimited runs"]
-      }
-    ]
-  },
-  {
-    name: "Content Creation",
-    features: [
-      {
-        name: "Chart Generator",
-        icon: BarChart3,
-        values: ["50 charts", "200 charts", "300 charts", "Unlimited charts"]
-      },
-      {
-        name: "Image Generator",
-        icon: Image,
-        values: ["20 images", "100 images", "250 images", "Unlimited images"]
-      }
-    ]
-  },
-  {
-    name: "Local SEO & Backlinks",
-    features: [
-      {
-        name: "Local SEO Maps",
-        icon: MapPin,
-        values: ["200 points", "1,000 points", "5,000 points", "Unlimited points"]
-      },
-      {
-        name: "Backlink Explorer",
-        icon: LinkIcon,
-        values: ["25 searches", "200 searches", "500 searches", "Unlimited searches"]
-      },
-      {
-        name: "Backlink Summary",
-        icon: FileText,
-        values: ["25 summaries", "200 summaries", "500 summaries", "Unlimited summaries"]
-      },
-      {
-        name: "Keyword Overlap",
-        icon: Target,
-        values: ["25 analyses", "100 analyses", "250 analyses", "Unlimited analyses"]
-      }
-    ]
-  },
-  {
-    name: "Premium Features",
-    features: [
-      {
-        name: "Whitelabel Reports",
-        subtitle: "Professional branding",
-        icon: Shield,
-        values: [false, true, true, true]
-      },
-      {
-        name: "Priority Support",
-        subtitle: "24/7 premium support",
-        icon: Bot,
-        values: [false, false, true, true]
-      },
-      {
-        name: "Article Integration",
-        subtitle: "Webflow & WordPress publishing",
-        icon: FileText,
-        values: [false, true, true, true]
+        name: "Kickoff Workshop",
+        icon: Zap,
+        values: [false, false, false, true],
+        subtitle: "Professional onboarding"
       }
     ]
   }
 ];
 
 export function PricingSection() {
+  const [billingInterval, setBillingInterval] = useState<'monthly' | 'yearly'>('monthly');
+
   useEffect(() => {
     // Cal.com popup embed script
     const script = document.createElement('script');
@@ -228,15 +191,14 @@ export function PricingSection() {
     };
   }, []);
 
-  // Function to determine if a plan should show "Book a Demo" - only Growth and Enterprise
-  const shouldShowBookDemo = (tierName: string) => {
-    const lowerName = tierName.toLowerCase();
-    return lowerName.includes('growth') || lowerName.includes('enterprise');
+  // Function to determine if a plan should show "Book a Demo"
+  const shouldShowBookDemo = (plan: any) => {
+    return plan.actionType === 'demo';
   };
 
   // Function to render the appropriate button
-  const renderPlanButton = (tier: any, isInHeader: boolean = false) => {
-    const isBookDemo = shouldShowBookDemo(tier.name);
+  const renderPlanButton = (plan: any, isInHeader: boolean = false) => {
+    const isBookDemo = shouldShowBookDemo(plan);
     
     if (isBookDemo) {
       return (
@@ -246,27 +208,27 @@ export function PricingSection() {
           data-cal-config='{"layout":"month_view"}'
           className={cn(
             "w-full px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 flex items-center justify-center cursor-pointer",
-            tier.isPopular
+            (plan.isPopular && plan.name === "Enterprise")
               ? "bg-secondary text-secondary-foreground hover:bg-secondary/90"
               : "bg-primary text-primary-foreground hover:bg-primary/90"
           )}
         >
-          Book a Demo
+          {plan.buttonText}
         </button>
       );
     }
 
     return (
       <Link
-        href={tier.href}
+        href={plan.href}
         className={cn(
           "w-full px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 flex items-center justify-center",
-          tier.isPopular
+          (plan.isPopular && plan.name === "Enterprise")
             ? "bg-secondary text-secondary-foreground hover:bg-secondary/90"
             : "bg-primary text-primary-foreground hover:bg-primary/90"
         )}
       >
-        {tier.buttonText}
+        {plan.buttonText}
       </Link>
     );
   };
@@ -278,12 +240,43 @@ export function PricingSection() {
     >
       <SectionHeader>
         <h2 className="text-3xl md:text-4xl font-medium tracking-tighter text-center text-balance">
-          {siteConfig.pricing.title}
+          All-Inclusive AI SEO Tools
         </h2>
         <p className="text-muted-foreground text-center text-balance font-medium">
-          {siteConfig.pricing.description}
+          🚀 Start Your 7-Day Free Trial - No hidden costs. Fair-use limits designed for intensive business use.
         </p>
       </SectionHeader>
+
+      {/* Billing Interval Switcher */}
+      <div className="flex justify-center mb-8">
+        <div className="bg-muted p-1 rounded-lg inline-flex">
+          <button
+            onClick={() => setBillingInterval('monthly')}
+            className={cn(
+              "px-4 py-2 text-sm font-medium rounded-md transition-all",
+              billingInterval === 'monthly'
+                ? "bg-background text-foreground shadow-sm"
+                : "text-muted-foreground hover:text-foreground"
+            )}
+          >
+            Monthly
+          </button>
+          <button
+            onClick={() => setBillingInterval('yearly')}
+            className={cn(
+              "px-4 py-2 text-sm font-medium rounded-md transition-all relative",
+              billingInterval === 'yearly'
+                ? "bg-background text-foreground shadow-sm"
+                : "text-muted-foreground hover:text-foreground"
+            )}
+          >
+            Yearly
+            <span className="absolute -top-2 -right-6 bg-secondary text-secondary-foreground text-xs px-1.5 py-0.5 rounded-full">
+              -20%
+            </span>
+          </button>
+        </div>
+      </div>
 
       {/* Comprehensive Feature Comparison Table */}
       <div className="w-full max-w-7xl mx-auto px-6">
@@ -296,25 +289,32 @@ export function PricingSection() {
                   <th className="w-1/5 px-6 py-4 text-left font-semibold text-sm text-foreground bg-muted/50">
                     Features
                   </th>
-                  {siteConfig.pricing.pricingItems.map((tier, index) => (
-                    <th key={tier.name} className={cn(
+                  {pricingPlans.map((plan, index) => (
+                    <th key={plan.name} className={cn(
                       "w-1/5 px-4 py-4 text-center relative",
-                      (tier.isPopular && tier.name !== "Growth") ? "bg-gradient-to-b from-secondary/5 to-secondary/10" : "bg-background",
+                      (plan.isPopular && plan.name === "Enterprise") ? "bg-gradient-to-b from-secondary/5 to-secondary/10" : "bg-background",
                       index % 2 === 1 && "bg-muted/30"
                     )}>
                       <div className="flex flex-col items-center gap-2">
+
                         <div className="flex items-center justify-center gap-2 mt-2">
-                          <span className="font-bold text-lg text-foreground">{tier.name}</span>
+                          <span className="font-bold text-lg text-foreground">{plan.name}</span>
                         </div>
                         <div className="flex items-baseline justify-center">
                           <span className="text-2xl font-bold text-foreground">
-                            {tier.price}
+                            {billingInterval === 'yearly' ? plan.yearlyPrice : plan.monthlyPrice}
                           </span>
-                          {tier.period && (
-                            <span className="text-sm text-muted-foreground ml-1">/{tier.period}</span>
+                          {plan.period && (
+                            <span className="text-sm text-muted-foreground ml-1">/{plan.period}</span>
                           )}
                         </div>
-                        {renderPlanButton(tier, true)}
+                        {billingInterval === 'yearly' && plan.name !== 'Enterprise' && (
+                          <p className="text-xs text-secondary mt-1">
+                            Save €{plan.name === 'Creator' ? '20' : plan.name === 'Business' ? '60' : '120'}/month
+                          </p>
+                        )}
+                        <p className="text-xs text-muted-foreground text-center px-2">{plan.description}</p>
+                        {renderPlanButton(plan, true)}
                       </div>
                     </th>
                   ))}
@@ -388,7 +388,7 @@ export function PricingSection() {
                               </div>
                             ) : (
                               <div className="flex flex-col items-center">
-                                <span className="text-lg font-semibold text-foreground">
+                                <span className="text-sm font-semibold text-foreground">
                                   {value.split(' ')[0]}
                                 </span>
                                 {value.split(' ').slice(1).length > 0 && (
@@ -410,12 +410,12 @@ export function PricingSection() {
                   <td className="px-6 py-4 font-medium text-foreground text-sm">
                     Ready to get started?
                   </td>
-                  {siteConfig.pricing.pricingItems.map((tier, index) => (
-                    <td key={tier.name} className={cn(
+                  {pricingPlans.map((plan, index) => (
+                    <td key={plan.name} className={cn(
                       "px-4 py-4 text-center",
                       index % 2 === 1 && "bg-muted/30"
                     )}>
-                      {renderPlanButton(tier, false)}
+                      {renderPlanButton(plan, false)}
                     </td>
                   ))}
                 </tr>

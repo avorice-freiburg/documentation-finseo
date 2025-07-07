@@ -1,4 +1,5 @@
-import { HeroVideoSection } from "@/components/sections/hero-video-section";
+import { AnimatedHeroDashboard } from "@/components/animated-hero-dashboard";
+import { AnimatedAIHeading } from "@/components/animated-ai-heading";
 import { siteConfig } from "@/lib/config";
 import Link from "next/link";
 
@@ -7,7 +8,7 @@ export function HeroSection() {
 
   return (
     <section id="hero" className="w-full relative">
-      <div className="relative flex flex-col items-center w-full px-6">
+      <div className="relative flex flex-col items-center w-full px-6 pb-12">
         <div className="absolute inset-0">
           <div className="absolute inset-0 -z-10 h-[600px] md:h-[800px] w-full [background:radial-gradient(125%_125%_at_50%_10%,var(--background)_40%,var(--secondary)_100%)] rounded-b-xl"></div>
         </div>
@@ -17,11 +18,9 @@ export function HeroSection() {
             {hero.badge}
           </p>
           <div className="flex flex-col items-center justify-center gap-5">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-medium tracking-tighter text-balance text-center text-primary">
-              {hero.title}
-            </h1>
+            <AnimatedAIHeading />
             <p className="text-base md:text-lg text-center text-muted-foreground font-medium text-balance leading-relaxed tracking-tight">
-              {hero.description}
+              Monitor your brand mentions across AI platforms, analyze sentiment, track competitor visibility, and optimize for the next generation of search.
             </p>
           </div>
           <div className="flex items-center gap-2.5 flex-wrap justify-center">
@@ -31,16 +30,18 @@ export function HeroSection() {
             >
               {hero.cta.primary.text}
             </Link>
-            <Link
-              href={hero.cta.secondary.href}
-              className="h-10 flex items-center justify-center w-32 px-5 text-sm font-normal tracking-wide text-primary rounded-md transition-all ease-out active:scale-95 bg-white dark:bg-background border border-[#E5E7EB] dark:border-[#27272A] hover:bg-white/80 dark:hover:bg-background/80"
+            <button
+              data-cal-link="finseo/30min"
+              data-cal-namespace="30min"
+              data-cal-config='{"layout":"month_view"}'
+              className="h-10 flex items-center justify-center w-32 px-5 text-sm font-normal tracking-wide text-primary rounded-md transition-all ease-out active:scale-95 bg-white dark:bg-background border border-[#E5E7EB] dark:border-[#27272A] hover:bg-white/80 dark:hover:bg-background/80 cursor-pointer"
             >
-              {hero.cta.secondary.text}
-            </Link>
+              Get Demo
+            </button>
           </div>
         </div>
       </div>
-      <HeroVideoSection />
+      <AnimatedHeroDashboard />
     </section>
   );
 }
