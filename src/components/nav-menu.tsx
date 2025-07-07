@@ -141,17 +141,17 @@ export function NavMenu() {
           </NavigationMenuContent>
         </NavigationMenuItem>
         
-        <NavigationMenuItem>
-          <NavigationMenuTrigger className="bg-transparent">Features</NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <div className="px-8 py-5 bg-background border-t border-border w-[680px]">
+                 <NavigationMenuItem>
+           <NavigationMenuTrigger className="bg-transparent">Features</NavigationMenuTrigger>
+           <NavigationMenuContent>
+             <div className="px-8 py-5 bg-background border-t border-border w-[480px]">
               <div className="flex justify-between relative">
                 <div className="flex-1">
                   <h4 className="font-bold text-xs mb-1.5 text-primary uppercase tracking-wide flex items-center gap-2">
                     <span className="inline-flex p-2 rounded-md bg-[#0eca7b]/10 w-8 h-8 items-center justify-center">
                       <MapIcon size={16} className="text-[#0eca7b]" />
                     </span>
-                    GEO
+                    AI Analytics
                   </h4>
                   <ul className="space-y-1">
                     <li>
@@ -172,43 +172,13 @@ export function NavMenu() {
                     <span className="inline-flex p-2 rounded-md bg-[#0eca7b]/10 w-8 h-8 items-center justify-center">
                       <BarChart3Icon size={16} className="text-[#0eca7b]" />
                     </span>
-                    SEO
+                    AI SEO
                   </h4>
                   <ul className="space-y-1">
-                    <li>
-                      <NavigationMenuLink asChild>
-                        <Link href="/backlink-checker" className="group inline-flex cursor-pointer items-center justify-start gap-1 text-sm leading-tight text-muted-foreground hover:text-primary transition-colors">
-                          Backlink Checker
-                          <div className="flex size-4 items-center justify-center border border-border rounded translate-x-0 transform opacity-0 transition-all duration-300 ease-out group-hover:translate-x-1 group-hover:opacity-100">
-                            <ChevronRightIcon className="h-4 w-4" />
-                          </div>
-                        </Link>
-                      </NavigationMenuLink>
-                    </li>
-                    <li>
-                      <NavigationMenuLink asChild>
-                        <Link href="/keyword-research" className="group inline-flex cursor-pointer items-center justify-start gap-1 text-sm leading-tight text-muted-foreground hover:text-primary transition-colors">
-                          Keyword Research
-                          <div className="flex size-4 items-center justify-center border border-border rounded translate-x-0 transform opacity-0 transition-all duration-300 ease-out group-hover:translate-x-1 group-hover:opacity-100">
-                            <ChevronRightIcon className="h-4 w-4" />
-                          </div>
-                        </Link>
-                      </NavigationMenuLink>
-                    </li>
                     <li>
                       <NavigationMenuLink asChild>
                         <Link href="/onpage-checker" className="group inline-flex cursor-pointer items-center justify-start gap-1 text-sm leading-tight text-muted-foreground hover:text-primary transition-colors">
-                          OnPage Checker
-                          <div className="flex size-4 items-center justify-center border border-border rounded translate-x-0 transform opacity-0 transition-all duration-300 ease-out group-hover:translate-x-1 group-hover:opacity-100">
-                            <ChevronRightIcon className="h-4 w-4" />
-                          </div>
-                        </Link>
-                      </NavigationMenuLink>
-                    </li>
-                    <li>
-                      <NavigationMenuLink asChild>
-                        <Link href="/accessibility-checker" className="group inline-flex cursor-pointer items-center justify-start gap-1 text-sm leading-tight text-muted-foreground hover:text-primary transition-colors">
-                          Accessibility Checker
+                          Technical Analysis
                           <div className="flex size-4 items-center justify-center border border-border rounded translate-x-0 transform opacity-0 transition-all duration-300 ease-out group-hover:translate-x-1 group-hover:opacity-100">
                             <ChevronRightIcon className="h-4 w-4" />
                           </div>
@@ -217,46 +187,16 @@ export function NavMenu() {
                     </li>
                   </ul>
                 </div>
-                <div className="w-px self-stretch bg-border mx-6"></div>
-                <div className="flex-1">
-                  <h4 className="font-bold text-xs mb-1.5 text-primary uppercase tracking-wide flex items-center gap-2">
-                    <span className="inline-flex p-2 rounded-md bg-[#0eca7b]/10 w-8 h-8 items-center justify-center">
-                      <FileEditIcon size={16} className="text-[#0eca7b]" />
-                    </span>
-                    Content
-                  </h4>
-                  <ul className="space-y-1">
-                    <li>
-                      <NavigationMenuLink asChild>
-                        <Link href="/ai-article-writer" className="group inline-flex cursor-pointer items-center justify-start gap-1 text-sm leading-tight text-muted-foreground hover:text-primary transition-colors">
-                          AI Article Writer
-                          <div className="flex size-4 items-center justify-center border border-border rounded translate-x-0 transform opacity-0 transition-all duration-300 ease-out group-hover:translate-x-1 group-hover:opacity-100">
-                            <ChevronRightIcon className="h-4 w-4" />
-                          </div>
-                        </Link>
-                      </NavigationMenuLink>
-                    </li>
-                    <li>
-                      <NavigationMenuLink asChild>
-                        <Link href="/ai-chart-generator" className="group inline-flex cursor-pointer items-center justify-start gap-1 text-sm leading-tight text-muted-foreground hover:text-primary transition-colors">
-                          AI Chart Generator
-                          <div className="flex size-4 items-center justify-center border border-border rounded translate-x-0 transform opacity-0 transition-all duration-300 ease-out group-hover:translate-x-1 group-hover:opacity-100">
-                            <ChevronRightIcon className="h-4 w-4" />
-                          </div>
-                        </Link>
-                      </NavigationMenuLink>
-                    </li>
-                  </ul>
-                </div>
+                
               </div>
             </div>
           </NavigationMenuContent>
         </NavigationMenuItem>
         
-        <NavigationMenuItem>
-          <NavigationMenuTrigger className="bg-transparent">Resources</NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <div className="px-8 py-5 bg-background border-t border-border w-[680px]">
+                 <NavigationMenuItem>
+           <NavigationMenuTrigger className="bg-transparent">Resources</NavigationMenuTrigger>
+           <NavigationMenuContent>
+             <div className="px-8 py-5 bg-background border-t border-border w-[480px]">
               <div className="flex justify-between relative">
                 <div className="flex-1">
                   <h4 className="font-bold text-xs mb-1.5 text-primary uppercase tracking-wide flex items-center gap-2">
@@ -278,37 +218,7 @@ export function NavMenu() {
                     </li>
                   </ul>
                 </div>
-                <div className="w-px self-stretch bg-border mx-6"></div>
-                <div className="flex-1">
-                  <h4 className="font-bold text-xs mb-1.5 text-primary uppercase tracking-wide flex items-center gap-2">
-                    <span className="inline-flex p-2 rounded-md bg-[#0eca7b]/10 w-8 h-8 items-center justify-center">
-                      <FileCode2Icon size={16} className="text-[#0eca7b]" />
-                    </span>
-                    Integrations
-                  </h4>
-                  <ul className="space-y-1">
-                    <li>
-                      <NavigationMenuLink asChild>
-                        <Link href="/integrations/wordpress" className="group inline-flex cursor-pointer items-center justify-start gap-1 text-sm leading-tight text-muted-foreground hover:text-primary transition-colors">
-                          WordPress
-                          <div className="flex size-4 items-center justify-center border border-border rounded translate-x-0 transform opacity-0 transition-all duration-300 ease-out group-hover:translate-x-1 group-hover:opacity-100">
-                            <ChevronRightIcon className="h-4 w-4" />
-                          </div>
-                        </Link>
-                      </NavigationMenuLink>
-                    </li>
-                    <li>
-                      <NavigationMenuLink asChild>
-                        <Link href="/integrations/webflow" className="group inline-flex cursor-pointer items-center justify-start gap-1 text-sm leading-tight text-muted-foreground hover:text-primary transition-colors">
-                          Webflow
-                          <div className="flex size-4 items-center justify-center border border-border rounded translate-x-0 transform opacity-0 transition-all duration-300 ease-out group-hover:translate-x-1 group-hover:opacity-100">
-                            <ChevronRightIcon className="h-4 w-4" />
-                          </div>
-                        </Link>
-                      </NavigationMenuLink>
-                    </li>
-                  </ul>
-                </div>
+                
                 <div className="w-px self-stretch bg-border mx-6"></div>
                 <div className="flex-1">
                   <h4 className="font-bold text-xs mb-1.5 text-primary uppercase tracking-wide flex items-center gap-2">

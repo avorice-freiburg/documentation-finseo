@@ -374,13 +374,13 @@ export function Navbar() {
       </motion.div>
 
       <div className="space-y-6">
-        {/* AI & Analytics */}
+        {/* AI Analytics */}
         <motion.div variants={itemVariants} className="space-y-3">
           <div className="flex items-center gap-3 mb-3">
             <div className="w-8 h-8 bg-purple-500/10 rounded-lg flex items-center justify-center">
               <MapIcon size={16} className="text-purple-500" />
             </div>
-            <h3 className="font-medium text-sm">AI & Analytics</h3>
+            <h3 className="font-medium text-sm">AI Analytics</h3>
           </div>
           <div className="grid grid-cols-1 gap-2">
             <Link
@@ -397,20 +397,17 @@ export function Navbar() {
           </div>
         </motion.div>
 
-        {/* SEO Tools */}
+        {/* AI SEO Tools */}
         <motion.div variants={itemVariants} className="space-y-3">
           <div className="flex items-center gap-3 mb-3">
             <div className="w-8 h-8 bg-green-500/10 rounded-lg flex items-center justify-center">
               <BarChart3Icon size={16} className="text-green-500" />
             </div>
-            <h3 className="font-medium text-sm">SEO Tools</h3>
+            <h3 className="font-medium text-sm">AI SEO Tools</h3>
           </div>
           <div className="grid grid-cols-1 gap-2">
             {[
-              { title: 'Backlink Checker', href: '/backlink-checker', desc: 'Analyze backlink profiles' },
-              { title: 'Keyword Research', href: '/keyword-research', desc: 'Find profitable keywords' },
-              { title: 'OnPage Checker', href: '/onpage-checker', desc: 'Optimize page content' },
-              { title: 'Accessibility Checker', href: '/accessibility-checker', desc: 'Ensure web accessibility' },
+              { title: 'Technical Analysis', href: '/onpage-checker', desc: 'AI-powered technical SEO audit' },
             ].map((item) => (
               <Link
                 key={item.title}
@@ -428,34 +425,7 @@ export function Navbar() {
           </div>
         </motion.div>
 
-        {/* Content Creation */}
-        <motion.div variants={itemVariants} className="space-y-3">
-          <div className="flex items-center gap-3 mb-3">
-            <div className="w-8 h-8 bg-orange-500/10 rounded-lg flex items-center justify-center">
-              <FileEditIcon size={16} className="text-orange-500" />
-            </div>
-            <h3 className="font-medium text-sm">Content Creation</h3>
-          </div>
-          <div className="grid grid-cols-1 gap-2">
-            {[
-              { title: 'AI Article Writer', href: '/ai-article-writer', desc: 'Generate SEO content' },
-              { title: 'AI Chart Generator', href: '/ai-chart-generator', desc: 'Create data visualizations' },
-            ].map((item) => (
-              <Link
-                key={item.title}
-                href={item.href}
-                onClick={closeDrawer}
-                className="group flex items-center justify-between p-3 bg-card border border-border rounded-lg hover:bg-accent transition-colors"
-              >
-                <div>
-                  <div className="font-medium text-sm text-primary">{item.title}</div>
-                  <div className="text-xs text-muted-foreground">{item.desc}</div>
-                </div>
-                <ChevronRight className="size-4 text-muted-foreground group-hover:text-primary group-hover:translate-x-0.5 transition-all duration-200" />
-              </Link>
-            ))}
-          </div>
-        </motion.div>
+
       </div>
     </motion.div>
   );
@@ -504,34 +474,7 @@ export function Navbar() {
           </div>
         </motion.div>
 
-        {/* Integrations */}
-        <motion.div variants={itemVariants} className="space-y-3">
-          <div className="flex items-center gap-3 mb-3">
-            <div className="w-8 h-8 bg-green-500/10 rounded-lg flex items-center justify-center">
-              <FileCode2Icon size={16} className="text-green-500" />
-            </div>
-            <h3 className="font-medium text-sm">Integrations</h3>
-          </div>
-          <div className="grid grid-cols-1 gap-2">
-            {[
-              { title: 'WordPress', href: '/integrations/wordpress', desc: 'WordPress plugin' },
-              { title: 'Webflow', href: '/integrations/webflow', desc: 'Webflow integration' },
-            ].map((item) => (
-              <Link
-                key={item.title}
-                href={item.href}
-                onClick={closeDrawer}
-                className="group flex items-center justify-between p-3 bg-card border border-border rounded-lg hover:bg-accent transition-colors"
-              >
-                <div>
-                  <div className="font-medium text-sm text-primary">{item.title}</div>
-                  <div className="text-xs text-muted-foreground">{item.desc}</div>
-                </div>
-                <ChevronRight className="size-4 text-muted-foreground group-hover:text-primary group-hover:translate-x-0.5 transition-all duration-200" />
-              </Link>
-            ))}
-          </div>
-        </motion.div>
+
       </div>
     </motion.div>
   );

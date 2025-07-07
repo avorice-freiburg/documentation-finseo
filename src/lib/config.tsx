@@ -1079,11 +1079,7 @@ export const siteConfig = {
       title: "Product",
       links: [
         { id: 1, title: "AI Visibility Tracking", url: "/ai-visibility-tracking" },
-        { id: 2, title: "AI Article Writer", url: "/ai-article-writer" },
-        { id: 4, title: "Keyword Research", url: "/keyword-research" },
-        { id: 5, title: "Backlink Checker", url: "/backlink-checker" },
-        { id: 6, title: "OnPage Checker", url: "/onpage-checker" },
-        { id: 7, title: "Accessibility Checker", url: "/accessibility-checker" },
+        { id: 6, title: "Technical Analysis", url: "/onpage-checker" },
         { id: 8, title: "Pricing", url: "/pricing" },
       ],
     },
@@ -1108,15 +1104,7 @@ export const siteConfig = {
         { id: 24, title: "Affiliate Program", url: "/seo-ai-affiliate-program" },
       ],
     },
-    {
-      title: "Chart Generators",
-      links: [
-        { id: 3, title: "AI Chart Generator", url: "/ai-chart-generator" },
-        { id: 29, title: "Pareto Chart Generator", url: "/pareto-chart-generator" },
-        { id: 30, title: "Line Chart Generator", url: "/line-chart-generator" },
-        { id: 31, title: "Pie Chart Generator", url: "/pie-chart-generator" },
-      ],
-    },
+
     {
       title: "Alternatives",
       links: [
