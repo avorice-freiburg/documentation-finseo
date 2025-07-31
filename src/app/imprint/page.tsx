@@ -12,12 +12,11 @@ export default function ImprintPage() {
             <section>
               <h2 className="text-2xl font-semibold mb-4">Responsible for the content of this website</h2>
               <div className="bg-card border border-border rounded-lg p-6">
-                <p className="mb-2"><strong>Online-Marketing David Mühlenweg</strong></p>
-                <p className="mb-2">Eschholzstraße 90</p>
-                <p className="mb-2">79115 Freiburg</p>
+                <p className="mb-2"><strong>Finseo GmbH</strong></p>
+                <p className="mb-2">Max-Eyth-Straße 2</p>
+                <p className="mb-2">74405 Gaildorf</p>
                 <p className="mb-4">Germany</p>
                 <p className="mb-2">E-Mail: <a href="mailto:info@finseo.ai" className="text-primary hover:underline">info@finseo.ai</a></p>
-                <p>Sales tax ID no.: DE353027595</p>
               </div>
             </section>
 
