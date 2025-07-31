@@ -476,9 +476,9 @@ export function PricingSection() {
       </div>
 
       {/* Agency Plan - Full Width with Theme Styling */}
-      <div className="w-full max-w-6xl mx-auto px-6">
-        <div className="relative bg-gradient-to-r from-secondary/5 to-secondary/10 border border-secondary/20 rounded-2xl p-8 transition-all duration-200 hover:shadow-md">
-          <div className="flex flex-col lg:flex-row gap-8 items-start">
+      <div className="w-full max-w-6xl mx-auto px-4 md:px-6">
+        <div className="relative bg-gradient-to-r from-secondary/5 to-secondary/10 border border-secondary/20 rounded-2xl p-4 md:p-8 transition-all duration-200 hover:shadow-md">
+          <div className="flex flex-col lg:flex-row gap-4 md:gap-8 items-start">
             {/* Left Side - Details (1/4 width) */}
             <div className="w-full lg:w-1/4">
               <div className="flex items-center gap-3 mb-4">
@@ -520,98 +520,52 @@ export function PricingSection() {
             {/* Right Side - Features in 5x2 Grid (3/4 width) */}
             <div className="w-full lg:w-3/4">
               <h4 className="text-lg font-semibold text-foreground mb-4">Everything included:</h4>
-              <div className="grid grid-cols-1 gap-3">
-                {/* First row - 5 features */}
-                <div className="grid grid-cols-5 gap-3">
-                  {agencyPlan.features.slice(0, 5).map((feature, featureIndex) => (
-                    <div key={featureIndex} className="text-center">
-                      <div className="flex flex-col items-center gap-2 p-3 bg-background/80 border border-border/50 rounded-lg">
-                        {feature.name === 'Projects' && <Target className="w-4 h-4 text-secondary" />}
-                        {feature.name === 'Workspace' && <Users className="w-4 h-4 text-secondary" />}
-                        {feature.name === 'AI Rank Tracker' && <Bot className="w-4 h-4 text-secondary" />}
-                        {feature.name === 'AI Competitor Analysis' && <Briefcase className="w-4 h-4 text-secondary" />}
-                        {feature.name === 'Models' && <Bot className="w-4 h-4 text-secondary" />}
-                        {feature.name === 'Updates' && <Clock className="w-4 h-4 text-secondary" />}
-                        {feature.name === 'AI Research' && <Sparkles className="w-4 h-4 text-secondary" />}
-                        <span className="text-xs text-muted-foreground text-center leading-tight">
-                          {feature.name === 'AI Competitor Analysis' ? 'AI Competitors' :
-                           feature.name === 'Customer Success Manager' ? 'Success Manager' :
-                           feature.name === 'Structured Data Generator' ? 'JSON Generator' :
-                           feature.name === 'Models' ? '' : feature.name}
-                        </span>
-                        {feature.available ? (
-                          feature.value ? (
-                            <span className="text-xs text-foreground font-medium">{feature.value}</span>
-                          ) : feature.name === 'Models' ? (
-                            <div className="relative flex items-center -space-x-1">
-                              <img src="/chatgpt.png" alt="ChatGPT" className="w-5 h-5 rounded-full bg-white border border-white shadow-sm" />
-                              <img src="/claude.png" alt="Claude" className="w-5 h-5 rounded-full border border-white shadow-sm" />
-                              <img src="/perplexity.png" alt="Perplexity" className="w-5 h-5 rounded-full border border-white shadow-sm" />
-                              <img src="/gemini.png" alt="Gemini" className="w-5 h-5 rounded-full border border-white shadow-sm" />
-                              <img src="/deepseek.png" alt="DeepSeek" className="w-5 h-5 rounded-full border border-white shadow-sm" />
-                            </div>
-                          ) : (
-                            <Check className="w-3 h-3 text-green-600" />
-                          )
+              <div className="grid grid-cols-2 gap-3">
+                {agencyPlan.features.slice(0, 10).map((feature, featureIndex) => (
+                  <div key={featureIndex} className="text-center">
+                    <div className="flex flex-col items-center gap-2 p-3 bg-background/80 border border-border/50 rounded-lg">
+                      {feature.name === 'Projects' && <Target className="w-4 h-4 text-secondary" />}
+                      {feature.name === 'Workspace' && <Users className="w-4 h-4 text-secondary" />}
+                      {feature.name === 'AI Rank Tracker' && <Bot className="w-4 h-4 text-secondary" />}
+                      {feature.name === 'AI Competitor Analysis' && <Briefcase className="w-4 h-4 text-secondary" />}
+                      {feature.name === 'Models' && <Bot className="w-4 h-4 text-secondary" />}
+                      {feature.name === 'Updates' && <Clock className="w-4 h-4 text-secondary" />}
+                      {feature.name === 'AI Research' && <Sparkles className="w-4 h-4 text-secondary" />}
+                      {feature.name === 'AI SEO Audit' && <Search className="w-4 h-4 text-secondary" />}
+                      {feature.name === 'Technical Analysis' && <BarChart3 className="w-4 h-4 text-secondary" />}
+                      {feature.name === 'Structured Data Generator' && <TrendingUp className="w-4 h-4 text-secondary" />}
+                      {feature.name === 'Customer Success Manager' && <User className="w-4 h-4 text-secondary" />}
+                      {feature.name === 'Kickoff Workshop' && <Zap className="w-4 h-4 text-secondary" />}
+                      <span className="text-xs text-muted-foreground text-center leading-tight">
+                        {feature.name === 'AI Competitor Analysis' ? 'AI Competitors' :
+                         feature.name === 'Customer Success Manager' ? 'Success Manager' :
+                         feature.name === 'Structured Data Generator' ? 'JSON Generator' :
+                         feature.name === 'Models' ? '' : feature.name}
+                      </span>
+                      {feature.available ? (
+                        feature.value ? (
+                          <span className="text-xs text-foreground font-medium">{feature.value}</span>
+                        ) : feature.name === 'Models' ? (
+                          <div className="relative flex items-center -space-x-1">
+                            <img src="/chatgpt.png" alt="ChatGPT" className="w-5 h-5 rounded-full bg-white border border-white shadow-sm" />
+                            <img src="/claude.png" alt="Claude" className="w-5 h-5 rounded-full border border-white shadow-sm" />
+                            <img src="/perplexity.png" alt="Perplexity" className="w-5 h-5 rounded-full border border-white shadow-sm" />
+                            <img src="/gemini.png" alt="Gemini" className="w-5 h-5 rounded-full border border-white shadow-sm" />
+                            <img src="/deepseek.png" alt="DeepSeek" className="w-5 h-5 rounded-full border border-white shadow-sm" />
+                          </div>
                         ) : (
-                          <X className="w-3 h-3 text-destructive" />
-                        )}
-                      </div>
+                          <Check className="w-3 h-3 text-green-600" />
+                        )
+                      ) : (
+                        <X className="w-3 h-3 text-destructive" />
+                      )}
                     </div>
-                  ))}
-                </div>
-                
-                {/* Second row - remaining 5 features */}
-                <div className="grid grid-cols-5 gap-3">
-                  {agencyPlan.features.slice(5, 10).map((feature, featureIndex) => (
-                    <div key={featureIndex} className="text-center">
-                      <div className="flex flex-col items-center gap-2 p-3 bg-background/80 border border-border/50 rounded-lg">
-                        {feature.name === 'Models' && <Bot className="w-4 h-4 text-secondary" />}
-                        {feature.name === 'Updates' && <Clock className="w-4 h-4 text-secondary" />}
-                        {feature.name === 'AI Research' && <Sparkles className="w-4 h-4 text-secondary" />}
-                        {feature.name === 'AI SEO Audit' && <Search className="w-4 h-4 text-secondary" />}
-                        {feature.name === 'Technical Analysis' && <BarChart3 className="w-4 h-4 text-secondary" />}
-                        {feature.name === 'Structured Data Generator' && <TrendingUp className="w-4 h-4 text-secondary" />}
-                        {feature.name === 'Customer Success Manager' && <Shield className="w-4 h-4 text-secondary" />}
-                        {feature.name === 'Kickoff Workshop' && <Zap className="w-4 h-4 text-secondary" />}
-                        <span className="text-xs text-muted-foreground text-center leading-tight">
-                          {feature.name === 'AI Competitor Analysis' ? 'AI Competitors' :
-                           feature.name === 'Customer Success Manager' ? 'Success Manager' :
-                           feature.name === 'Structured Data Generator' ? 'JSON Generator' :
-                           feature.name === 'Models' ? '' : feature.name}
-                        </span>
-                        {feature.available ? (
-                          feature.value ? (
-                            <span className="text-xs text-foreground font-medium">{feature.value}</span>
-                          ) : feature.name === 'Models' ? (
-                            <div className="relative flex items-center -space-x-1">
-                              <img src="/chatgpt.png" alt="ChatGPT" className="w-5 h-5 rounded-full bg-white border border-white shadow-sm" />
-                              <img src="/claude.png" alt="Claude" className="w-5 h-5 rounded-full border border-white shadow-sm" />
-                              <img src="/perplexity.png" alt="Perplexity" className="w-5 h-5 rounded-full border border-white shadow-sm" />
-                              <img src="/gemini.png" alt="Gemini" className="w-5 h-5 rounded-full border border-white shadow-sm" />
-                              <img src="/deepseek.png" alt="DeepSeek" className="w-5 h-5 rounded-full border border-white shadow-sm" />
-                            </div>
-                          ) : (
-                            <Check className="w-3 h-3 text-green-600" />
-                          )
-                        ) : (
-                          <X className="w-3 h-3 text-destructive" />
-                        )}
-                      </div>
-                    </div>
-                  ))}
-                </div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
         </div>
-      </div>
-
-      {/* Bottom CTA */}
-      <div className="text-center">
-        <p className="text-sm text-muted-foreground">
-          Ready to get started? Choose your plan above and start your free trial today!
-        </p>
       </div>
     </section>
   );

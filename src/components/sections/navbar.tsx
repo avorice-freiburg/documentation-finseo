@@ -29,8 +29,8 @@ import { useEffect, useState } from "react";
 const INITIAL_WIDTH = "70rem";
 const MAX_WIDTH = "900px";
 
-// Navigation pages enum
-type NavigationPage = 'main' | 'why-finseo' | 'features' | 'resources';
+// Navigation pages enum (simplified)
+type NavigationPage = 'main';
 
 // Animation variants
 const overlayVariants = {
@@ -86,7 +86,7 @@ export function Navbar() {
   const { scrollY } = useScroll();
   const [hasScrolled, setHasScrolled] = useState(false);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-  const [currentPage, setCurrentPage] = useState<NavigationPage>('main');
+  // Simplified navigation - no sub-pages needed
   const [activeSection, setActiveSection] = useState("hero");
 
   useEffect(() => {
@@ -122,27 +122,14 @@ export function Navbar() {
 
   const toggleDrawer = () => {
     setIsDrawerOpen((prev) => !prev);
-    if (!isDrawerOpen) {
-      setCurrentPage('main');
-    }
   };
 
   const handleOverlayClick = () => {
     setIsDrawerOpen(false);
-    setCurrentPage('main');
-  };
-
-  const navigateToPage = (page: NavigationPage) => {
-    setCurrentPage(page);
-  };
-
-  const navigateBack = () => {
-    setCurrentPage('main');
   };
 
   const closeDrawer = () => {
     setIsDrawerOpen(false);
-    setCurrentPage('main');
   };
 
   // Prevent body scroll when drawer is open
@@ -158,39 +145,44 @@ export function Navbar() {
     };
   }, [isDrawerOpen]);
 
+  // Smooth scroll function for mobile
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+    // Close the mobile drawer after scrolling
+    setIsDrawerOpen(false);
+  };
+
   // Main navigation categories
   const mainCategories = [
     {
       id: 'why-finseo',
-      title: 'Why Finseo',
-      description: 'Solutions for teams & company info',
+      title: 'Why Finseo?',
+      description: 'Scroll to problems section',
       icon: UserIcon,
       color: 'bg-blue-500',
-      page: 'why-finseo' as NavigationPage,
+      scrollTo: 'bento',
     },
     {
       id: 'features',
       title: 'Features',
-      description: 'AI, SEO tools & content creation',
+      description: 'Scroll to features section',
       icon: BarChart3Icon,
       color: 'bg-green-500',
-      page: 'features' as NavigationPage,
-    },
-    {
-      id: 'resources',
-      title: 'Resources',
-      description: 'Documentation & support',
-      icon: BookOpenIcon,
-      color: 'bg-purple-500',
-      page: 'resources' as NavigationPage,
+      scrollTo: 'features',
     },
     {
       id: 'pricing',
       title: 'Pricing',
-      description: 'Plans & pricing options',
+      description: 'Scroll to pricing section',
       icon: DollarSign,
       color: 'bg-orange-500',
-      href: '/pricing',
+      scrollTo: 'pricing',
     },
     {
       id: 'affiliate',
@@ -199,6 +191,14 @@ export function Navbar() {
       icon: Handshake,
       color: 'bg-pink-500',
       href: '/seo-ai-affiliate-program',
+    },
+    {
+      id: 'contact',
+      title: 'Contact',
+      description: 'Get in touch with us',
+      icon: HelpCircleIcon,
+      color: 'bg-purple-500',
+      href: '/support',
     },
   ];
 
@@ -211,10 +211,6 @@ export function Navbar() {
       exit="exit"
       className="flex-1 p-6"
     >
-      <motion.div variants={itemVariants} className="mb-8 text-center">
-        <h2 className="text-xl font-semibold text-primary mb-2">Explore Finseo</h2>
-        <p className="text-sm text-muted-foreground">Discover our features and solutions</p>
-      </motion.div>
 
       <div className="space-y-3">
         {mainCategories.map((category, index) => (
@@ -242,7 +238,7 @@ export function Navbar() {
               </Link>
             ) : (
               <button
-                onClick={() => navigateToPage(category.page!)}
+                onClick={() => category.scrollTo ? scrollToSection(category.scrollTo) : undefined}
                 className="group w-full flex items-center justify-between p-4 bg-card border border-border rounded-xl hover:bg-accent transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]"
               >
                 <div className="flex items-center gap-4">
@@ -480,16 +476,7 @@ export function Navbar() {
   );
 
   const renderCurrentPage = () => {
-    switch (currentPage) {
-      case 'why-finseo':
-        return renderWhyFinseoPage();
-      case 'features':
-        return renderFeaturesPage();
-      case 'resources':
-        return renderResourcesPage();
-      default:
-        return renderMainPage();
-    }
+    return renderMainPage();
   };
 
   return (
@@ -540,6 +527,14 @@ export function Navbar() {
                   <LogIn className="size-4" />
                 </Link>
               </div>
+              <button
+                data-cal-link="finseo/30min"
+                data-cal-namespace="30min"
+                data-cal-config='{"layout":"month_view"}'
+                className="md:hidden bg-secondary h-8 flex items-center justify-center text-xs font-normal tracking-wide rounded-md text-primary-foreground dark:text-secondary-foreground px-3 cursor-pointer"
+              >
+                Get Demo
+              </button>
               <ThemeToggle />
               <button
                 className="md:hidden border border-border size-8 rounded-md cursor-pointer flex items-center justify-center hover:bg-accent transition-colors"
@@ -581,14 +576,6 @@ export function Navbar() {
                 {/* Header */}
                 <div className="flex items-center justify-between p-6 border-b border-border bg-background/95 backdrop-blur-sm">
                   <div className="flex items-center gap-3">
-                    {currentPage !== 'main' && (
-                      <button
-                        onClick={navigateBack}
-                        className="p-2 -ml-2 hover:bg-accent rounded-lg transition-colors"
-                      >
-                        <ArrowLeft className="size-5 text-muted-foreground" />
-                      </button>
-                    )}
                     <Link href="/" className="flex items-center gap-3" onClick={closeDrawer}>
                       <div className="w-20 h-8 relative">
                         <img src="/finseo-light-logo.svg" alt="Finseo Logo" className="size-full absolute inset-0 dark:opacity-0" />
