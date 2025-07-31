@@ -10,7 +10,7 @@ export function CTASection() {
       id="cta"
       className="flex flex-col items-center justify-center w-full"
     >
-      <div className="w-full">
+      <div className="w-full max-w-6xl mx-auto px-4 md:px-6">
         <div className="h-[350px] md:h-[350px] overflow-hidden shadow-xl w-full border border-border rounded-xl bg-secondary relative z-20">
           <Image
             src={ctaSection.backgroundImage}

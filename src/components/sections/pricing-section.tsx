@@ -520,7 +520,7 @@ export function PricingSection() {
             {/* Right Side - Features in 5x2 Grid (3/4 width) */}
             <div className="w-full lg:w-3/4">
               <h4 className="text-lg font-semibold text-foreground mb-4">Everything included:</h4>
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-2 lg:grid-cols-5 gap-3">
                 {agencyPlan.features.slice(0, 10).map((feature, featureIndex) => (
                   <div key={featureIndex} className="text-center">
                     <div className="flex flex-col items-center gap-2 p-3 bg-background/80 border border-border/50 rounded-lg">
