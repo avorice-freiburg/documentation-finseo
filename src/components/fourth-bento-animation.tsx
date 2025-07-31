@@ -8,25 +8,29 @@ import {
   useSpring,
 } from "motion/react";
 import { useEffect, useRef, useState } from "react";
+import { TrendingDown } from "lucide-react";
 
 interface BoxConfig {
   title: string;
   className: string;
+  decline: string;
 }
 
 const boxConfigs: BoxConfig[] = [
   {
-    title: "Keyword Rankings",
-    className: "bg-secondary text-white",
+    title: "Search CTR",
+    className: "bg-red-500 text-white",
+    decline: "-43%"
   },
   {
-    title: "AI Visibility Score",
-    className: "bg-secondary/40 text-white",
+    title: "Organic Clicks", 
+    className: "bg-red-400 text-white",
+    decline: "-42%"
   },
   {
-    title: "Content Optimization",
-    className:
-      "bg-secondary/20 border border-secondary border-dashed text-secondary",
+    title: "Page Visibility",
+    className: "bg-red-300 text-white",
+    decline: "-52%"
   },
 ];
 
@@ -113,31 +117,15 @@ export function FourthBentoAnimation({
           {Array.from({ length: 5 }).map((_, index) => (
             <div
               key={index}
-              className="w-px h-5 bg-primary first:bg-transparent"
+              className="w-px h-5 bg-red-400 first:bg-transparent"
             ></div>
           ))}
         </div>
-        <div className="w-1/2 h-full border-x border-border/70 border-dashed flex items-start justify-between">
+        <div className="w-1/2 h-full border-x border-red-200/70 border-dashed flex items-start justify-between">
           {Array.from({ length: 5 }).map((_, index) => (
             <div
               key={index}
-              className="w-px h-5 bg-primary first:bg-transparent"
-            ></div>
-          ))}
-        </div>
-        <div className=" w-1/2 h-full flex items-start justify-between">
-          {Array.from({ length: 5 }).map((_, index) => (
-            <div
-              key={index}
-              className="w-px h-5 bg-primary first:bg-transparent"
-            ></div>
-          ))}
-        </div>
-        <div className="w-1/2 h-full border-x border-border/70 border-dashed flex items-start justify-between">
-          {Array.from({ length: 5 }).map((_, index) => (
-            <div
-              key={index}
-              className="w-px h-5 bg-primary first:bg-transparent "
+              className="w-px h-5 bg-red-400 first:bg-transparent"
             ></div>
           ))}
         </div>
@@ -145,15 +133,15 @@ export function FourthBentoAnimation({
           {Array.from({ length: 5 }).map((_, index) => (
             <div
               key={index}
-              className="w-px h-5 bg-primary first:bg-transparent"
+              className="w-px h-5 bg-red-400 first:bg-transparent"
             ></div>
           ))}
         </div>
-        <div className="w-1/2 h-full border-x border-border/70 border-dashed flex items-start justify-between">
+        <div className="w-1/2 h-full border-x border-red-200/70 border-dashed flex items-start justify-between">
           {Array.from({ length: 5 }).map((_, index) => (
             <div
               key={index}
-              className="w-px h-5 bg-primary first:bg-transparent"
+              className="w-px h-5 bg-red-400 first:bg-transparent "
             ></div>
           ))}
         </div>
@@ -161,31 +149,47 @@ export function FourthBentoAnimation({
           {Array.from({ length: 5 }).map((_, index) => (
             <div
               key={index}
-              className="w-px h-5 bg-primary first:bg-transparent"
+              className="w-px h-5 bg-red-400 first:bg-transparent"
             ></div>
           ))}
         </div>
-        <div className="w-1/2 h-full border-x border-border/70 border-dashed flex items-start justify-between">
+        <div className="w-1/2 h-full border-x border-red-200/70 border-dashed flex items-start justify-between">
           {Array.from({ length: 5 }).map((_, index) => (
             <div
               key={index}
-              className="w-px h-5 bg-primary first:bg-transparent"
+              className="w-px h-5 bg-red-400 first:bg-transparent"
+            ></div>
+          ))}
+        </div>
+        <div className=" w-1/2 h-full flex items-start justify-between">
+          {Array.from({ length: 5 }).map((_, index) => (
+            <div
+              key={index}
+              className="w-px h-5 bg-red-400 first:bg-transparent"
+            ></div>
+          ))}
+        </div>
+        <div className="w-1/2 h-full border-x border-red-200/70 border-dashed flex items-start justify-between">
+          {Array.from({ length: 5 }).map((_, index) => (
+            <div
+              key={index}
+              className="w-px h-5 bg-red-400 first:bg-transparent"
             ></div>
           ))}
         </div>
       </div>
 
-      {/* Days of the week */}
+      {/* Time periods */}
       <div className="absolute top-4 left-0 right-0 flex justify-between max-w-md mx-auto px-8 text-sm text-gray-500">
-        <span>Week 1</span>
-        <span>Week 2</span>
-        <span>Week 3</span>
-        <span>Week 4</span>
-        <span>Week 5</span>
+        <span>Jan</span>
+        <span>Feb</span>
+        <span>Mar</span>
+        <span>Apr</span>
+        <span>May</span>
       </div>
 
       <motion.div
-        className="absolute top-10 w-[2px] h-[calc(100%-80px)] bg-gradient-to-b from-black dark:from-accent to-transparent z-10"
+        className="absolute top-10 w-[2px] h-[calc(100%-80px)] bg-gradient-to-b from-red-500 to-transparent z-10"
         style={{
           x: smoothX,
           translateX: "-50%",
@@ -200,7 +204,7 @@ export function FourthBentoAnimation({
         }}
       />
       <motion.div
-        className="absolute top-14 bg-black dark:bg-accent h-6 z-20 flex items-center justify-center text-xs p-2 rounded-md shadow-[0px_2.2px_6.6px_0px_rgba(18,43,105,0.04),0px_1.1px_2.2px_0px_rgba(18,43,105,0.08),0px_0px_0px_1.1px_rgba(18,43,105,0.08),0px_1.1px_0px_0px_rgba(255,255,255,0.20)_inset,0px_4.4px_6.6px_0px_rgba(255,255,255,0.01)_inset]"
+        className="absolute top-14 bg-red-500 h-6 z-20 flex items-center justify-center text-xs p-2 rounded-md shadow-lg"
         style={{
           x: smoothX,
           translateX: "-50%",
@@ -214,7 +218,10 @@ export function FourthBentoAnimation({
           default: { duration: 0 }, // Makes position update instant
         }}
       >
-        <span className="text-white">+35% Growth</span>
+        <div className="flex items-center gap-1 text-white">
+          <TrendingDown className="size-3" />
+          <span>Loosing Visibility</span>
+        </div>
       </motion.div>
 
       <div
@@ -255,9 +262,10 @@ export function FourthBentoAnimation({
                 duration: 0.3,
                 delay: startAnimationDelay + index * 0.2,
               }}
-              className={`flex items-center h-8 justify-center gap-2 rounded-lg w-[250px] p-2 shadow-[0px_9px_5px_0px_#00000005,0px_4px_4px_0px_#00000009,0px_1px_2px_0px_#00000010] ${boxConfigs[index].className}`}
+              className={`flex items-center h-8 justify-between gap-3 rounded-lg w-[250px] p-3 shadow-lg ${boxConfigs[index].className}`}
             >
               <p className="font-medium text-sm">{boxConfigs[index].title}</p>
+              <span className="font-bold text-sm">{boxConfigs[index].decline}</span>
             </motion.div>
           ))}
         </AnimatePresence>

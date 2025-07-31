@@ -58,7 +58,7 @@ export function AnimatedAIHeading() {
   
   return (
     <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-medium tracking-tighter text-balance text-center text-primary">
-      <div>Control your AI Visibility in</div>
+      <div>Improve your AI Visibility in</div>
       <div className="mt-2">
         <AnimatePresence mode="wait">
           <motion.span

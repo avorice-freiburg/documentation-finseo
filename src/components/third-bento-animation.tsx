@@ -237,7 +237,7 @@ export function NumberFlowCounter({
     <div
       className={`${
         showCounter ? "opacity-100" : "opacity-0"
-      } transition-opacity duration-300 ease-in-out absolute top-32 left-[42%] -translate-x-1/2 text-sm bg-[#1A1B25] border border-white/[0.07] text-white px-4 py-1 rounded-full h-8 flex items-center justify-center font-mono shadow-[0px_1.1px_0px_0px_rgba(255,255,255,0.20)_inset,0px_4.4px_6.6px_0px_rgba(255,255,255,0.01)_inset,0px_2.2px_6.6px_0px_rgba(18,43,105,0.04),0px_1.1px_2.2px_0px_rgba(18,43,105,0.08),0px_0px_0px_1.1px_rgba(18,43,105,0.08)]`}
+      } transition-opacity duration-300 ease-in-out absolute top-32 left-[34%] -translate-x-1/2 text-sm bg-[#1A1B25] border border-white/[0.07] text-white px-4 py-1 rounded-full h-8 flex items-center justify-center font-mono shadow-[0px_1.1px_0px_0px_rgba(255,255,255,0.20)_inset,0px_4.4px_6.6px_0px_rgba(255,255,255,0.01)_inset,0px_2.2px_6.6px_0px_rgba(18,43,105,0.04),0px_1.1px_2.2px_0px_rgba(18,43,105,0.08),0px_0px_0px_1.1px_rgba(18,43,105,0.08)]`}
     >
       <NumberFlow
         value={currentValue}
@@ -251,6 +251,7 @@ export function NumberFlowCounter({
           minimumIntegerDigits: 1,
         }}
       />
+      <span className="ml-1">Clicks</span>
     </div>
   );
 }
@@ -261,12 +262,14 @@ export function ThirdBentoAnimation({
   color = "var(--secondary)",
   startAnimationDelay = 0,
   once = false,
+  showGoogleBranding = false,
 }: {
   data: number[];
   toolTipValues: number[];
   color?: string;
   startAnimationDelay?: number;
   once?: boolean;
+  showGoogleBranding?: boolean;
 }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once });
@@ -295,6 +298,69 @@ export function ThirdBentoAnimation({
         } as CSSProperties
       }
     >
+      {/* Google Branding */}
+      {showGoogleBranding && (
+        <>
+          {/* Google Logo */}
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: shouldAnimate ? 1 : 0, y: shouldAnimate ? 0 : -10 }}
+            transition={{
+              duration: 0.6,
+              delay: startAnimationDelay ? startAnimationDelay + 0.5 : 0.5,
+              ease: "easeOut",
+            }}
+            className="absolute top-12 left-1/2 -translate-x-1/2 flex items-center gap-3"
+          >
+            <div className="w-12 h-12 rounded-lg bg-white shadow-md flex items-center justify-center">
+              <img 
+                src="/google.webp" 
+                alt="Google" 
+                className="w-8 h-8 object-contain"
+              />
+            </div>
+            <span className="text-lg font-medium text-muted-foreground">Organic Traffic</span>
+            
+            {/* Red Downward Arrow and Percentage */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0 }}
+              animate={{ 
+                opacity: shouldAnimate ? 1 : 0, 
+                scale: shouldAnimate ? 1 : 0,
+                y: shouldAnimate ? [0, 2, 0] : 0,
+              }}
+              transition={{
+                duration: 0.8,
+                delay: startAnimationDelay ? startAnimationDelay + 1.2 : 1.2,
+                ease: "easeOut",
+                y: {
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }
+              }}
+              className="flex items-center gap-1 ml-3"
+            >
+              <div className="bg-red-500 text-white rounded-full p-1.5 shadow-lg">
+                <svg 
+                  className="w-4 h-4" 
+                  fill="currentColor" 
+                  viewBox="0 0 20 20"
+                >
+                  <path 
+                    fillRule="evenodd" 
+                    d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z" 
+                    clipRule="evenodd"
+                    transform="rotate(180 10 10)"
+                  />
+                </svg>
+              </div>
+              <span className="text-lg font-bold text-red-600">-42%</span>
+            </motion.div>
+          </motion.div>
+        </>
+      )}
+      
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: shouldAnimate ? 1 : 0 }}

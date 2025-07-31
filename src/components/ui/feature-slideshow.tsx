@@ -249,407 +249,434 @@ export const Feature = ({
 
     // Create detailed UI mockups for each feature
     if (currentItem.id === 1) {
-      // Comprehensive Keyword Intelligence Dashboard
+      // AI Visibility Tracking Mockup
       return (
-        <div className="aspect-auto h-full w-full rounded-xl border border-border bg-card p-3 md:p-4 shadow-xl overflow-hidden">
-          <div className="flex items-center justify-between mb-3">
-            <div>
-              <h3 className="text-sm md:text-base font-medium">Keyword Research</h3>
-              <p className="text-xs text-muted-foreground">AI-powered insights</p>
-            </div>
-            <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-          </div>
+        <div className="relative w-full h-full bg-gradient-to-br from-background via-background/95 to-secondary/10 rounded-xl border border-border/30 p-4 overflow-hidden">
+          {/* Background gradient effects */}
+          <div className="absolute inset-0 bg-gradient-to-br from-secondary/5 to-transparent"></div>
+          <div className="absolute top-4 right-4 w-32 h-32 bg-secondary/5 rounded-full blur-2xl"></div>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 h-auto lg:h-[260px]">
-            {/* Left Side - Search and Metrics */}
-            <div className="space-y-3 order-1">
-              {/* Search Bar */}
-              <div className="relative">
-                <input
-                  type="text"
-                  placeholder="Enter keyword..."
-                  className="w-full h-8 md:h-10 px-3 bg-background border border-border rounded-lg text-xs md:text-sm"
-                  defaultValue="SEO tools"
-                />
+          {/* Header */}
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="relative z-10 mb-6"
+          >
+            <div className="flex items-center justify-between">
+              <div>
+                <h3 className="text-lg font-semibold text-foreground">AI Visibility Dashboard</h3>
+                <p className="text-sm text-muted-foreground">Live tracking across AI platforms</p>
               </div>
-
-              {/* Key Metrics */}
-              <div className="grid grid-cols-3 gap-2">
-                <div className="bg-background p-2 md:p-3 rounded-lg text-center">
-                  <div className="text-sm md:text-lg font-bold text-blue-600">12.5K</div>
-                  <div className="text-xs text-muted-foreground">Volume</div>
-                </div>
-                <div className="bg-background p-2 md:p-3 rounded-lg text-center">
-                  <div className="text-sm md:text-lg font-bold text-orange-600">45</div>
-                  <div className="text-xs text-muted-foreground">Difficulty</div>
-                </div>
-                <div className="bg-background p-2 md:p-3 rounded-lg text-center">
-                  <div className="text-sm md:text-lg font-bold text-green-600">$2.40</div>
-                  <div className="text-xs text-muted-foreground">CPC</div>
-                </div>
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                <span className="text-xs text-green-600 font-medium">Live</span>
               </div>
+            </div>
+          </motion.div>
 
-              {/* Keywords List */}
-              <div className="space-y-1.5 lg:block hidden">
-                {[
-                  { keyword: "SEO tools", volume: "12.5K", difficulty: 45 },
-                  { keyword: "keyword research", volume: "8.9K", difficulty: 38 }
-                ].map((item, i) => (
-                  <div key={i} className="flex items-center justify-between bg-background p-2 rounded-lg">
-                    <span className="text-xs font-medium truncate flex-1">{item.keyword}</span>
-                    <div className="flex items-center gap-2 text-xs">
-                      <span>{item.volume}</span>
-                      <span className="text-muted-foreground">{item.difficulty}</span>
-                    </div>
+          {/* AI Platform Cards */}
+          <div className="relative z-10 grid grid-cols-2 gap-2 mb-3">
+            {[
+              { name: "ChatGPT", visible: true, mentions: 47, icon: "/chatgpt.png" },
+              { name: "Claude", visible: true, mentions: 23, icon: "/claude.png" },
+              { name: "Perplexity", visible: false, mentions: 8, icon: "/perplexity.png" },
+              { name: "Gemini", visible: true, mentions: 31, icon: "/gemini.png" }
+            ].map((platform, i) => (
+              <motion.div
+                key={platform.name}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.4, delay: i * 0.1 }}
+                className="bg-background/50 backdrop-blur-sm border border-border/30 rounded-lg p-2"
+              >
+                <div className="flex items-center justify-between mb-1">
+                  <div className="flex items-center gap-1.5">
+                    <img src={platform.icon} alt={platform.name} className="w-3.5 h-3.5 rounded-full" />
+                    <span className="text-xs font-medium truncate">{platform.name}</span>
                   </div>
+                  <div className={`w-1.5 h-1.5 rounded-full ${platform.visible ? 'bg-green-500' : 'bg-red-500'}`}></div>
+                </div>
+                <div className="flex items-center gap-1">
+                  <span className="text-sm font-bold text-foreground">{platform.mentions}</span>
+                  <span className="text-xs text-muted-foreground">mentions</span>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Visibility Chart Mockup */}
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="relative z-10 bg-background/30 backdrop-blur-sm border border-border/20 rounded-lg p-3 h-32"
+          >
+            <div className="flex items-center justify-between mb-2">
+              <div className="text-xs font-medium text-foreground">Visibility Trend (7 days)</div>
+              <div className="flex items-center gap-1">
+                <div className="w-2 h-2 bg-green-500 rounded-sm"></div>
+                <span className="text-xs text-muted-foreground">Mentions</span>
+              </div>
+            </div>
+            <div className="relative h-20">
+              <div className="absolute inset-0 flex items-end justify-between px-1">
+                {[65, 72, 68, 85, 78, 82, 89].map((height, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ height: 0 }}
+                    animate={{ height: `${height}%` }}
+                    transition={{ duration: 0.8, delay: 0.5 + i * 0.1 }}
+                    className="bg-green-500 w-3 rounded-t opacity-90 relative z-20"
+                  ></motion.div>
                 ))}
               </div>
+              {/* Chart baseline */}
+              <div className="absolute bottom-0 left-0 right-0 h-px bg-border/30"></div>
             </div>
-
-            {/* Right Side - Chart */}
-            <div className="bg-background border border-border rounded-lg p-2 order-2">
-              <div className="text-xs font-medium mb-2">Search Trend</div>
-              <div className="h-[120px] md:h-[180px]">
-                <ChartContainer config={chartConfig} className="h-full w-full">
-                  <AreaChart data={keywordTrendData} margin={{ top: 5, right: 5, left: 5, bottom: 5 }}>
-                    <defs>
-                      <linearGradient id="fillVolume" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="5%" stopColor="#0ea5e9" stopOpacity={0.8}/>
-                        <stop offset="95%" stopColor="#0ea5e9" stopOpacity={0.1}/>
-                      </linearGradient>
-                    </defs>
-                    <XAxis 
-                      dataKey="month" 
-                      axisLine={false}
-                      tickLine={false}
-                      tick={{ fontSize: 9, fill: '#6b7280' }}
-                    />
-                    <YAxis 
-                      axisLine={false}
-                      tickLine={false}
-                      tick={{ fontSize: 9, fill: '#6b7280' }}
-                      domain={[8000, 14000]}
-                    />
-                    <ChartTooltip 
-                      content={({ active, payload, label }) => {
-                        if (active && payload && payload.length) {
-                          return (
-                            <div className="bg-white/95 backdrop-blur-md border border-border/50 rounded-lg p-2 shadow-lg">
-                              <div className="text-xs font-medium text-gray-700">{label}</div>
-                              <div className="text-sm font-bold text-blue-600">
-                                {payload[0]?.value?.toLocaleString()}
-                              </div>
-                            </div>
-                          );
-                        }
-                        return null;
-                      }}
-                    />
-                    <Area
-                      type="monotone"
-                      dataKey="volume"
-                      stroke="#0ea5e9"
-                      strokeWidth={2}
-                      fill="url(#fillVolume)"
-                      fillOpacity={0.6}
-                    />
-                  </AreaChart>
-                </ChartContainer>
-              </div>
+            {/* Day labels */}
+            <div className="flex justify-between px-1 mt-1">
+              {['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'].map((day, i) => (
+                <span key={i} className="text-xs text-muted-foreground text-center w-3">{day.slice(0, 1)}</span>
+              ))}
             </div>
-          </div>
+          </motion.div>
         </div>
       );
     }
 
     if (currentItem.id === 2) {
-      // Multi-Platform Rank Tracking Dashboard
+      // AI Brand Analysis Mockup
       return (
-        <div className="aspect-auto h-full w-full rounded-xl border border-border bg-card p-3 md:p-4 shadow-xl overflow-hidden">
-          <div className="flex items-center justify-between mb-3">
-            <div>
-              <h3 className="text-sm md:text-base font-medium">Rank Tracking</h3>
-              <p className="text-xs text-muted-foreground">Multi-platform monitoring</p>
+        <div className="relative w-full h-full bg-gradient-to-br from-background via-background/95 to-secondary/10 rounded-xl border border-border/30 p-4 overflow-hidden">
+          {/* Background elements */}
+          <div className="absolute inset-0 bg-gradient-to-br from-secondary/5 to-transparent"></div>
+          <div className="absolute bottom-4 left-4 w-24 h-24 bg-secondary/5 rounded-full blur-xl"></div>
+          
+          {/* Header */}
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="relative z-10 mb-6"
+          >
+            <div className="flex items-center justify-between">
+              <div>
+                <h3 className="text-lg font-semibold text-foreground">AI Brand Monitor</h3>
+                <p className="text-sm text-muted-foreground">How AI talks about your brand</p>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 bg-orange-500 rounded-full animate-pulse"></div>
+                <span className="text-xs text-orange-600 font-medium">Analyzing</span>
+              </div>
             </div>
-            <div className="text-xs text-green-500 flex items-center gap-1">
-              <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-              <span className="hidden sm:inline">Live</span>
-            </div>
+          </motion.div>
+
+          {/* AI Sentiment Analysis */}
+          <div className="relative z-10 mb-4">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="bg-background/50 backdrop-blur-sm border border-border/30 rounded-lg p-4"
+            >
+              <div className="flex items-center justify-between mb-3">
+                <span className="text-sm font-medium">Overall Sentiment</span>
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 rounded-full bg-green-500"></div>
+                  <span className="text-sm font-bold text-green-600">Positive</span>
+                </div>
+              </div>
+              
+              {/* Sentiment bar */}
+              <div className="w-full bg-background/50 rounded-full h-2 mb-3">
+                <motion.div
+                  initial={{ width: 0 }}
+                  animate={{ width: "78%" }}
+                  transition={{ duration: 1, delay: 0.5 }}
+                  className="bg-green-500 h-2 rounded-full"
+                ></motion.div>
+              </div>
+              
+              <div className="grid grid-cols-3 gap-2 text-center">
+                <div>
+                  <div className="text-lg font-bold text-green-600">78%</div>
+                  <div className="text-xs text-muted-foreground">Positive</div>
+                </div>
+                <div>
+                  <div className="text-lg font-bold text-gray-500">18%</div>
+                  <div className="text-xs text-muted-foreground">Neutral</div>
+                </div>
+                <div>
+                  <div className="text-lg font-bold text-red-500">4%</div>
+                  <div className="text-xs text-muted-foreground">Negative</div>
+                </div>
+              </div>
+            </motion.div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 h-auto lg:h-[260px]">
-            {/* Left Side - Platforms and Rankings */}
-            <div className="space-y-3 order-1">
-              {/* Platform Tabs */}
-              <div className="flex gap-1 overflow-x-auto">
-                {["Google", "Bing", "Yahoo"].map((platform, i) => (
-                  <button
-                    key={platform}
-                    className={`px-2 md:px-3 py-1 md:py-1.5 text-xs rounded-lg whitespace-nowrap ${
-                      i === 0 ? "bg-blue-500 text-white" : "bg-background text-muted-foreground border border-border"
-                    }`}
-                  >
-                    {platform}
-                  </button>
-                ))}
-              </div>
-
-              {/* Rankings */}
-              <div className="space-y-1.5">
-                {[
-                  { keyword: "SEO tools", rank: 3, change: "+2" },
-                  { keyword: "keyword research", rank: 7, change: "-1" },
-                  { keyword: "backlink checker", rank: 12, change: "+5" }
-                ].map((item, i) => (
-                  <div key={i} className="flex items-center justify-between bg-background p-2 rounded-lg">
-                    <span className="text-xs md:text-sm font-medium truncate flex-1">{item.keyword}</span>
-                    <div className="flex items-center gap-2">
-                      <span className="text-sm md:text-lg font-bold">#{item.rank}</span>
-                      <span className={`text-xs ${item.change.startsWith('+') ? 'text-green-500' : 'text-red-500'}`}>
-                        {item.change}
-                      </span>
+          {/* Recent AI Mentions */}
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="relative z-10 bg-background/30 backdrop-blur-sm border border-border/20 rounded-lg p-3"
+          >
+            <div className="text-sm font-medium mb-3 text-foreground">Recent AI Mentions</div>
+            <div className="space-y-2">
+              {[
+                { ai: "ChatGPT", context: "Best SEO tools recommendation", sentiment: "positive", icon: "/chatgpt.png" },
+                { ai: "Claude", context: "AI optimization platforms", sentiment: "positive", icon: "/claude.png" },
+                { ai: "Perplexity", context: "Search engine ranking tools", sentiment: "neutral", icon: "/perplexity.png" }
+              ].map((mention, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, x: -10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.4, delay: 0.6 + i * 0.1 }}
+                  className="flex items-center justify-between bg-background/40 p-2 rounded"
+                >
+                  <div className="flex items-center gap-2 flex-1">
+                    <img src={mention.icon} alt={mention.ai} className="w-4 h-4 rounded-full" />
+                    <div className="flex-1">
+                      <div className="text-xs font-medium">{mention.ai}</div>
+                      <div className="text-xs text-muted-foreground truncate">{mention.context}</div>
                     </div>
                   </div>
-                ))}
-              </div>
+                  <div className={`w-2 h-2 rounded-full ${
+                    mention.sentiment === 'positive' ? 'bg-green-500' : 
+                    mention.sentiment === 'negative' ? 'bg-red-500' : 'bg-gray-400'
+                  }`}></div>
+                </motion.div>
+              ))}
             </div>
-
-            {/* Right Side - Chart */}
-            <div className="bg-background border border-border rounded-lg p-2 order-2">
-              <div className="text-xs font-medium mb-2">Ranking Progress</div>
-              <div className="h-[120px] md:h-[180px]">
-                <ChartContainer config={chartConfig} className="h-full w-full">
-                  <LineChart data={rankingTrendData} margin={{ top: 5, right: 5, left: 5, bottom: 5 }}>
-                    <XAxis 
-                      dataKey="week" 
-                      axisLine={false}
-                      tickLine={false}
-                      tick={{ fontSize: 9, fill: '#6b7280' }}
-                    />
-                    <YAxis 
-                      axisLine={false}
-                      tickLine={false}
-                      tick={{ fontSize: 9, fill: '#6b7280' }}
-                      domain={[0, 16]}
-                      reversed={true}
-                    />
-                    <ChartTooltip 
-                      content={({ active, payload, label }) => {
-                        if (active && payload && payload.length) {
-                          return (
-                            <div className="bg-white/95 backdrop-blur-md border border-border/50 rounded-lg p-2 shadow-lg">
-                              <div className="text-xs font-medium text-gray-700">{label}</div>
-                              <div className="text-sm font-bold text-blue-600">#{payload[0]?.value}</div>
-                            </div>
-                          );
-                        }
-                        return null;
-                      }}
-                    />
-                    <Line
-                      type="monotone"
-                      dataKey="google"
-                      stroke="#3b82f6"
-                      strokeWidth={2}
-                      dot={{ r: 2 }}
-                    />
-                  </LineChart>
-                </ChartContainer>
-              </div>
-            </div>
-          </div>
+          </motion.div>
         </div>
       );
     }
 
     if (currentItem.id === 3) {
-      // AI-Powered Content Creation Interface
+      // Prompt Discovery Mockup
       return (
-        <div className="aspect-auto h-full w-full rounded-xl border border-border bg-card p-3 md:p-4 shadow-xl overflow-hidden">
-          <div className="flex items-center justify-between mb-3">
-            <div>
-              <h3 className="text-sm md:text-base font-medium">AI Content Generator</h3>
-              <p className="text-xs text-muted-foreground">Smart content creation</p>
-            </div>
-            <div className="w-2 h-2 bg-purple-500 rounded-full animate-pulse"></div>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 h-auto lg:h-[260px]">
-            {/* Left Side - Input and Settings */}
-            <div className="space-y-3 order-1">
-              {/* Content Type Selector */}
-              <div className="flex gap-1 overflow-x-auto">
-                {["Article", "Meta", "Schema"].map((type, i) => (
-                  <button
-                    key={type}
-                    className={`px-2 md:px-3 py-1 md:py-1.5 text-xs rounded-lg whitespace-nowrap ${
-                      i === 0 ? "bg-purple-500 text-white" : "bg-background text-muted-foreground border border-border"
-                    }`}
-                  >
-                    {type}
-                  </button>
-                ))}
-              </div>
-
-              {/* Input Field */}
+        <div className="relative w-full h-full bg-gradient-to-br from-background via-background/95 to-secondary/10 rounded-xl border border-border/30 p-4 overflow-hidden">
+          {/* Background elements */}
+          <div className="absolute inset-0 bg-gradient-to-br from-secondary/5 to-transparent"></div>
+          <div className="absolute top-8 left-8 w-20 h-20 bg-green-500/10 rounded-full blur-xl"></div>
+          <div className="absolute bottom-8 right-8 w-16 h-16 bg-secondary/10 rounded-full blur-lg"></div>
+          
+          {/* Header */}
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="relative z-10 mb-6"
+          >
+            <div className="flex items-center justify-between">
               <div>
-                <label className="text-xs text-muted-foreground mb-1 block">Topic</label>
-                <input
-                  type="text"
-                  placeholder="Enter your topic..."
-                  className="w-full h-8 md:h-10 px-3 bg-background border border-border rounded-lg text-xs md:text-sm"
-                  defaultValue="Best SEO practices 2024"
-                />
+                <h3 className="text-lg font-semibold text-foreground">Prompt Discovery</h3>
+                <p className="text-sm text-muted-foreground">Key prompts for your business</p>
               </div>
-
-              {/* AI Settings */}
-              <div className="grid grid-cols-2 gap-2">
-                <div className="bg-background p-2 rounded-lg">
-                  <div className="text-xs text-muted-foreground">Tone</div>
-                  <div className="text-xs md:text-sm font-medium">Professional</div>
-                </div>
-                <div className="bg-background p-2 rounded-lg">
-                  <div className="text-xs text-muted-foreground">Length</div>
-                  <div className="text-xs md:text-sm font-medium">1500 words</div>
-                </div>
-              </div>
-
-              {/* Generate Button */}
-              <button className="w-full bg-purple-500 text-white py-2 rounded-lg text-xs md:text-sm font-medium hover:bg-purple-600 transition-colors">
-                Generate Content
-              </button>
-            </div>
-
-            {/* Right Side - Preview */}
-            <div className="bg-background border border-border rounded-lg p-2 order-2">
-              <div className="text-xs font-medium mb-2">Content Preview</div>
-              <div className="h-[120px] md:h-[180px] overflow-hidden">
-                <div className="text-xs text-muted-foreground leading-relaxed space-y-2">
-                  <div className="font-medium text-primary">Best SEO Practices for 2024</div>
-                  <div>Discover the latest SEO strategies that drive organic traffic and improve search rankings...</div>
-                  <div className="flex items-center gap-2 pt-2">
-                    <div className="w-2 h-2 bg-purple-500 rounded-full animate-bounce"></div>
-                    <span className="text-xs text-purple-600">AI is writing...</span>
-                  </div>
-                  <div className="space-y-1 pt-2">
-                    <div className="text-xs text-green-600">✓ SEO Score: 94/100</div>
-                    <div className="text-xs text-blue-600">✓ Readability: Grade 8</div>
-                    <div className="text-xs text-orange-600">✓ Keywords: 12 optimized</div>
-                  </div>
-                </div>
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                <span className="text-xs text-green-600 font-medium">Scanning</span>
               </div>
             </div>
-          </div>
+          </motion.div>
+
+          {/* Search Input */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="relative z-10 mb-3"
+          >
+            <div className="relative">
+              <Search className="absolute left-2 top-1/2 transform -translate-y-1/2 w-3 h-3 text-green-600 z-10" />
+              <input
+                type="text"
+                placeholder="Search relevant prompts..."
+                className="w-full h-8 pl-7 pr-2 bg-background/80 border border-border/50 rounded-lg text-xs text-foreground"
+                defaultValue="AI SEO tools"
+              />
+            </div>
+          </motion.div>
+
+          {/* Discovered Prompts */}
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="relative z-10 space-y-3"
+          >
+            <div className="text-xs font-medium text-foreground mb-2">High-Impact Prompts</div>
+            {[
+              { 
+                prompt: "What are the best AI SEO tools?", 
+                impact: "high",
+                mentions: "You appear in 6/10 responses"
+              },
+              { 
+                prompt: "How to optimize for AI search?", 
+                impact: "medium",
+                mentions: "You appear in 3/10 responses"
+              },
+              { 
+                prompt: "Top SEO automation platforms", 
+                impact: "high",
+                mentions: "Not mentioned"
+              }
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, x: -10 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.4, delay: 0.5 + i * 0.1 }}
+                className="bg-background/50 backdrop-blur-sm border border-border/30 rounded-lg p-2 mb-2"
+              >
+                <div className="flex items-start justify-between mb-1">
+                  <div className="flex-1 min-w-0">
+                    <div className="text-xs font-medium text-foreground mb-0.5 truncate">"{item.prompt}"</div>
+                    <div className="text-xs text-muted-foreground truncate">{item.mentions}</div>
+                  </div>
+                  <div className="flex items-center gap-1 ml-2">
+                    <div className={`px-1.5 py-0.5 rounded text-xs font-medium ${
+                      item.impact === 'high' 
+                        ? 'bg-green-100 text-green-700' 
+                        : 'bg-orange-100 text-orange-700'
+                    }`}>
+                      {item.impact}
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
       );
     }
 
     if (currentItem.id === 4) {
-      // Backlink Analysis & Strategy Dashboard
+      // AI Optimization Recommendations Mockup
       return (
-        <div className="aspect-auto h-full w-full rounded-xl border border-border bg-card p-3 md:p-4 shadow-xl overflow-hidden">
-          <div className="flex items-center justify-between mb-3">
-            <div>
-              <h3 className="text-sm md:text-base font-medium">Backlink Analysis</h3>
-              <p className="text-xs text-muted-foreground">Link building insights</p>
-            </div>
-            <div className="w-2 h-2 bg-orange-500 rounded-full animate-pulse"></div>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 h-auto lg:h-[260px]">
-            {/* Left Side - Metrics and Links */}
-            <div className="space-y-3 order-1">
-              {/* Key Metrics */}
-              <div className="grid grid-cols-2 gap-2">
-                <div className="bg-background p-2 md:p-3 rounded-lg text-center">
-                  <div className="text-sm md:text-lg font-bold text-blue-600">2.4K</div>
-                  <div className="text-xs text-muted-foreground">Total Links</div>
-                </div>
-                <div className="bg-background p-2 md:p-3 rounded-lg text-center">
-                  <div className="text-sm md:text-lg font-bold text-green-600">67</div>
-                  <div className="text-xs text-muted-foreground">DR Score</div>
-                </div>
-              </div>
-
-              {/* Recent Backlinks */}
+        <div className="relative w-full h-full bg-gradient-to-br from-background via-background/95 to-secondary/10 rounded-xl border border-border/30 p-4 overflow-hidden">
+          {/* Background elements */}
+          <div className="absolute inset-0 bg-gradient-to-br from-secondary/5 to-transparent"></div>
+          <div className="absolute top-6 right-6 w-28 h-28 bg-orange-500/10 rounded-full blur-2xl"></div>
+          <div className="absolute bottom-6 left-6 w-20 h-20 bg-secondary/10 rounded-full blur-xl"></div>
+          
+          {/* Header */}
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="relative z-10 mb-6"
+          >
+            <div className="flex items-center justify-between">
               <div>
-                <div className="text-xs text-muted-foreground mb-2">Recent Backlinks</div>
-                <div className="space-y-1.5">
-                  {[
-                    { domain: "techcrunch.com", dr: "92", type: "dofollow" },
-                    { domain: "searchengineland.com", dr: "85", type: "dofollow" },
-                    { domain: "moz.com", dr: "91", type: "nofollow" }
-                  ].map((link, i) => (
-                    <div key={i} className={`flex items-center justify-between bg-background p-2 rounded-lg ${i > 0 ? 'hidden lg:flex' : ''}`}>
-                      <span className="text-xs md:text-sm font-medium truncate flex-1">{link.domain}</span>
+                <h3 className="text-lg font-semibold text-foreground">AI Optimization</h3>
+                <p className="text-sm text-muted-foreground">Clear recommendations</p>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 bg-orange-500 rounded-full animate-pulse"></div>
+                <span className="text-xs text-orange-600 font-medium">Optimizing</span>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Priority Score */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="relative z-10 mb-4"
+          >
+            <div className="bg-background/50 backdrop-blur-sm border border-border/30 rounded-lg p-4">
+              <div className="flex items-center justify-between mb-3">
+                <span className="text-sm font-medium">Optimization Score</span>
+                <span className="text-2xl font-bold text-orange-600">73/100</span>
+              </div>
+              <div className="w-full bg-background/50 rounded-full h-2">
+                <motion.div
+                  initial={{ width: 0 }}
+                  animate={{ width: "73%" }}
+                  transition={{ duration: 1, delay: 0.5 }}
+                  className="bg-orange-500 h-2 rounded-full"
+                ></motion.div>
+              </div>
+              <div className="text-xs text-muted-foreground mt-2">Good progress! 27 points to maximize visibility</div>
+            </div>
+          </motion.div>
+
+          {/* Recommendations */}
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="relative z-10 space-y-3"
+          >
+            <div className="text-sm font-medium text-foreground mb-3">Priority Actions</div>
+            {[
+              {
+                action: "Add structured data markup to key pages",
+                impact: "High",
+                effort: "Medium",
+                priority: 1
+              },
+              {
+                action: "Include citations and sources on content pages",
+                impact: "High", 
+                effort: "Low",
+                priority: 2
+              },
+              {
+                action: "Optimize homepage for 'AI SEO tools' queries",
+                impact: "Medium",
+                effort: "Medium", 
+                priority: 3
+              }
+            ].map((rec, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, x: -10 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.4, delay: 0.6 + i * 0.1 }}
+                className="bg-background/50 backdrop-blur-sm border border-border/30 rounded-lg p-3"
+              >
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-orange-500 text-white rounded-full flex items-center justify-center text-xs font-bold">
+                    {rec.priority}
+                  </div>
+                  <div className="flex-1">
+                    <div className="text-sm font-medium text-foreground mb-2">{rec.action}</div>
+                    <div className="flex items-center gap-3">
                       <div className="flex items-center gap-1">
-                        <span className="text-xs bg-blue-100 text-blue-700 px-1.5 py-0.5 rounded">
-                          DR {link.dr}
-                        </span>
-                        <span className={`text-xs px-1.5 py-0.5 rounded ${
-                          link.type === 'dofollow' ? 'bg-green-100 text-green-700' : 'bg-gray-100 text-gray-700'
+                        <span className="text-xs text-muted-foreground">Impact:</span>
+                        <span className={`text-xs font-medium px-2 py-1 rounded ${
+                          rec.impact === 'High' 
+                            ? 'bg-green-100 text-green-700'
+                            : 'bg-orange-100 text-orange-700'
                         }`}>
-                          {link.type}
+                          {rec.impact}
+                        </span>
+                      </div>
+                      <div className="flex items-center gap-1">
+                        <span className="text-xs text-muted-foreground">Effort:</span>
+                        <span className={`text-xs font-medium px-2 py-1 rounded ${
+                          rec.effort === 'Low' 
+                            ? 'bg-green-100 text-green-700'
+                            : rec.effort === 'Medium'
+                            ? 'bg-orange-100 text-orange-700'
+                            : 'bg-red-100 text-red-700'
+                        }`}>
+                          {rec.effort}
                         </span>
                       </div>
                     </div>
-                  ))}
+                  </div>
                 </div>
-              </div>
-            </div>
-
-            {/* Right Side - Growth Chart */}
-            <div className="bg-background border border-border rounded-lg p-2 order-2">
-              <div className="text-xs font-medium mb-2">Link Growth</div>
-              <div className="h-[120px] md:h-[180px]">
-                <ChartContainer config={chartConfig} className="h-full w-full">
-                  <AreaChart data={backlinkGrowthData} margin={{ top: 5, right: 5, left: 5, bottom: 5 }}>
-                    <defs>
-                      <linearGradient id="fillTotalLinks" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="5%" stopColor="#f97316" stopOpacity={0.8}/>
-                        <stop offset="95%" stopColor="#f97316" stopOpacity={0.1}/>
-                      </linearGradient>
-                    </defs>
-                    <XAxis 
-                      dataKey="month" 
-                      axisLine={false}
-                      tickLine={false}
-                      tick={{ fontSize: 9, fill: '#6b7280' }}
-                    />
-                    <YAxis 
-                      axisLine={false}
-                      tickLine={false}
-                      tick={{ fontSize: 9, fill: '#6b7280' }}
-                      domain={[1800, 2500]}
-                    />
-                    <ChartTooltip 
-                      content={({ active, payload, label }) => {
-                        if (active && payload && payload.length) {
-                          return (
-                            <div className="bg-white/95 backdrop-blur-md border border-border/50 rounded-lg p-2 shadow-lg">
-                              <div className="text-xs font-medium text-gray-700">{label}</div>
-                              <div className="text-sm font-bold text-orange-600">
-                                {payload[0]?.value?.toLocaleString()} links
-                              </div>
-                            </div>
-                          );
-                        }
-                        return null;
-                      }}
-                    />
-                    <Area
-                      type="monotone"
-                      dataKey="totalLinks"
-                      stroke="#f97316"
-                      strokeWidth={2}
-                      fill="url(#fillTotalLinks)"
-                      fillOpacity={0.6}
-                    />
-                  </AreaChart>
-                </ChartContainer>
-              </div>
-            </div>
-          </div>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
       );
     }
@@ -707,7 +734,7 @@ export const Feature = ({
       <div className="flex w-full flex-col items-center justify-center max-w-7xl mx-auto">
         <div className="grid h-full grid-cols-5 gap-x-10 px-10 md:px-20 items-center w-full">
           <div
-            className={`col-span-2 w-full h-full hidden lg:flex md:items-center ${
+            className={`col-span-3 w-full h-full hidden lg:flex md:items-center ${
               ltr ? "md:order-2 md:justify-end" : "justify-start"
             }`}
           >
@@ -784,7 +811,7 @@ export const Feature = ({
             </Accordion.Root>
           </div>
           <div
-            className={`col-span-5 h-[350px] min-h-[200px] w-auto lg:col-span-3 ${
+            className={`col-span-5 h-[350px] min-h-[200px] w-full lg:col-span-2 lg:h-auto lg:max-w-[400px] lg:max-h-[400px] lg:aspect-square lg:mx-auto ${
               ltr && "md:order-1"
             }`}
           >

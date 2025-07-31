@@ -39,7 +39,9 @@ import {
   LogOut,
   UserCog,
   Wrench,
-  Scissors
+  Scissors,
+  Link,
+  MessageCircle
 } from "lucide-react";
 import Image from "next/image";
 import {
@@ -112,6 +114,7 @@ const navigationSections = [
     items: [
       { icon: Sparkles, label: "AI Tracking", active: true },
       { icon: Users, label: "Competitors", active: false },
+      { icon: Link, label: "Sources", active: false },
     ]
   },
   {
@@ -261,7 +264,7 @@ export function AnimatedHeroDashboard() {
   const [searchQuery, setSearchQuery] = useState("");
   const [filterModel, setFilterModel] = useState("all");
   const [filterStatus, setFilterStatus] = useState("all");
-  const [activeMetric, setActiveMetric] = useState<'visible' | 'mentions' | 'position' | 'findex'>('position');
+  const [activeMetric, setActiveMetric] = useState<'visible' | 'mentions' | 'position' | 'findex'>('visible');
 
   // Only start component after hydration - no model cycling needed
   useEffect(() => {
@@ -786,131 +789,184 @@ export function AnimatedHeroDashboard() {
                   <TableHeader>
                     <TableRow className="bg-gray-50 hover:bg-gray-50 border-b border-gray-200">
                       <TableHead className="font-semibold text-gray-900 min-w-[200px] lg:min-w-[300px]">Prompt</TableHead>
-                      <TableHead className="font-semibold text-gray-900 min-w-[80px]">Model</TableHead>
-                      <TableHead className="font-semibold text-gray-900 min-w-[60px]">Language</TableHead>
+                      <TableHead className="font-semibold text-gray-900 min-w-[140px]">
+                        <div className="flex items-center gap-1">
+                          Model Visibility
+                          <Info className="h-3 w-3 text-gray-400" />
+                        </div>
+                      </TableHead>
                       <TableHead className="font-semibold text-gray-900 min-w-[60px]">Intent</TableHead>
-                      <TableHead className="font-semibold text-gray-900 w-24 lg:w-32">Status</TableHead>
-                      <TableHead className="font-semibold text-gray-900 min-w-[120px]">Position</TableHead>
+                      <TableHead className="font-semibold text-gray-900 min-w-[120px]">Metrics</TableHead>
+                      <TableHead className="font-semibold text-gray-900 min-w-[120px]">Position (Avg)</TableHead>
                       <TableHead className="font-semibold text-gray-900 text-center min-w-[100px]">Last 7 Days</TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
-                    {filteredPrompts.map((prompt) => (
-                      <TableRow key={prompt.id} className="hover:bg-gray-50/50 border-b border-gray-100">
-                        <TableCell className="max-w-[300px]">
-                          <div className="truncate text-gray-900" title={prompt.prompt}>
-                            {prompt.prompt}
-                          </div>
-                        </TableCell>
-                        <TableCell>
-                          <div className="flex items-center gap-2">
-                            {prompt.model === 'claude' ? (
-                              <>
-                                <img src="/claude.png" alt="Claude" className="h-5 w-5" />
-                                <span className="text-sm text-gray-900">Claude</span>
-                              </>
-                            ) : prompt.model === 'perplexity' ? (
-                              <>
-                                <img src="/perplexity.png" alt="Perplexity" className="h-5 w-5" />
-                                <span className="text-sm text-gray-900">Perplexity</span>
-                              </>
-                            ) : prompt.model === 'gemini' ? (
-                              <>
-                                <img src="/gemini.png" alt="Gemini" className="h-5 w-5" />
-                                <span className="text-sm text-gray-900">Gemini</span>
-                              </>
-                            ) : prompt.model === 'deepseek' ? (
-                              <>
-                                <img src="/deepseek.png" alt="DeepSeek" className="h-5 w-5" />
-                                <span className="text-sm text-gray-900">DeepSeek</span>
-                              </>
-                            ) : (
-                              <>
-                                <img src="/chatgpt.png" alt="ChatGPT" className="h-5 w-5" />
-                                <span className="text-sm text-gray-900">ChatGPT</span>
-                              </>
-                            )}
-                          </div>
-                        </TableCell>
-                        <TableCell>
-                          <LanguageDisplay languageCode={prompt.language} />
-                        </TableCell>
-                        <TableCell>
-                          <div className="flex items-center gap-1">
-                            {prompt.intent.length > 0 ? (
+                    {filteredPrompts.map((prompt, rowIndex) => {
+                                             // Create different data for each row
+                       const rowVariations = [
+                         {
+                           models: [
+                             { name: 'ChatGPT', icon: '/chatgpt.png', visible: true },
+                             { name: 'Google AI', icon: '/google.webp', visible: false },
+                             { name: 'Perplexity', icon: '/perplexity.png', visible: true },
+                             { name: 'Gemini', icon: '/gemini.png', visible: true },
+                             { name: 'DeepSeek', icon: '/deepseek.png', visible: false }
+                           ],
+                           intents: [
+                             { type: 'I', color: 'bg-blue-100 text-blue-600', title: 'Informational' }, 
+                             { type: 'C', color: 'bg-amber-100 text-amber-600', title: 'Commercial' }
+                           ],
+                           metrics: { competitors: 3, sources: 8, mentions: 5, sentiment: 85, sentimentColor: 'bg-green-100 text-green-700' },
+                           position: 23, change: 5,
+                           last7Days: ['partially-visible', 'partially-visible', 'partially-visible', 'all-visible', 'not-visible', 'partially-visible', 'partially-visible']
+                         },
+                         {
+                           models: [
+                             { name: 'ChatGPT', icon: '/chatgpt.png', visible: false },
+                             { name: 'Claude', icon: '/claude.png', visible: true },
+                             { name: 'Perplexity', icon: '/perplexity.png', visible: true },
+                             { name: 'Gemini', icon: '/gemini.png', visible: false },
+                             { name: 'DeepSeek', icon: '/deepseek.png', visible: true }
+                           ],
+                           intents: [
+                             { type: 'I', color: 'bg-blue-100 text-blue-600', title: 'Informational' }
+                           ],
+                           metrics: { competitors: 7, sources: 12, mentions: 3, sentiment: 72, sentimentColor: 'bg-green-100 text-green-700' },
+                           position: 45, change: -2,
+                           last7Days: ['partially-visible', 'partially-visible', 'all-visible', 'partially-visible', 'partially-visible', 'not-visible', 'partially-visible']
+                         },
+                         {
+                           models: [
+                             { name: 'ChatGPT', icon: '/chatgpt.png', visible: true },
+                             { name: 'Claude', icon: '/claude.png', visible: true },
+                             { name: 'Perplexity', icon: '/perplexity.png', visible: true },
+                             { name: 'Gemini', icon: '/gemini.png', visible: true },
+                             { name: 'DeepSeek', icon: '/deepseek.png', visible: true }
+                           ],
+                           intents: [
+                             { type: 'T', color: 'bg-green-100 text-green-600', title: 'Transactional' }, 
+                             { type: 'C', color: 'bg-amber-100 text-amber-600', title: 'Commercial' }
+                           ],
+                           metrics: { competitors: 2, sources: 15, mentions: 8, sentiment: 91, sentimentColor: 'bg-green-100 text-green-700' },
+                           position: 12, change: 8,
+                           last7Days: ['all-visible', 'all-visible', 'all-visible', 'all-visible', 'all-visible', 'partially-visible', 'all-visible']
+                         },
+                         {
+                           models: [
+                             { name: 'ChatGPT', icon: '/chatgpt.png', visible: false },
+                             { name: 'Claude', icon: '/claude.png', visible: false },
+                             { name: 'Perplexity', icon: '/perplexity.png', visible: true },
+                             { name: 'Gemini', icon: '/gemini.png', visible: false },
+                             { name: 'DeepSeek', icon: '/deepseek.png', visible: false }
+                           ],
+                           intents: [
+                             { type: 'N', color: 'bg-purple-100 text-purple-600', title: 'Navigational' }
+                           ],
+                           metrics: { competitors: 1, sources: 4, mentions: 1, sentiment: 45, sentimentColor: 'bg-red-100 text-red-700' },
+                           position: null, change: 0,
+                           last7Days: ['partially-visible', 'not-visible', 'partially-visible', 'not-visible', 'not-visible', 'not-visible', 'partially-visible']
+                         }
+                       ];
+
+                      const currentRowData = rowVariations[rowIndex % 4];
+
+                      return (
+                        <TableRow key={prompt.id} className="hover:bg-gray-50/50 border-b border-gray-100">
+                          <TableCell className="max-w-[300px]">
+                            <div className="truncate text-gray-900" title={prompt.prompt}>
+                              {prompt.prompt}
+                            </div>
+                          </TableCell>
+                          <TableCell>
+                            <div className="flex items-center gap-1">
+                              {currentRowData.models.map((model, idx) => (
+                                <div key={idx} className={`w-6 h-6 rounded flex items-center justify-center bg-white border ${model.visible ? 'border-green-500' : 'border-red-500'}`} title={`${model.name} (${model.visible ? 'Visible' : 'Not Visible'})`}>
+                                  <img src={model.icon} alt={model.name} className="h-4 w-4" />
+                                </div>
+                              ))}
+                            </div>
+                          </TableCell>
+                          <TableCell>
+                            <div className="flex items-center gap-1">
                               <div className="flex gap-1">
-                                {prompt.intent.map((intent, index) => (
-                                  <div 
-                                    key={index}
-                                    className={`w-5 h-5 rounded-md flex items-center justify-center text-xs font-semibold ${
-                                      intent === 'I' ? 'bg-blue-100 text-blue-600' :
-                                      intent === 'N' ? 'bg-purple-100 text-purple-600' :
-                                      intent === 'T' ? 'bg-green-100 text-green-600' :
-                                      intent === 'C' ? 'bg-amber-100 text-amber-600' :
-                                      'bg-gray-100 text-gray-600'
-                                    }`}
-                                    title={
-                                      intent === 'I' ? 'Informational' :
-                                      intent === 'N' ? 'Navigational' :
-                                      intent === 'T' ? 'Transactional' :
-                                      intent === 'C' ? 'Commercial' : intent
-                                    }
-                                  >
-                                    {intent}
+                                {currentRowData.intents.map((intent, idx) => (
+                                  <div key={idx} className={`${intent.color} w-5 h-5 rounded-md flex items-center justify-center text-xs font-semibold`} title={intent.title}>
+                                    {intent.type}
                                   </div>
                                 ))}
                               </div>
-                            ) : (
-                              <span className="text-slate-400 text-xs">-</span>
-                            )}
-                          </div>
-                        </TableCell>
-                        <TableCell>
-                          {renderVisibilityStatus(prompt)}
-                        </TableCell>
-                        <TableCell>
-                          {prompt.visible && prompt.position ? (
-                            <div className="flex flex-col w-full">
-                              <div className="flex items-center gap-2">
-                                <div className="w-full bg-slate-100 h-2 rounded-full overflow-hidden relative">
-                                  <div className="absolute inset-y-0 left-0 bg-gradient-to-r from-green-400 via-yellow-400 to-orange-400 w-full" />
-                                  <div 
-                                    className="absolute inset-y-0 w-1 bg-white border border-slate-800"
-                                    style={{ left: `${prompt.position}%` }}
-                                  />
-                                </div>
-                                <div className="flex items-center gap-0.5 whitespace-nowrap">
-                                  <span className="text-xs font-medium text-gray-900">{prompt.position}%</span>
-                                  <span className={`text-xs ${
-                                    prompt.change > 0 ? 'text-green-600' : 
-                                    prompt.change < 0 ? 'text-red-600' : 'text-gray-500'
-                                  }`}>
-                                    ({prompt.change > 0 ? '+' : ''}{prompt.change})
-                                  </span>
-                                </div>
+                            </div>
+                          </TableCell>
+                          <TableCell>
+                            <div className="flex items-center gap-1.5 text-xs">
+                              <div className="flex items-center gap-1 bg-slate-100 text-slate-700 px-2 py-1 rounded-md" title="Competitors">
+                                <Building2 className="h-3 w-3" />
+                                <span className="font-medium">{currentRowData.metrics.competitors}</span>
+                              </div>
+                              <div className="flex items-center gap-1 bg-slate-100 text-slate-700 px-2 py-1 rounded-md" title="Sources">
+                                <Link className="h-3 w-3" />
+                                <span className="font-medium">{currentRowData.metrics.sources}</span>
+                              </div>
+                              <div className="flex items-center gap-1 bg-orange-100 text-orange-700 px-2 py-1 rounded-md" title="Brand Mentions">
+                                <Bot className="h-3 w-3" />
+                                <span className="font-medium">{currentRowData.metrics.mentions}</span>
+                              </div>
+                              <div className={`flex items-center gap-1 ${currentRowData.metrics.sentimentColor} px-2 py-1 rounded-md`} title="Avg Sentiment">
+                                <SmileIcon className="h-3 w-3" />
+                                <span className="font-medium">{currentRowData.metrics.sentiment}</span>
                               </div>
                             </div>
-                          ) : (
-                            <span className="text-slate-500 text-sm">Not visible</span>
-                          )}
-                        </TableCell>
-                        <TableCell>
-                          <div className="flex space-x-1 justify-center">
-                            {getLast7DaysStatus(prompt.id).map((status, index) => (
-                              <div 
-                                key={index}
-                                className={`w-3 h-3 rounded ${
-                                  status === 'gained' ? 'bg-green-500' : 'bg-red-500'
-                                }`}
-                                title={`${index === 0 ? 'Today' : `${index} days ago`}: ${
-                                  status === 'gained' ? 'Position gained' : 'Position lost'
-                                }`}
-                              />
-                            ))}
-                          </div>
-                        </TableCell>
-                      </TableRow>
-                    ))}
+                          </TableCell>
+                          <TableCell>
+                            {currentRowData.position ? (
+                              <div className="flex flex-col w-full">
+                                <div className="flex items-center gap-2">
+                                  <div className="w-full bg-slate-100 h-2 rounded-full overflow-hidden relative">
+                                    <div className="absolute inset-y-0 left-0 bg-gradient-to-r from-green-400 via-yellow-400 to-orange-400 w-full" />
+                                    <div 
+                                      className="absolute inset-y-0 w-1 bg-white border border-slate-800"
+                                      style={{ left: `${currentRowData.position}%` }}
+                                    />
+                                  </div>
+                                  <div className="flex items-center gap-0.5 whitespace-nowrap">
+                                    <span className="text-xs font-medium text-gray-900">{currentRowData.position}%</span>
+                                    <span className={`text-xs ${
+                                      currentRowData.change > 0 ? 'text-green-600' : 
+                                      currentRowData.change < 0 ? 'text-red-600' : 'text-gray-500'
+                                    }`}>
+                                      ({currentRowData.change > 0 ? '+' : ''}{currentRowData.change})
+                                    </span>
+                                  </div>
+                                </div>
+                              </div>
+                            ) : (
+                              <span className="text-slate-500 text-sm">Not visible</span>
+                            )}
+                          </TableCell>
+                          <TableCell>
+                            <div className="flex space-x-1 justify-center">
+                              {currentRowData.last7Days.map((status, index) => (
+                                <div 
+                                  key={index}
+                                  className={`w-3 h-3 rounded-sm ${
+                                    status === 'all-visible' ? 'bg-green-600' : 
+                                    status === 'partially-visible' ? 'bg-green-100 border border-green-500' : 
+                                    'bg-red-500'
+                                  }`}
+                                  title={`${index === 0 ? 'Today' : 
+                                    index === 6 ? '7 days ago' : 
+                                    `${index} days ago`}: ${
+                                    status === 'all-visible' ? 'All models visible' : 
+                                    status === 'partially-visible' ? 'Some models visible' :
+                                    'No models visible'}`}
+                                />
+                              ))}
+                            </div>
+                          </TableCell>
+                        </TableRow>
+                      )
+                    })}
                   </TableBody>
                 </Table>
                 </div>

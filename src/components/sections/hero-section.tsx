@@ -20,7 +20,7 @@ export function HeroSection() {
           <div className="flex flex-col items-center justify-center gap-5">
             <AnimatedAIHeading />
             <p className="text-base md:text-lg text-center text-muted-foreground font-medium text-balance leading-relaxed tracking-tight">
-              Monitor your brand mentions across AI platforms, analyze sentiment, track competitor visibility, and optimize for the next generation of search.
+              See if AI talks about your brand, what it recommends - and what it doesn't. Track your visibility, monitor competitors, and get clear step by step actions to improve your presence in AI search.
             </p>
           </div>
           <div className="flex items-center gap-2.5 flex-wrap justify-center">
