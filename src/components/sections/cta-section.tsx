@@ -2,6 +2,15 @@ import Image from "next/image";
 import { siteConfig } from "@/lib/config";
 import Link from "next/link";
 
+const aiModels = [
+  { name: "ChatGPT", icon: "/chatgpt.png" },
+  { name: "Perplexity", icon: "/perplexity.png" },
+  { name: "Gemini", icon: "/gemini.png" },
+  { name: "Google AIO", icon: "/google.webp" },
+  { name: "Claude", icon: "/claude.png" },
+  { name: "DeepSeek", icon: "/deepseek.png" }
+];
+
 export function CTASection() {
   const { ctaSection } = siteConfig;
 
@@ -20,9 +29,28 @@ export function CTASection() {
             priority
           />
           <div className="relative z-10 flex flex-col items-center justify-center h-full px-4 py-8 text-center">
-            <h1 className="text-white text-4xl md:text-7xl font-medium tracking-tighter max-w-xs md:max-w-xl mb-8">
+            <h1 className="text-white text-4xl md:text-7xl font-medium tracking-tighter max-w-xs md:max-w-xl mb-4">
               {ctaSection.title}
             </h1>
+            
+            {/* AI Model Icons */}
+            <div className="flex items-center justify-center gap-3 mb-6">
+              {aiModels.map((model, index) => (
+                <div
+                  key={model.name}
+                  className="flex items-center justify-center w-8 h-8 md:w-10 md:h-10 bg-white rounded-full border border-white/20 p-1"
+                >
+                  <Image
+                    src={model.icon}
+                    alt={model.name}
+                    width={20}
+                    height={20}
+                    className="rounded-full object-contain"
+                  />
+                </div>
+              ))}
+            </div>
+            
             <div className="flex flex-col items-center justify-center gap-2">
               <Link
                 href={ctaSection.button.href}

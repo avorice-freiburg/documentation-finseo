@@ -29,7 +29,7 @@ export function NavMenu() {
         <NavigationMenuItem>
           <button
             onClick={() => scrollToSection('bento')}
-            className={cn(navigationMenuTriggerStyle(), "bg-transparent hover:bg-accent cursor-pointer")}
+            className={cn(navigationMenuTriggerStyle(), "bg-transparent hover:bg-card cursor-pointer")}
           >
             Why Finseo?
           </button>
@@ -38,7 +38,7 @@ export function NavMenu() {
         <NavigationMenuItem>
           <button
             onClick={() => scrollToSection('features')}
-            className={cn(navigationMenuTriggerStyle(), "bg-transparent hover:bg-accent cursor-pointer")}
+            className={cn(navigationMenuTriggerStyle(), "bg-transparent hover:bg-card cursor-pointer")}
           >
             Features
           </button>
@@ -47,20 +47,20 @@ export function NavMenu() {
         <NavigationMenuItem>
           <button
             onClick={() => scrollToSection('pricing')}
-            className={cn(navigationMenuTriggerStyle(), "bg-transparent hover:bg-accent cursor-pointer")}
+            className={cn(navigationMenuTriggerStyle(), "bg-transparent hover:bg-card cursor-pointer")}
           >
             Pricing
           </button>
         </NavigationMenuItem>
         
         <NavigationMenuItem>
-          <NavigationMenuLink asChild className={cn(navigationMenuTriggerStyle(), "bg-transparent hover:bg-accent")}>
+          <NavigationMenuLink asChild className={cn(navigationMenuTriggerStyle(), "bg-transparent hover:bg-card")}>
             <Link href="/seo-ai-affiliate-program">Affiliate</Link>
           </NavigationMenuLink>
         </NavigationMenuItem>
         
         <NavigationMenuItem>
-          <NavigationMenuLink asChild className={cn(navigationMenuTriggerStyle(), "bg-transparent hover:bg-accent")}>
+          <NavigationMenuLink asChild className={cn(navigationMenuTriggerStyle(), "bg-transparent hover:bg-card")}>
             <Link href="/support">Contact</Link>
           </NavigationMenuLink>
         </NavigationMenuItem>

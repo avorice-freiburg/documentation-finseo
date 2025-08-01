@@ -1,6 +1,8 @@
 import { AnimatedHeroDashboard } from "@/components/animated-hero-dashboard";
 import { AnimatedAIHeading } from "@/components/animated-ai-heading";
 import { FlickeringGrid } from "@/components/ui/flickering-grid";
+import { DotPattern } from "@/components/ui/dot-pattern";
+import { cn } from "@/lib/utils";
 import { siteConfig } from "@/lib/config";
 import Link from "next/link";
 
@@ -10,9 +12,19 @@ export function HeroSection() {
   return (
     <section id="hero" className="w-full relative">
       <div className="relative flex flex-col items-center w-full px-6 pb-12">
+        <div className="absolute inset-0 -z-10">
+          <div className="absolute inset-0 h-[600px] md:h-[800px] w-full bg-background rounded-b-xl"></div>
+          <DotPattern
+            className={cn(
+              "absolute inset-0 h-[600px] md:h-[800px] w-full",
+              "[mask-image:radial-gradient(900px_circle_at_center,white,transparent)]",
+              "opacity-30"
+            )}
+          />
+        </div>
 
         <div className="relative z-10 pt-32 max-w-3xl mx-auto h-full w-full flex flex-col gap-10 items-center justify-center">
-          <p className="border border-border bg-accent rounded-full text-sm h-8 px-3 flex items-center gap-2">
+          <p className="border border-border bg-card rounded-full text-sm h-8 px-3 flex items-center gap-2">
             {hero.badgeIcon}
             {hero.badge}
           </p>
