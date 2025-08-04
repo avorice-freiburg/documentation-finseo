@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -23,12 +24,36 @@ const scrollToSection = (sectionId: string) => {
 };
 
 export function NavMenu() {
+  const pathname = usePathname();
+  const router = useRouter();
+
+  const handleSectionClick = (sectionId: string) => {
+    // If we're on the homepage, scroll directly
+    if (pathname === '/') {
+      scrollToSection(sectionId);
+    } else {
+      // Navigate to homepage with hash, then scroll after navigation
+      router.push(`/#${sectionId}`);
+    }
+  };
+
+  // Handle scrolling when page loads with hash
+  React.useEffect(() => {
+    if (pathname === '/' && window.location.hash) {
+      const hash = window.location.hash.slice(1);
+      // Wait a bit for the page to render
+      setTimeout(() => {
+        scrollToSection(hash);
+      }, 100);
+    }
+  }, [pathname]);
+
   return (
     <NavigationMenu className="w-full">
       <NavigationMenuList className="w-full justify-center">
         <NavigationMenuItem>
           <button
-            onClick={() => scrollToSection('bento')}
+            onClick={() => handleSectionClick('bento')}
             className={cn(navigationMenuTriggerStyle(), "bg-transparent hover:bg-card cursor-pointer")}
           >
             Why Finseo?
@@ -37,7 +62,7 @@ export function NavMenu() {
         
         <NavigationMenuItem>
           <button
-            onClick={() => scrollToSection('features')}
+            onClick={() => handleSectionClick('features')}
             className={cn(navigationMenuTriggerStyle(), "bg-transparent hover:bg-card cursor-pointer")}
           >
             Features
@@ -46,7 +71,7 @@ export function NavMenu() {
         
         <NavigationMenuItem>
           <button
-            onClick={() => scrollToSection('pricing')}
+            onClick={() => handleSectionClick('pricing')}
             className={cn(navigationMenuTriggerStyle(), "bg-transparent hover:bg-card cursor-pointer")}
           >
             Pricing

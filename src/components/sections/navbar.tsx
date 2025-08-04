@@ -24,6 +24,7 @@ import {
 } from "lucide-react";
 import { AnimatePresence, motion, useScroll } from "motion/react";
 import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const INITIAL_WIDTH = "70rem";
@@ -88,6 +89,8 @@ export function Navbar() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   // Simplified navigation - no sub-pages needed
   const [activeSection, setActiveSection] = useState("hero");
+  const pathname = usePathname();
+  const router = useRouter();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -145,6 +148,23 @@ export function Navbar() {
     };
   }, [isDrawerOpen]);
 
+  // Handle scrolling when page loads with hash
+  useEffect(() => {
+    if (pathname === '/' && window.location.hash) {
+      const hash = window.location.hash.slice(1);
+      // Wait a bit for the page to render
+      setTimeout(() => {
+        const element = document.getElementById(hash);
+        if (element) {
+          element.scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      }, 100);
+    }
+  }, [pathname]);
+
   // Smooth scroll function for mobile
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -156,6 +176,17 @@ export function Navbar() {
     }
     // Close the mobile drawer after scrolling
     setIsDrawerOpen(false);
+  };
+
+  const handleSectionClick = (sectionId: string) => {
+    // If we're on the homepage, scroll directly
+    if (pathname === '/') {
+      scrollToSection(sectionId);
+    } else {
+      // Navigate to homepage with hash, then close drawer
+      router.push(`/#${sectionId}`);
+      setIsDrawerOpen(false);
+    }
   };
 
   // Main navigation categories
@@ -238,7 +269,7 @@ export function Navbar() {
               </Link>
             ) : (
               <button
-                onClick={() => category.scrollTo ? scrollToSection(category.scrollTo) : undefined}
+                onClick={() => category.scrollTo ? handleSectionClick(category.scrollTo) : undefined}
                 className="group w-full flex items-center justify-between p-4 bg-card border border-border rounded-xl hover:bg-accent transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]"
               >
                 <div className="flex items-center gap-4">
