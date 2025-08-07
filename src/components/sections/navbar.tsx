@@ -295,7 +295,7 @@ export function Navbar() {
           className="bg-secondary h-12 flex items-center justify-center text-sm font-medium rounded-xl text-primary-foreground dark:text-secondary-foreground w-full shadow-lg hover:bg-secondary/90 transition-colors"
           onClick={closeDrawer}
         >
-          Try Finseo for Free
+          Get started
         </Link>
         <Link
           href="https://app.finseo.ai/signin"
@@ -548,7 +548,7 @@ export function Navbar() {
                   className="bg-secondary h-8 hidden md:flex items-center justify-center text-sm font-normal tracking-wide rounded-md text-primary-foreground dark:text-secondary-foreground w-fit px-4 shadow-[inset_0_1px_2px_rgba(255,255,255,0.25),0_3px_3px_-1.5px_rgba(16,24,40,0.06),0_1px_1px_rgba(16,24,40,0.08)] border border-white/[0.12]"
                   href="https://app.finseo.ai/signup"
                 >
-                  Try for free
+                  Get started
                 </Link>
                 <Link
                   className="h-8 hidden md:flex items-center justify-center rounded-md border border-border hover:bg-accent transition-colors p-2"

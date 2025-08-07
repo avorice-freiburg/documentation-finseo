@@ -46,7 +46,7 @@ const pricingPlans = [
     description: "Perfect for freelancers and small businesses",
     suitableFor: "Ideal for bloggers, freelancers, and small websites",
     href: "https://app.finseo.ai/signup",
-    buttonText: "Start Free Trial",
+    buttonText: "Get started",
     isPopular: false,
     actionType: 'checkout',
     features: [
@@ -96,7 +96,7 @@ const pricingPlans = [
     description: "Best for growing businesses",
     suitableFor: "Perfect for small businesses, agencies, and growing websites",
     href: "https://app.finseo.ai/signup",
-    buttonText: "Start Free Trial",
+    buttonText: "Get started",
     isPopular: true,
     actionType: 'checkout',
     features: [
@@ -351,7 +351,7 @@ export function PricingSection() {
           AI Search Visibility Tool
         </h2>
         <p className="text-muted-foreground text-center text-balance font-medium">
-          🚀 Start Your 7-Day Free Trial
+          🚀 Get started today
         </p>
       </SectionHeader>
 

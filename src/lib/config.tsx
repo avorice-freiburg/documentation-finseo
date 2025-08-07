@@ -76,7 +76,7 @@ export const siteConfig = {
       "Optimize your content for both traditional search engines and AI platforms like ChatGPT, Claude, and Gemini. Track performance, discover keywords, and create content that ranks everywhere.",
     cta: {
       primary: {
-        text: "Try for Free",
+        text: "Get started",
         href: "https://app.finseo.ai/signup",
       },
       secondary: {
@@ -918,7 +918,7 @@ export const siteConfig = {
     title: "Improve Your AI Visibility Today",
     backgroundImage: "/agent-cta-background.png",
     button: {
-      text: "Start Your 7-Day Free Trial",
+      text: "Get started",
       href: "https://app.finseo.ai/signup",
     },
     subtext: "Monitor & optimize across all AI platforms",
