@@ -312,11 +312,11 @@ export function ThirdBentoAnimation({
             }}
             className="absolute top-12 left-1/2 -translate-x-1/2 flex items-center gap-3"
           >
-            <div className="w-12 h-12 rounded-lg bg-white shadow-md flex items-center justify-center">
+            <div className="w-12 h-12 md:w-14 md:h-14 rounded-lg md:rounded-xl bg-white shadow-md flex items-center justify-center aspect-square">
               <img 
                 src="/google.webp" 
                 alt="Google" 
-                className="w-8 h-8 object-contain"
+                className="w-8 h-8 md:w-10 md:h-10 object-contain"
               />
             </div>
             <span className="text-lg font-medium text-muted-foreground">Organic Traffic</span>
