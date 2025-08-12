@@ -119,30 +119,6 @@ export const pageMetadata: Record<string, PageMetadata> = {
     keywords: ["Pareto chart generator", "80/20 analysis", "Pareto diagram", "quality analysis chart", "AI Pareto chart"]
   },
 
-  // Alternative Pages
-  "ubersuggest-alternative": {
-    title: "Best Ubersuggest Alternative - Finseo AI SEO Tools",
-    description: "Looking for an Ubersuggest alternative? Finseo offers advanced AI-powered keyword research, content optimization, and rank tracking at competitive prices.",
-    keywords: ["Ubersuggest alternative", "keyword research alternative", "SEO tool alternative", "Ubersuggest competitor", "better than Ubersuggest"]
-  },
-
-  "semrush-alternative": {
-    title: "Best SEMrush Alternative - Affordable AI SEO Platform",
-    description: "Discover a powerful SEMrush alternative with Finseo. Get advanced SEO features, AI-powered insights, and better pricing for your digital marketing needs.",
-    keywords: ["SEMrush alternative", "SEO platform alternative", "digital marketing tools", "SEMrush competitor", "affordable SEO software"]
-  },
-
-  "peec-ai-alternative": {
-    title: "Best Peec AI Alternative - Advanced AI SEO Optimization",
-    description: "Find a superior Peec AI alternative with Finseo. Advanced generative engine optimization, AI content creation, and comprehensive SEO tools.",
-    keywords: ["Peec AI alternative", "AI SEO alternative", "generative engine optimization", "AI content optimization", "GEO tools"]
-  },
-
-  "otterly-ai-alternative": {
-    title: "Best Otterly AI Alternative - AI-Powered SEO Tools",
-    description: "Discover a powerful Otterly AI alternative. Finseo provides advanced AI SEO tools, content optimization, and rank tracking for better search visibility.",
-    keywords: ["Otterly AI alternative", "AI SEO tools", "search optimization", "AI marketing tools", "content optimization"]
-  },
 
   // Integration Pages
   "integrations/wordpress": {
