@@ -97,17 +97,19 @@ export const siteConfig = {
             className="h-8 w-auto object-contain invert dark:invert-0"
           />
         ),
+        href: "https://app.finseo.ai/signup",
       },
       {
         id: 2,
-        name: "Findling",
+        name: "Enpal",
         logo: (
           <img 
-            src="/findling-logo.svg" 
-            alt="Findling" 
-            className="h-12 w-auto object-contain invert dark:invert-0"
+            src="/enpal.png" 
+            alt="Enpal" 
+            className="h-8 w-auto object-contain invert dark:invert-0 mt-1"
           />
         ),
+        href: "https://enpal.de",
       },
       {
         id: 3,
@@ -119,6 +121,7 @@ export const siteConfig = {
             className="h-8 w-auto object-contain invert dark:invert-0"
           />
         ),
+        href: "https://app.finseo.ai/signup",
       },
       {
         id: 4,
@@ -130,6 +133,7 @@ export const siteConfig = {
             className="h-8 w-auto object-contain invert dark:invert-0"
           />
         ),
+        href: "https://app.finseo.ai/signup",
       },
     ],
   },
