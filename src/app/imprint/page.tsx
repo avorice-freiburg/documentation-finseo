@@ -18,6 +18,11 @@ export default function ImprintPage() {
                 <p className="mb-2">74405 Gaildorf</p>
                 <p className="mb-4">Germany</p>
                 <p className="mb-2">E-Mail: <a href="mailto:info@finseo.ai" className="text-primary hover:underline">info@finseo.ai</a></p>
+                <div className="mt-4 pt-4 border-t border-border">
+                  <p className="mb-2"><strong>Handelsregister:</strong></p>
+                  <p className="mb-1">Amtsgericht Freiburg</p>
+                  <p className="mb-1">HRB 733795</p>
+                </div>
               </div>
             </section>
 
