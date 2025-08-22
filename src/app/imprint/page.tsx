@@ -13,6 +13,7 @@ export default function ImprintPage() {
               <h2 className="text-2xl font-semibold mb-4">Responsible for the content of this website</h2>
               <div className="bg-card border border-border rounded-lg p-6">
                 <p className="mb-2"><strong>Finseo GmbH</strong></p>
+                <p className="mb-2">Managing Director: David Mühlenweg</p>
                 <p className="mb-2">Max-Eyth-Straße 2</p>
                 <p className="mb-2">74405 Gaildorf</p>
                 <p className="mb-4">Germany</p>
