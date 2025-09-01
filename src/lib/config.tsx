@@ -125,12 +125,12 @@ export const siteConfig = {
       },
       {
         id: 4,
-        name: "True Nature",
+        name: "Findling",
         logo: (
           <img 
-            src="/truenature.svg" 
-            alt="True Nature" 
-            className="h-8 w-auto object-contain invert dark:invert-0"
+            src="/findling-logo.svg" 
+            alt="Findling" 
+            className="h-14 mt-1 w-auto object-contain invert dark:invert-0"
           />
         ),
         href: "https://app.finseo.ai/signup",

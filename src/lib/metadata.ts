@@ -64,23 +64,12 @@ export const pageMetadata: Record<string, PageMetadata> = {
     keywords: ["AI visibility tracking", "AI rank tracking", "ChatGPT ranking", "AI platform monitoring", "generative search tracking", "brand mention tracking", "AI search monitoring", "Claude visibility", "Gemini tracking", "Perplexity monitoring", "AI sentiment analysis", "competitor AI analysis"]
   },
 
-  "ai-article-writer": {
-    title: "AI Article Writer - Generate SEO-Optimized Content Instantly",
-    description: "Create high-quality, SEO-optimized articles with our AI article writer. Generate content for blogs, websites, and marketing campaigns in minutes.",
-    keywords: ["AI article writer", "AI content generator", "SEO content creation", "automated writing", "AI blog writer"]
-  },
-
   "keyword-research": {
     title: "AI Keyword Research Tool - Find High-Impact Keywords",
     description: "Discover profitable keywords with our AI-powered keyword research tool. Analyze search volume, competition, and AI platform opportunities across 115+ languages.",
     keywords: ["keyword research tool", "AI keyword research", "SEO keyword finder", "keyword analysis", "search volume tool"]
   },
 
-  "backlink-checker": {
-    title: "Backlink Checker - Analyze Your Link Profile & Competitors",
-    description: "Comprehensive backlink analysis tool. Check your backlinks, analyze competitors, find link opportunities, and monitor your link profile health.",
-    keywords: ["backlink checker", "link analysis tool", "competitor backlinks", "link building tool", "backlink monitor"]
-  },
 
   "onpage-checker": {
     title: "On-Page SEO Checker - Complete Website SEO Analysis",
@@ -88,50 +77,6 @@ export const pageMetadata: Record<string, PageMetadata> = {
     keywords: ["on-page SEO checker", "SEO analysis tool", "website SEO audit", "technical SEO checker", "SEO optimization tool"]
   },
 
-  "accessibility-checker": {
-    title: "Website Accessibility Checker - WCAG Compliance Tool",
-    description: "Ensure your website meets accessibility standards with our comprehensive checker. WCAG compliance analysis, automated testing, and detailed reports.",
-    keywords: ["accessibility checker", "WCAG compliance", "website accessibility", "accessibility audit", "ADA compliance tool"]
-  },
-
-  // Chart Generator Pages
-  "ai-chart-generator": {
-    title: "AI Chart Generator - Create Beautiful Charts & Visualizations",
-    description: "Generate stunning charts and data visualizations with AI. Create pie charts, line graphs, bar charts, and more from simple text descriptions. Free to use!",
-    keywords: ["AI chart generator", "data visualization tool", "chart maker", "graph generator", "AI data charts"]
-  },
-
-  "pie-chart-generator": {
-    title: "AI Pie Chart Generator - Create Pie Charts Instantly",
-    description: "Generate beautiful pie charts with AI. Simply describe your data and create professional pie charts for presentations, reports, and websites. Free tool!",
-    keywords: ["pie chart generator", "AI pie chart", "pie chart maker", "data visualization", "chart creator"]
-  },
-
-  "line-chart-generator": {
-    title: "AI Line Chart Generator - Create Line Graphs Instantly",
-    description: "Create professional line charts and graphs with AI. Perfect for showing trends, time series data, and comparisons. Generate line charts from text descriptions.",
-    keywords: ["line chart generator", "AI line graph", "trend chart maker", "time series visualization", "line graph creator"]
-  },
-
-  "pareto-chart-generator": {
-    title: "AI Pareto Chart Generator - 80/20 Analysis Charts",
-    description: "Generate Pareto charts for 80/20 analysis with AI. Identify the most important factors in your data with professional Pareto diagrams and visualizations.",
-    keywords: ["Pareto chart generator", "80/20 analysis", "Pareto diagram", "quality analysis chart", "AI Pareto chart"]
-  },
-
-
-  // Integration Pages
-  "integrations/wordpress": {
-    title: "WordPress SEO Integration - Finseo Plugin & Tools",
-    description: "Seamlessly integrate Finseo with WordPress. Optimize your WordPress site with AI-powered SEO tools, content generation, and automated optimization.",
-    keywords: ["WordPress SEO", "WordPress integration", "WordPress SEO plugin", "WordPress optimization", "WordPress AI tools"]
-  },
-
-  "integrations/webflow": {
-    title: "Webflow SEO Integration - Finseo CMS Publishing",
-    description: "Connect Finseo with Webflow for seamless content publishing and SEO optimization. Automate your Webflow SEO workflow with AI-powered tools.",
-    keywords: ["Webflow SEO", "Webflow integration", "Webflow CMS", "Webflow optimization", "Webflow publishing"]
-  },
 
   // Resource Pages
   blog: {
@@ -170,13 +115,6 @@ export const pageMetadata: Record<string, PageMetadata> = {
     description: "Legal information and contact details for Finseo. Company information, registered address, and legal compliance details.",
     keywords: ["imprint", "legal information", "company details", "contact information", "legal compliance"]
   },
-
-  // Utility Pages
-  "indexnow-submit": {
-    title: "IndexNow Submit Tool - Instant Search Engine Indexing",
-    description: "Submit your URLs to search engines instantly with IndexNow. Fast indexing for Bing, Yandex, and other search engines. Free IndexNow submission tool.",
-    keywords: ["IndexNow", "instant indexing", "search engine submission", "URL indexing", "IndexNow tool"]
-  }
 };
 
 // Helper function to get metadata for a specific page
