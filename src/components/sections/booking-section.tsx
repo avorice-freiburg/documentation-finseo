@@ -35,19 +35,15 @@ export function BookingSection() {
         }; 
       })(window, "https://app.cal.com/embed/embed.js", "init");
       
-      Cal("init", "30min", {origin:"https://app.cal.com"});
+      Cal("init", "demo", {origin:"https://app.cal.com"});
 
-      Cal.ns["30min"]("inline", {
-        elementOrSelector:"#my-cal-inline-30min",
+      Cal.ns.demo("inline", {
+        elementOrSelector:"#my-cal-inline-demo",
         config: {"layout":"month_view"},
-        calLink: "finseo/30min",
+        calLink: "team/finseo/demo",
       });
 
-      Cal.ns["30min"]("ui", {
-        "cssVarsPerTheme":{"light":{"cal-brand":"#0eca7b"}},
-        "hideEventTypeDetails":false,
-        "layout":"month_view"
-      });
+      Cal.ns.demo("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#060607"},"dark":{"cal-brand":"#fafafa"}},"hideEventTypeDetails":false,"layout":"month_view"});
     `;
     
     document.head.appendChild(script);
@@ -73,7 +69,7 @@ export function BookingSection() {
         <div className="w-full h-[600px] rounded-lg overflow-hidden">
           <div 
             style={{width: '100%', height: '100%', overflow: 'scroll'}} 
-            id="my-cal-inline-30min"
+            id="my-cal-inline-demo"
           />
         </div>
       </div>

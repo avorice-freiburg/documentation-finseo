@@ -17,35 +17,27 @@ export function BentoSection() {
   useEffect(() => {
     // Load Cal.com script and initialize
     const script = document.createElement('script');
-    script.src = 'https://app.cal.com/embed/embed.js';
-    script.async = true;
+    script.type = 'text/javascript';
+    script.innerHTML = `
+      (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+      Cal("init", "demo", {origin:"https://app.cal.com"});
+
+      Cal.ns.demo("inline", {
+        elementOrSelector:"#my-cal-inline-demo",
+        config: {"layout":"month_view"},
+        calLink: "team/finseo/demo",
+      });
+
+      Cal.ns.demo("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#060607"},"dark":{"cal-brand":"#fafafa"}},"hideEventTypeDetails":false,"layout":"month_view"});
+    `;
+    
     document.head.appendChild(script);
-
-    script.onload = () => {
-      // Initialize Cal.com
-      if (window.Cal) {
-        window.Cal("init", "30min", {origin:"https://app.cal.com"});
-
-        window.Cal.ns["30min"]("inline", {
-          elementOrSelector:"#my-cal-inline-30min",
-          config: {"layout":"month_view"},
-          calLink: "finseo/30min",
-        });
-
-        window.Cal.ns["30min"]("ui", {
-          "cssVarsPerTheme":{
-            "light":{"cal-brand":"#0eca7b", "cal-bg-muted": "#131920"},
-            "dark":{"cal-brand":"#0eca7b", "cal-bg-muted": "#131920"}
-          },
-          "hideEventTypeDetails":false,
-          "layout":"month_view"
-        });
-      }
-    };
 
     return () => {
       // Cleanup script on unmount
-      document.head.removeChild(script);
+      if (document.head.contains(script)) {
+        document.head.removeChild(script);
+      }
     };
   }, []);
 
@@ -103,7 +95,7 @@ export function BentoSection() {
           {/* Cal.com inline embed */}
           <div className="max-w-7xl mx-auto w-full px-4">
             <div className="w-full h-[600px] rounded-lg border border-border/30 overflow-hidden bg-background">
-              <div style={{width:'100%',height:'100%',overflow:'scroll'}} id="my-cal-inline-30min"></div>
+              <div style={{width:'100%',height:'100%',overflow:'scroll'}} id="my-cal-inline-demo"></div>
             </div>
           </div>
         </div>

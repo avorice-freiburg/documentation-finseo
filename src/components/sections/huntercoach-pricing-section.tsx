@@ -270,43 +270,10 @@ export function HuntercoachPricingSection() {
     const script = document.createElement('script');
     script.type = 'text/javascript';
     script.innerHTML = `
-      (function (C, A, L) { 
-        let p = function (a, ar) { a.q.push(ar); }; 
-        let d = C.document; 
-        C.Cal = C.Cal || function () { 
-          let cal = C.Cal; 
-          let ar = arguments; 
-          if (!cal.loaded) { 
-            cal.ns = {}; 
-            cal.q = cal.q || []; 
-            d.head.appendChild(d.createElement("script")).src = A; 
-            cal.loaded = true; 
-          } 
-          if (ar[0] === L) { 
-            const api = function () { p(api, arguments); }; 
-            const namespace = ar[1]; 
-            api.q = api.q || []; 
-            if(typeof namespace === "string"){
-              cal.ns[namespace] = cal.ns[namespace] || api;
-              p(cal.ns[namespace], ar);
-              p(cal, ["initNamespace", namespace]);
-            } else p(cal, ar); 
-            return;
-          } 
-          p(cal, ar); 
-        }; 
-      })(window, "https://app.cal.com/embed/embed.js", "init");
-      
-      Cal("init", "30min", {origin:"https://app.cal.com"});
+      (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+      Cal("init", "finseo-demo", {origin:"https://app.cal.com"});
 
-      Cal.ns["30min"]("ui", {
-        "cssVarsPerTheme":{
-          "light":{"cal-brand":"#0eca7b"},
-          "dark":{"cal-brand":"#0eca7b"}
-        },
-        "hideEventTypeDetails":false,
-        "layout":"month_view"
-      });
+      Cal.ns["finseo-demo"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#060607"},"dark":{"cal-brand":"#fafafa"}},"hideEventTypeDetails":false,"layout":"month_view"});
     `;
     
     document.head.appendChild(script);
@@ -331,8 +298,8 @@ export function HuntercoachPricingSection() {
     if (isBookDemo) {
       return (
         <button
-          data-cal-link="finseo/30min"
-          data-cal-namespace="30min"
+          data-cal-link="team/finseo/finseo-demo"
+          data-cal-namespace="finseo-demo"
           data-cal-config='{"layout":"month_view"}'
           className={cn(
             "w-full px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 flex items-center justify-center cursor-pointer gap-2",
@@ -544,8 +511,8 @@ export function HuntercoachPricingSection() {
 
                 {/* CTA Button */}
                 <button
-                  data-cal-link="finseo/30min"
-                  data-cal-namespace="30min"
+                  data-cal-link="team/finseo/finseo-demo"
+                  data-cal-namespace="finseo-demo"
                   data-cal-config='{"layout":"month_view"}'
                   className="w-full py-3 text-sm transition-all duration-200 border-0 flex items-center justify-center gap-2 bg-secondary text-secondary-foreground hover:bg-secondary/90 rounded-md cursor-pointer"
                 >
