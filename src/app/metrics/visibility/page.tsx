@@ -59,11 +59,11 @@ export default function VisibilityPage() {
           <section className="space-y-6 mb-12">
             <div className="rounded-lg border bg-card p-6">
               <div className="aspect-video bg-muted rounded-lg flex items-center justify-center">
-                <div className="text-center space-y-2">
-                  <div className="text-4xl">📊</div>
-                  <p className="text-sm text-muted-foreground">Visibility Dashboard Visualization</p>
-                  <p className="text-xs text-muted-foreground">[Image placeholder - showing visibility percentages across models]</p>
-                </div>
+                <img 
+                  src="/visibility.png" 
+                  alt="Visibility Analytics Dashboard" 
+                  className="w-full h-full object-contain rounded-lg"
+                />
               </div>
             </div>
           </section>

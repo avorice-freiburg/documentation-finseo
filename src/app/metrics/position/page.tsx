@@ -60,11 +60,11 @@ export default function PositionPage() {
           <section className="space-y-6 mb-12">
             <div className="rounded-lg border bg-card p-6">
               <div className="aspect-video bg-muted rounded-lg flex items-center justify-center">
-                <div className="text-center space-y-2">
-                  <div className="text-4xl">📍</div>
-                  <p className="text-sm text-muted-foreground">Position Tracking Dashboard</p>
-                  <p className="text-xs text-muted-foreground">[Image placeholder - showing position percentages and trends over time]</p>
-                </div>
+                <img 
+                  src="/position.png" 
+                  alt="Position Tracking Dashboard" 
+                  className="w-full h-full object-contain rounded-lg"
+                />
               </div>
             </div>
           </section>
@@ -169,14 +169,14 @@ export default function PositionPage() {
               <div className="rounded-lg border bg-card p-6">
                 <h4 className="font-semibold mb-4 flex items-center gap-2">
                   <div className="h-3 w-3 rounded-full bg-green-500"></div>
-                  Early Position (Position: 8%)
+                  Early Position (Position: 0.8%)
                 </h4>
                 <div className="bg-muted p-4 rounded text-sm mb-3">
                   <p className="mb-2"><strong>Response (125 words total):</strong></p>
                   <em>"<span className="bg-secondary/20 px-1 rounded">Finseo</span> is a leading SEO analytics platform that provides comprehensive keyword tracking and competitor analysis. The platform offers advanced features for monitoring your brand's performance across multiple AI models including ChatGPT, Perplexity, and Claude. With real-time data updates and intuitive dashboards, businesses can track their visibility, sentiment, and positioning metrics effectively. The tool also includes automated reporting features that help teams stay informed about their SEO performance trends and make data-driven decisions for their marketing strategies."</em>
                 </div>
                 <p className="text-sm text-muted-foreground">
-                  <strong>Analysis:</strong> Brand appears at word 10 out of 125 total words = 8% position (excellent early positioning).
+                  <strong>Analysis:</strong> Brand appears at word 1 out of 125 total words = 0.8% position (excellent early positioning).
                 </p>
               </div>
 

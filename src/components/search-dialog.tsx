@@ -46,7 +46,6 @@ const allPages = [
   { title: "Visibility Tracking", href: "/metrics/visibility", category: "Metrics" },
   { title: "Position Tracking", href: "/metrics/position", category: "Metrics" },
   { title: "Mentions & Citations", href: "/metrics/mentions", category: "Metrics" },
-  { title: "Synonyms Analysis", href: "/metrics/synonyms", category: "Metrics" },
   
   // Bot Traffic
   { title: "Bot Traffic Overview", href: "/bot-analytics", category: "Bot Traffic" },

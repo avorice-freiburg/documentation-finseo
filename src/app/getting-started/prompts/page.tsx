@@ -158,10 +158,11 @@ export default function PromptsPage() {
                     </p>
                     {/* Image Placeholder */}
                     <div className="rounded-lg border bg-muted/50 p-8 mb-4">
-                      <div className="flex flex-col items-center justify-center space-y-4">
-                        <PlusCircle className="h-16 w-16 text-muted-foreground/50" />
-                        <p className="text-sm text-muted-foreground text-center">Add Prompts Interface</p>
-                      </div>
+                      <img 
+                        src="/addprompt.png" 
+                        alt="Add Prompts Interface" 
+                        className="w-full h-full object-contain rounded-lg"
+                      />
                     </div>
                   </div>
                 </div>
@@ -260,10 +261,11 @@ export default function PromptsPage() {
                 </ul>
                 {/* Image Placeholder */}
                 <div className="rounded-lg border bg-muted/50 p-8 mt-4">
-                  <div className="flex flex-col items-center justify-center space-y-4">
-                    <Upload className="h-16 w-16 text-muted-foreground/50" />
-                    <p className="text-sm text-muted-foreground text-center">CSV Upload Interface</p>
-                  </div>
+                  <img 
+                    src="/csv.png" 
+                    alt="CSV Upload Interface" 
+                    className="w-full h-full object-contain rounded-lg"
+                  />
                 </div>
               </div>
             </div>

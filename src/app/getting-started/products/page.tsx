@@ -249,10 +249,11 @@ export default function ProductsPage() {
               
               {/* Image Placeholder */}
               <div className="rounded-lg border bg-muted/50 p-8 mb-6">
-                <div className="flex flex-col items-center justify-center space-y-4">
-                  <Package className="h-16 w-16 text-muted-foreground/50" />
-                  <p className="text-sm text-muted-foreground text-center">Product Analytics Dashboard</p>
-                </div>
+                <img 
+                  src="/products.png" 
+                  alt="Product Analytics Dashboard" 
+                  className="w-full h-full object-contain rounded-lg"
+                />
               </div>
               
               <div className="grid gap-4 md:grid-cols-2">
@@ -385,10 +386,11 @@ export default function ProductsPage() {
                   </ul>
                   {/* Image Placeholder */}
                   <div className="rounded-lg border bg-muted/50 p-8 mt-4">
-                    <div className="flex flex-col items-center justify-center space-y-4">
-                      <BarChart3 className="h-16 w-16 text-muted-foreground/50" />
-                      <p className="text-sm text-muted-foreground text-center">Product Performance Timeline</p>
-                    </div>
+                    <img 
+                      src="/price.png" 
+                      alt="Price Analysis - Distributed Price Ranges" 
+                      className="w-full h-full object-contain rounded-lg"
+                    />
                   </div>
                 </div>
               </div>

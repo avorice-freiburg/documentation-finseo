@@ -126,7 +126,7 @@ export default function MetricsPage() {
               </p>
               <ol className="list-decimal list-inside space-y-2 text-muted-foreground">
                 <li>Set up your project with the prompts you want to track</li>
-                <li>Configure your brand synonyms in <Link href="/metrics/synonyms" className="text-secondary hover:underline">project settings</Link></li>
+                <li>Configure your brand synonyms in <Link href="/getting-started/synonyms" className="text-secondary hover:underline">project settings</Link></li>
                 <li>Select the AI models you want to monitor (ChatGPT, Perplexity, Claude, Google AI Overview)</li>
                 <li>Wait for data collection to begin - metrics update regularly</li>
                 <li>Analyze your performance across all four metric types</li>

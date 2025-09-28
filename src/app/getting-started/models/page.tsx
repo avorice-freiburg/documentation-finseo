@@ -251,10 +251,11 @@ export default function ModelsPage() {
                     </p>
                     {/* Image Placeholder */}
                     <div className="rounded-lg border bg-muted/50 p-8 mb-4">
-                      <div className="flex flex-col items-center justify-center space-y-4">
-                        <Settings className="h-16 w-16 text-muted-foreground/50" />
-                        <p className="text-sm text-muted-foreground text-center">Models Selection Interface</p>
-                      </div>
+                      <img 
+                        src="/models.png" 
+                        alt="Models Selection Interface" 
+                        className="w-full h-full object-contain rounded-lg"
+                      />
                     </div>
                   </div>
                 </div>

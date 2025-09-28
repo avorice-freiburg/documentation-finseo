@@ -149,10 +149,11 @@ export default function CompetitorsPage() {
               
               {/* Image Placeholder */}
               <div className="rounded-lg border bg-muted/50 p-8 mb-6">
-                <div className="flex flex-col items-center justify-center space-y-4">
-                  <BarChart3 className="h-16 w-16 text-muted-foreground/50" />
-                  <p className="text-sm text-muted-foreground text-center">Competitor Dashboard Overview</p>
-                </div>
+                <img 
+                  src="/competitor.png" 
+                  alt="Competitor Dashboard Overview" 
+                  className="w-full h-full object-contain rounded-lg"
+                />
               </div>
               
               <div className="grid gap-4 md:grid-cols-2">
@@ -233,10 +234,11 @@ export default function CompetitorsPage() {
                     </p>
                     {/* Image Placeholder */}
                     <div className="rounded-lg border bg-muted/50 p-8 mb-4">
-                      <div className="flex flex-col items-center justify-center space-y-4">
-                        <Star className="h-16 w-16 text-muted-foreground/50" />
-                        <p className="text-sm text-muted-foreground text-center">Key Competitor Selection</p>
-                      </div>
+                      <img 
+                        src="/mylist.png" 
+                        alt="Key Competitor Selection" 
+                        className="w-full h-full object-contain rounded-lg"
+                      />
                     </div>
                   </div>
                 </div>
@@ -253,10 +255,11 @@ export default function CompetitorsPage() {
                     </p>
                     {/* Image Placeholder */}
                     <div className="rounded-lg border bg-muted/50 p-8 mb-4">
-                      <div className="flex flex-col items-center justify-center space-y-4">
-                        <BarChart3 className="h-16 w-16 text-muted-foreground/50" />
-                        <p className="text-sm text-muted-foreground text-center">Comparison Charts</p>
-                      </div>
+                      <img 
+                        src="/competitor-comparison.png" 
+                        alt="Comparison Charts" 
+                        className="w-full h-full object-contain rounded-lg"
+                      />
                     </div>
                   </div>
                 </div>

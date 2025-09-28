@@ -59,11 +59,11 @@ export default function SentimentPage() {
           <section className="space-y-6 mb-12">
             <div className="rounded-lg border bg-card p-6">
               <div className="aspect-video bg-muted rounded-lg flex items-center justify-center">
-                <div className="text-center space-y-2">
-                  <div className="text-4xl">😊</div>
-                  <p className="text-sm text-muted-foreground">Sentiment Analysis Dashboard</p>
-                  <p className="text-xs text-muted-foreground">[Image placeholder - showing sentiment scores and trends]</p>
-                </div>
+                <img 
+                  src="/sentiment.png" 
+                  alt="Sentiment Analysis Dashboard" 
+                  className="w-full h-full object-contain rounded-lg"
+                />
               </div>
             </div>
           </section>

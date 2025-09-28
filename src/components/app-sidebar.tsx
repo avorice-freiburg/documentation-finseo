@@ -11,6 +11,9 @@ import {
   GalleryVerticalEnd,
   PieChart,
   Users,
+  LayoutDashboard,
+  Globe,
+  Mail,
 } from "lucide-react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
@@ -78,10 +81,6 @@ const data = {
         {
           title: "Mentions",
           url: "/metrics/mentions",
-        },
-        {
-          title: "Synonyms",
-          url: "/metrics/synonyms",
         },
       ],
     },
@@ -154,17 +153,17 @@ const data = {
     {
       name: "Dashboard",
       url: "https://app.finseo.ai",
-      icon: PieChart,
+      icon: LayoutDashboard,
     },
     {
       name: "Website",
       url: "https://www.finseo.ai",
-      icon: Frame,
+      icon: Globe,
     },
     {
       name: "Contact",
       url: "https://www.finseo.ai/contact",
-      icon: AudioWaveform,
+      icon: Mail,
     },
   ],
 }

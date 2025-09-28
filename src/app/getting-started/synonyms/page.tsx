@@ -60,11 +60,11 @@ export default function SynonymsPage() {
           <section className="space-y-6 mb-12">
             <div className="rounded-lg border bg-card p-6">
               <div className="aspect-video bg-muted rounded-lg flex items-center justify-center">
-                <div className="text-center space-y-2">
-                  <div className="text-4xl">🔗</div>
-                  <p className="text-sm text-muted-foreground">Synonym Configuration Interface</p>
-                  <p className="text-xs text-muted-foreground">[Image placeholder - showing synonym setup dashboard]</p>
-                </div>
+                <img 
+                  src="/synonyms.png" 
+                  alt="Synonym Configuration Interface" 
+                  className="w-full h-full object-contain rounded-lg"
+                />
               </div>
             </div>
           </section>
