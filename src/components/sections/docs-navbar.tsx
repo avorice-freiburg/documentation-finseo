@@ -67,7 +67,6 @@ export function DocsNavbar() {
 
         {/* Action buttons and Theme toggle */}
         <div className="ml-auto flex items-center gap-2">
-          {/* Get Started button - hidden on mobile */}
           <Button 
             asChild 
             className="hidden sm:flex bg-[#0eca7b] hover:bg-[#0eca7b]/90 text-gray-900 border-0 rounded-sm"
