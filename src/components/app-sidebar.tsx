@@ -14,6 +14,7 @@ import {
   LayoutDashboard,
   Globe,
   Mail,
+  Lightbulb,
 } from "lucide-react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
@@ -147,6 +148,11 @@ const data = {
       title: "Human Traffic",
       url: "/human-traffic",
       icon: Users,
+    },
+    {
+      title: "Prompt Research",
+      url: "/prompt-research",
+      icon: Lightbulb,
     },
   ],
   projects: [
