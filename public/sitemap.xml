@@ -1,162 +1,176 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Main Pages -->
+  <!-- Main Documentation Page -->
   <url>
-    <loc>https://finseo.ai/</loc>
-    <lastmod>2024-01-15</lastmod>
+    <loc>https://docs.finseo.ai/</loc>
+    <lastmod>2025-10-01</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
   </url>
   
+  <!-- Getting Started Pages -->
   <url>
-    <loc>https://finseo.ai/pricing</loc>
-    <lastmod>2024-01-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  
-  <!-- Company Pages -->
-  <url>
-    <loc>https://finseo.ai/for-agencies</loc>
-    <lastmod>2024-01-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>https://finseo.ai/for-enterprise</loc>
-    <lastmod>2024-01-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>https://finseo.ai/for-smbs</loc>
-    <lastmod>2024-01-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>https://finseo.ai/for-entrepreneurs</loc>
-    <lastmod>2024-01-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>https://finseo.ai/careers</loc>
-    <lastmod>2024-01-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <!-- Feature Pages -->
-  <url>
-    <loc>https://finseo.ai/ai-visibility-tracking</loc>
-    <lastmod>2024-01-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>https://finseo.ai/ai-article-writer</loc>
-    <lastmod>2024-01-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>https://finseo.ai/keyword-research</loc>
-    <lastmod>2024-01-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>https://finseo.ai/backlink-checker</loc>
-    <lastmod>2024-01-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>https://finseo.ai/onpage-checker</loc>
-    <lastmod>2024-01-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>https://finseo.ai/accessibility-checker</loc>
-    <lastmod>2024-01-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <!-- Chart Generator Pages -->
-  <url>
-    <loc>https://finseo.ai/ai-chart-generator</loc>
-    <lastmod>2024-01-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://finseo.ai/pie-chart-generator</loc>
-    <lastmod>2024-01-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://finseo.ai/line-chart-generator</loc>
-    <lastmod>2024-01-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://finseo.ai/pareto-chart-generator</loc>
-    <lastmod>2024-01-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <!-- Integration Pages -->
-  <url>
-    <loc>https://finseo.ai/integrations/wordpress</loc>
-    <lastmod>2024-01-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://finseo.ai/integrations/webflow</loc>
-    <lastmod>2024-01-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <!-- Resource Pages -->
-  <url>
-    <loc>https://finseo.ai/blog</loc>
-    <lastmod>2024-01-15</lastmod>
+    <loc>https://docs.finseo.ai/getting-started/synonyms</loc>
+    <lastmod>2025-10-01</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://finseo.ai/support</loc>
-    <lastmod>2024-01-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <loc>https://docs.finseo.ai/getting-started/models</loc>
+    <lastmod>2025-10-01</lastmod>
+    <changefreq>weekly</changefreq>
   </url>
   
   <url>
-    <loc>https://finseo.ai/seo-ai-affiliate-program</loc>
-    <lastmod>2024-01-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <loc>https://docs.finseo.ai/getting-started/prompts</loc>
+    <lastmod>2025-10-01</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  
+  <url>
+    <loc>https://docs.finseo.ai/getting-started/competitors</loc>
+    <lastmod>2025-10-01</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  
+  <url>
+    <loc>https://docs.finseo.ai/getting-started/sources</loc>
+    <lastmod>2025-10-01</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  
+  <url>
+    <loc>https://docs.finseo.ai/getting-started/products</loc>
+    <lastmod>2025-10-01</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  
+  <!-- Metrics Pages -->
+  <url>
+    <loc>https://docs.finseo.ai/metrics</loc>
+    <lastmod>2025-10-01</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  
+  <url>
+    <loc>https://docs.finseo.ai/metrics/visibility</loc>
+    <lastmod>2025-10-01</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  
+  <url>
+    <loc>https://docs.finseo.ai/metrics/sentiment</loc>
+    <lastmod>2025-10-01</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  
+  <url>
+    <loc>https://docs.finseo.ai/metrics/position</loc>
+    <lastmod>2025-10-01</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  
+  <url>
+    <loc>https://docs.finseo.ai/metrics/mentions</loc>
+    <lastmod>2025-10-01</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  
+  <url>
+    <loc>https://docs.finseo.ai/metrics/synonyms</loc>
+    <lastmod>2025-10-01</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  
+  <!-- Bot Analytics Pages -->
+  <url>
+    <loc>https://docs.finseo.ai/bot-analytics</loc>
+    <lastmod>2025-10-01</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  
+  <url>
+    <loc>https://docs.finseo.ai/bot-analytics/siteground</loc>
+    <lastmod>2025-10-01</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  
+  <url>
+    <loc>https://docs.finseo.ai/bot-analytics/bluehost</loc>
+    <lastmod>2025-10-01</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  
+  <url>
+    <loc>https://docs.finseo.ai/bot-analytics/godaddy</loc>
+    <lastmod>2025-10-01</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  
+  <url>
+    <loc>https://docs.finseo.ai/bot-analytics/hostinger</loc>
+    <lastmod>2025-10-01</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  
+  <url>
+    <loc>https://docs.finseo.ai/bot-analytics/raidboxes</loc>
+    <lastmod>2025-10-01</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  
+  <url>
+    <loc>https://docs.finseo.ai/bot-analytics/strato</loc>
+    <lastmod>2025-10-01</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  
+  <url>
+    <loc>https://docs.finseo.ai/bot-analytics/cloudflare</loc>
+    <lastmod>2025-10-01</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  
+  <url>
+    <loc>https://docs.finseo.ai/bot-analytics/fastly</loc>
+    <lastmod>2025-10-01</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  
+  <url>
+    <loc>https://docs.finseo.ai/bot-analytics/shopify</loc>
+    <lastmod>2025-10-01</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  
+  <url>
+    <loc>https://docs.finseo.ai/bot-analytics/webflow</loc>
+    <lastmod>2025-10-01</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  
+  <url>
+    <loc>https://docs.finseo.ai/bot-analytics/cpanel</loc>
+    <lastmod>2025-10-01</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  
+  <url>
+    <loc>https://docs.finseo.ai/bot-analytics/plesk</loc>
+    <lastmod>2025-10-01</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  
+  <!-- Human Traffic Page -->
+  <url>
+    <loc>https://docs.finseo.ai/human-traffic</loc>
+    <lastmod>2025-10-01</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  
+  <!-- Prompt Research Page -->
+  <url>
+    <loc>https://docs.finseo.ai/prompt-research</loc>
+    <lastmod>2025-10-01</lastmod>
+    <changefreq>weekly</changefreq>
   </url>
 </urlset> 
