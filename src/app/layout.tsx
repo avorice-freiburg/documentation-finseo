@@ -24,11 +24,43 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteConfig.url),
-  ...getPageMetadata('home'),
+  metadataBase: new URL("https://docs.finseo.ai"),
   title: {
-    default: "Finseo - AI-Powered SEO Tools for Next-Gen Search Optimization",
-    template: `%s | Finseo`,
+    default: "Finseo Documentation - AI Visibility Tracking & Analytics",
+    template: `%s | Finseo Docs`,
+  },
+  description: "Official documentation for Finseo.ai - Learn how to track and optimize your visibility across AI-powered search platforms including ChatGPT, Claude, Perplexity, and more.",
+  keywords: ["Finseo documentation", "AI visibility tracking", "ChatGPT SEO", "AI search optimization", "bot analytics", "AI metrics", "generative engine optimization"],
+  authors: [
+    {
+      name: "Finseo",
+      url: "https://finseo.ai",
+    },
+  ],
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://docs.finseo.ai",
+    title: "Finseo Documentation - AI Visibility Tracking & Analytics",
+    description: "Official documentation for Finseo.ai - Learn how to track and optimize your visibility across AI-powered search platforms.",
+    siteName: "Finseo Docs",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Finseo Documentation",
+    description: "Official documentation for Finseo.ai - Learn how to track and optimize your visibility across AI-powered search platforms.",
+    creator: "@finseo_ai",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 
@@ -37,29 +69,34 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Documentation schema for docs.finseo.ai
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "Finseo",
-    "description": "AI-powered SEO tools for next-generation search optimization. Optimize for Google, ChatGPT, Claude & AI platforms with advanced keyword research, rank tracking, and content generation.",
-    "url": "https://finseo.ai",
-    "applicationCategory": "SEO Software",
-    "operatingSystem": "Web",
-    "offers": {
-      "@type": "Offer",
-      "price": "29",
-      "priceCurrency": "USD",
-      "priceValidUntil": "2024-12-31"
+    "@type": "TechArticle",
+    "headline": "Finseo Documentation - AI Visibility Tracking Platform",
+    "description": "Official technical documentation for Finseo.ai - Track and optimize your visibility in AI-powered search results including ChatGPT, Claude, Perplexity, and other AI platforms.",
+    "url": "https://docs.finseo.ai",
+    "isPartOf": {
+      "@type": "SoftwareApplication",
+      "name": "Finseo",
+      "url": "https://finseo.ai",
+      "applicationCategory": "SEO Software"
+    },
+    "about": {
+      "@type": "SoftwareApplication",
+      "name": "Finseo",
+      "description": "AI visibility tracking and optimization platform for monitoring brand presence across AI-powered search engines and chat systems.",
+      "url": "https://finseo.ai"
     },
     "author": {
       "@type": "Organization",
       "name": "Finseo",
       "url": "https://finseo.ai"
     },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.8",
-      "ratingCount": "15"
+    "publisher": {
+      "@type": "Organization",
+      "name": "Finseo",
+      "url": "https://finseo.ai"
     }
   };
 

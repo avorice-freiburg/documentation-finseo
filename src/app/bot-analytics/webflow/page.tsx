@@ -5,6 +5,8 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 import { Badge } from "@/components/ui/badge"
+import { generateMetadata as getPageMetadata } from "@/lib/metadata"
+import { Metadata } from "next"
 import { 
   Layout, 
   Download, 
@@ -18,6 +20,8 @@ import {
   Terminal,
   FileText
 } from "lucide-react"
+
+export const metadata: Metadata = getPageMetadata('bot-analytics-webflow');
 
 const breadcrumbItems = [
   { label: "Documentation", href: "/" },

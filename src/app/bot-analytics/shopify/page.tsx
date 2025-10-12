@@ -5,6 +5,8 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 import { Badge } from "@/components/ui/badge"
+import { generateMetadata as getPageMetadata } from "@/lib/metadata"
+import { Metadata } from "next"
 import { 
   ShoppingCart, 
   Download, 
@@ -18,6 +20,8 @@ import {
   Activity,
   BarChart3
 } from "lucide-react"
+
+export const metadata: Metadata = getPageMetadata('bot-analytics-shopify');
 
 const breadcrumbItems = [
   { label: "Documentation", href: "/" },

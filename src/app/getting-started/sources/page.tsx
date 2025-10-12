@@ -17,6 +17,10 @@ import {
   BookOpen,
   Target
 } from "lucide-react"
+import { generateMetadata as getPageMetadata } from "@/lib/metadata"
+import { Metadata } from "next"
+
+export const metadata: Metadata = getPageMetadata('getting-started-sources');
 
 const breadcrumbItems = [
   { label: "Documentation", href: "/" },

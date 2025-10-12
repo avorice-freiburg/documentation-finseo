@@ -16,6 +16,10 @@ import {
   Lightbulb,
   Target
 } from "lucide-react"
+import { generateMetadata as getPageMetadata } from "@/lib/metadata"
+import { Metadata } from "next"
+
+export const metadata: Metadata = getPageMetadata('getting-started-prompts');
 
 const breadcrumbItems = [
   { label: "Documentation", href: "/" },

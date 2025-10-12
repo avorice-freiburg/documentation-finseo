@@ -4,6 +4,10 @@ import { TableOfContents } from "@/components/table-of-contents"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import Link from "next/link"
 import { ArrowRight, Bot, BarChart3, Users, Zap, Target, Globe } from "lucide-react"
+import { generateMetadata as getPageMetadata } from "@/lib/metadata"
+import { Metadata } from "next"
+
+export const metadata: Metadata = getPageMetadata('home');
 
 const tocItems = [
   { id: "introduction", title: "Introduction", level: 2 },

@@ -4,6 +4,8 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
+import { generateMetadata as getPageMetadata } from "@/lib/metadata"
+import { Metadata } from "next"
 import { 
   Bot, 
   BarChart3, 
@@ -20,6 +22,8 @@ import {
   Globe,
   Zap
 } from "lucide-react"
+
+export const metadata: Metadata = getPageMetadata('bot-analytics');
 
 const breadcrumbItems = [
   { label: "Documentation", href: "/" },

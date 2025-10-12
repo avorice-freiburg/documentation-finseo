@@ -2,6 +2,10 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { TableOfContents } from "@/components/table-of-contents"
 import Link from "next/link"
 import { CheckCircle, XCircle } from "lucide-react"
+import { generateMetadata as getPageMetadata } from "@/lib/metadata"
+import { Metadata } from "next"
+
+export const metadata: Metadata = getPageMetadata('metrics-synonyms');
 
 const breadcrumbItems = [
   { label: "Documentation", href: "/" },

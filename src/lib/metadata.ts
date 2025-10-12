@@ -7,11 +7,178 @@ export interface PageMetadata {
 }
 
 export const pageMetadata: Record<string, PageMetadata> = {
-  // Main Pages
+  // Documentation Home
   home: {
-    title: "Finseo - AI-Powered SEO Tools for Next-Gen Search Optimization",
-    description: "Optimize your content for Google, ChatGPT, Claude & AI platforms. Advanced keyword research, rank tracking, content generation & SEO tools. Start free today!",
-    keywords: ["AI SEO tools", "generative engine optimization", "ChatGPT SEO", "AI content optimization", "keyword research", "rank tracking"]
+    title: "Finseo Documentation - AI Visibility Tracking Guide",
+    description: "Complete guide to tracking and optimizing your visibility across AI-powered search platforms. Learn how to monitor ChatGPT, Claude, Perplexity, and more with Finseo's AI analytics.",
+    keywords: ["Finseo documentation", "AI visibility tracking", "ChatGPT analytics", "AI search monitoring", "bot analytics guide", "AI metrics tracking"]
+  },
+  
+  // Getting Started Pages
+  "getting-started-synonyms": {
+    title: "Brand Synonyms Setup - Finseo Documentation",
+    description: "Learn how to configure brand name variations and synonyms in Finseo to ensure comprehensive tracking across all AI visibility metrics.",
+    keywords: ["brand synonyms", "Finseo setup", "brand variations", "AI tracking configuration", "synonym setup"]
+  },
+  
+  "getting-started-models": {
+    title: "AI Models Configuration - Finseo Documentation",
+    description: "Configure which AI models to track in Finseo. Monitor ChatGPT, Claude, Gemini, Perplexity, and other AI platforms for brand visibility.",
+    keywords: ["AI models", "ChatGPT tracking", "Claude monitoring", "Perplexity analytics", "AI platform selection"]
+  },
+  
+  "getting-started-prompts": {
+    title: "Prompt Research & Setup - Finseo Documentation",
+    description: "Create effective AI search queries and prompts to track your brand visibility. Learn best practices for prompt optimization in Finseo.",
+    keywords: ["prompt research", "AI search queries", "prompt optimization", "search intent tracking", "query configuration"]
+  },
+  
+  "getting-started-competitors": {
+    title: "Competitor Tracking Setup - Finseo Documentation",
+    description: "Monitor competitive positioning in AI search results. Learn how to track competitors and analyze comparative brand performance.",
+    keywords: ["competitor tracking", "competitive analysis", "AI competitor monitoring", "brand comparison", "competitive positioning"]
+  },
+  
+  "getting-started-sources": {
+    title: "Source Tracking Configuration - Finseo Documentation",
+    description: "Monitor which sources AI platforms cite when mentioning your brand. Track citation patterns and source attribution.",
+    keywords: ["source tracking", "citation monitoring", "AI sources", "content attribution", "reference tracking"]
+  },
+  
+  "getting-started-products": {
+    title: "Product Tracking Setup - Finseo Documentation",
+    description: "Configure product-level tracking to monitor how AI platforms mention and recommend your products and services.",
+    keywords: ["product tracking", "product mentions", "AI recommendations", "product visibility", "service tracking"]
+  },
+  
+  // Metrics Pages
+  "metrics": {
+    title: "AI Metrics Overview - Finseo Documentation",
+    description: "Comprehensive guide to Finseo's AI visibility metrics including sentiment, position, mentions, and visibility tracking across AI platforms.",
+    keywords: ["AI metrics", "visibility tracking", "brand analytics", "AI performance metrics", "tracking dashboard"]
+  },
+  
+  "metrics-sentiment": {
+    title: "Sentiment Analysis - Finseo Documentation",
+    description: "Track sentiment analysis of AI responses about your brand. Monitor whether AI platforms present your brand positively or negatively.",
+    keywords: ["sentiment analysis", "brand sentiment", "AI sentiment tracking", "positive mentions", "negative feedback"]
+  },
+  
+  "metrics-visibility": {
+    title: "Visibility Tracking - Finseo Documentation",
+    description: "Monitor your overall visibility across AI platforms. Track how often and how prominently your brand appears in AI responses.",
+    keywords: ["visibility tracking", "brand visibility", "AI presence", "mention frequency", "visibility metrics"]
+  },
+  
+  "metrics-position": {
+    title: "Position Tracking - Finseo Documentation",
+    description: "Track where your brand ranks in AI-generated lists and recommendations. Monitor competitive positioning across AI platforms.",
+    keywords: ["position tracking", "ranking analysis", "AI rankings", "list position", "recommendation tracking"]
+  },
+  
+  "metrics-mentions": {
+    title: "Mentions Tracking - Finseo Documentation",
+    description: "Track and analyze brand mentions across AI platforms. Monitor mention frequency, context, and patterns in AI responses.",
+    keywords: ["mention tracking", "brand mentions", "AI citations", "mention analysis", "reference tracking"]
+  },
+  
+  "metrics-synonyms": {
+    title: "Synonym Performance Metrics - Finseo Documentation",
+    description: "Analyze which brand synonyms and variations are most frequently used by AI platforms in their responses.",
+    keywords: ["synonym tracking", "brand variations", "name usage", "synonym performance", "variation analytics"]
+  },
+  
+  // Bot Analytics Pages
+  "bot-analytics": {
+    title: "Bot Traffic Analytics - Finseo Documentation",
+    description: "Monitor AI crawler and bot visits to your website. Track ChatGPT, Claude, Perplexity, and other AI bot traffic patterns.",
+    keywords: ["bot analytics", "crawler tracking", "AI bot traffic", "website crawling", "bot monitoring"]
+  },
+  
+  "bot-analytics-cloudflare": {
+    title: "Cloudflare Bot Analytics Setup - Finseo Documentation",
+    description: "Configure AI bot tracking for Cloudflare-hosted websites. Monitor AI crawler activity through Cloudflare integration.",
+    keywords: ["Cloudflare setup", "bot tracking Cloudflare", "Cloudflare integration", "crawler monitoring"]
+  },
+  
+  "bot-analytics-shopify": {
+    title: "Shopify Bot Analytics Setup - Finseo Documentation",
+    description: "Track AI bot visits on your Shopify store. Configure bot analytics for e-commerce AI visibility monitoring.",
+    keywords: ["Shopify bot tracking", "Shopify analytics", "e-commerce bot monitoring", "Shopify integration"]
+  },
+  
+  "bot-analytics-webflow": {
+    title: "Webflow Bot Analytics Setup - Finseo Documentation",
+    description: "Set up AI bot tracking for Webflow websites. Monitor AI crawler activity on your Webflow site.",
+    keywords: ["Webflow bot tracking", "Webflow integration", "Webflow analytics", "bot monitoring Webflow"]
+  },
+  
+  "bot-analytics-cpanel": {
+    title: "cPanel Bot Analytics Setup - Finseo Documentation",
+    description: "Configure AI bot tracking on cPanel-hosted websites. Monitor AI crawler logs and traffic patterns.",
+    keywords: ["cPanel bot tracking", "cPanel setup", "server log analysis", "cPanel integration"]
+  },
+  
+  "bot-analytics-plesk": {
+    title: "Plesk Bot Analytics Setup - Finseo Documentation",
+    description: "Set up AI bot monitoring for Plesk-hosted websites. Track AI crawler activity through Plesk logs.",
+    keywords: ["Plesk bot tracking", "Plesk integration", "Plesk analytics", "bot monitoring Plesk"]
+  },
+  
+  "bot-analytics-bluehost": {
+    title: "Bluehost Bot Analytics Setup - Finseo Documentation",
+    description: "Configure AI bot tracking for Bluehost-hosted websites. Monitor AI crawler visits on your Bluehost site.",
+    keywords: ["Bluehost bot tracking", "Bluehost setup", "Bluehost integration", "bot monitoring"]
+  },
+  
+  "bot-analytics-godaddy": {
+    title: "GoDaddy Bot Analytics Setup - Finseo Documentation",
+    description: "Set up AI bot tracking for GoDaddy-hosted websites. Monitor AI crawler activity on your GoDaddy site.",
+    keywords: ["GoDaddy bot tracking", "GoDaddy integration", "GoDaddy analytics", "bot monitoring"]
+  },
+  
+  "bot-analytics-hostinger": {
+    title: "Hostinger Bot Analytics Setup - Finseo Documentation",
+    description: "Configure AI bot tracking for Hostinger-hosted websites. Track AI crawler visits and patterns.",
+    keywords: ["Hostinger bot tracking", "Hostinger setup", "Hostinger integration", "bot monitoring"]
+  },
+  
+  "bot-analytics-siteground": {
+    title: "SiteGround Bot Analytics Setup - Finseo Documentation",
+    description: "Set up AI bot monitoring for SiteGround-hosted websites. Track AI crawler activity through SiteGround.",
+    keywords: ["SiteGround bot tracking", "SiteGround integration", "SiteGround analytics", "bot monitoring"]
+  },
+  
+  "bot-analytics-raidboxes": {
+    title: "Raidboxes Bot Analytics Setup - Finseo Documentation",
+    description: "Configure AI bot tracking for Raidboxes WordPress hosting. Monitor AI crawler visits on your WordPress site.",
+    keywords: ["Raidboxes bot tracking", "Raidboxes WordPress", "WordPress bot monitoring", "Raidboxes integration"]
+  },
+  
+  "bot-analytics-strato": {
+    title: "Strato Bot Analytics Setup - Finseo Documentation",
+    description: "Set up AI bot tracking for Strato-hosted websites. Monitor AI crawler activity on your Strato site.",
+    keywords: ["Strato bot tracking", "Strato integration", "Strato analytics", "bot monitoring Strato"]
+  },
+  
+  "bot-analytics-fastly": {
+    title: "Fastly Bot Analytics Setup - Finseo Documentation",
+    description: "Configure AI bot tracking for Fastly CDN. Monitor AI crawler activity through Fastly edge logs.",
+    keywords: ["Fastly bot tracking", "Fastly CDN", "CDN bot monitoring", "Fastly integration"]
+  },
+  
+  // Human Traffic
+  "human-traffic": {
+    title: "Human Traffic Analytics - Finseo Documentation",
+    description: "Analyze real user visits from AI-powered search referrals. Track human traffic from ChatGPT, Perplexity, and AI search platforms.",
+    keywords: ["human traffic", "AI referrals", "user visits", "traffic analytics", "AI search traffic"]
+  },
+  
+  // Prompt Research
+  "prompt-research": {
+    title: "Prompt Research Tools - Finseo Documentation",
+    description: "Discover and analyze effective prompts for AI visibility. Research what queries drive AI mentions of your brand.",
+    keywords: ["prompt research", "query analysis", "search intent", "prompt discovery", "AI queries"]
   },
   
   pricing: {

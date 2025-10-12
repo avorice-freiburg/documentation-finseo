@@ -16,6 +16,10 @@ import {
   Sparkles,
   Users
 } from "lucide-react"
+import { generateMetadata as getPageMetadata } from "@/lib/metadata"
+import { Metadata } from "next"
+
+export const metadata: Metadata = getPageMetadata('getting-started-competitors');
 
 const breadcrumbItems = [
   { label: "Documentation", href: "/" },

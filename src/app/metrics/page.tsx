@@ -1,6 +1,10 @@
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { TableOfContents } from "@/components/table-of-contents"
 import Link from "next/link"
+import { generateMetadata as getPageMetadata } from "@/lib/metadata"
+import { Metadata } from "next"
+
+export const metadata: Metadata = getPageMetadata('metrics');
 
 const breadcrumbItems = [
   { label: "Documentation", href: "/" },
