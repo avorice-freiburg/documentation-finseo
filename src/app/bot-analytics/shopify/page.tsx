@@ -52,7 +52,7 @@ export default function ShopifyPage() {
               Shopify Server Log Access
             </h1>
             <p className="max-w-[750px] text-lg text-muted-foreground sm:text-xl">
-              How to access server logs from Shopify stores for AI bot analytics and visibility tracking.
+              How to access server logs from Shopify stores for AI bot analytics and <Link href="https://www.finseo.ai/ai-visibility-tracking" className="text-[#0eca7b] hover:underline" target="_blank">AI visibility tracking</Link>.
             </p>
           </div>
 
@@ -409,10 +409,10 @@ export default function ShopifyPage() {
               After obtaining your Shopify logs through either method:
             </p>
             <ul className="text-sm space-y-2 ml-6 list-disc text-muted-foreground mb-4">
-              <li>Monitor AI bot visits to your product pages and content</li>
+              <li>Monitor AI bot visits to your product pages using our <Link href="https://www.finseo.ai/bot-traffic" className="text-[#0eca7b] hover:underline" target="_blank">AI bot traffic analytics</Link></li>
               <li>Identify which products attract the most AI crawler attention</li>
               <li>Optimize your store's content for AI-powered shopping assistants</li>
-              <li>Track the impact of SEO improvements on AI visibility</li>
+              <li>Track the impact of SEO improvements with our <Link href="https://www.finseo.ai/ai-visibility-tracking" className="text-[#0eca7b] hover:underline" target="_blank">AI visibility tracker</Link></li>
             </ul>
             <div className="flex gap-3">
               <Button asChild variant="outline">

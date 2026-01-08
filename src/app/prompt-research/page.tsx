@@ -52,7 +52,7 @@ export default function PromptResearchPage() {
               Prompt Research
             </h1>
             <p className="max-w-[750px] text-lg text-muted-foreground sm:text-xl">
-              Discover high-value commercial prompts where your brand or product can appear in AI search results across ChatGPT, Perplexity, Claude, and Gemini.
+              Discover high-value commercial prompts where your brand or product can appear in AI search results across <Link href="https://www.finseo.ai/ai-visibility-tracking/chatgpt" className="text-[#0eca7b] hover:underline" target="_blank">ChatGPT</Link>, <Link href="https://www.finseo.ai/ai-visibility-tracking/perplexity" className="text-[#0eca7b] hover:underline" target="_blank">Perplexity</Link>, <Link href="https://www.finseo.ai/ai-visibility-tracking/claude" className="text-[#0eca7b] hover:underline" target="_blank">Claude</Link>, and <Link href="https://www.finseo.ai/ai-visibility-tracking/gemini" className="text-[#0eca7b] hover:underline" target="_blank">Gemini</Link>.
             </p>
           </div>
 
@@ -82,7 +82,8 @@ export default function PromptResearchPage() {
               <p className="text-muted-foreground mb-4">
                 Prompt Research helps you understand what people might use for prompts in AI platforms and identifies 
                 high-value commercial opportunities where your brand, products, or services can gain visibility. Unlike 
-                traditional keyword research, this focuses on transactional queries where purchase intent is highest.
+                traditional keyword research, this focuses on transactional queries where purchase intent is highest. 
+                Learn more about <Link href="https://www.finseo.ai/prompt-research" className="text-[#0eca7b] hover:underline" target="_blank">AI prompt research and discovery</Link>.
               </p>
               <div className="grid gap-4 md:grid-cols-2">
                 <div className="rounded-lg border bg-card p-4">
@@ -100,7 +101,7 @@ export default function PromptResearchPage() {
                     <h4 className="font-semibold">Volume Estimates</h4>
                   </div>
                   <p className="text-sm text-muted-foreground">
-                    Get estimated search volumes for ChatGPT, Perplexity, Claude, and Gemini
+                    Get estimated search volumes across all major <Link href="https://www.finseo.ai/ai-visibility-tracking" className="text-[#0eca7b] hover:underline" target="_blank">AI visibility tracking</Link> platforms
                   </p>
                 </div>
               </div>
@@ -295,7 +296,7 @@ export default function PromptResearchPage() {
                 <div className="rounded-lg border bg-card p-4">
                   <h4 className="font-semibold mb-2">Track Performance</h4>
                   <p className="text-sm text-muted-foreground">
-                    Monitor your brand's visibility across specific high-intent prompts over time
+                    Monitor your brand's visibility across specific high-intent prompts over time with our <Link href="https://www.finseo.ai/ai-visibility-tracking" className="text-[#0eca7b] hover:underline" target="_blank">AI visibility tracker</Link>
                   </p>
                 </div>
                 

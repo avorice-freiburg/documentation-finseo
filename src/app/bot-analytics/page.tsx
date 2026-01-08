@@ -53,7 +53,7 @@ export default function BotAnalyticsPage() {
               Bot Analytics
             </h1>
             <p className="max-w-[750px] text-lg text-muted-foreground sm:text-xl">
-              Track AI search engine bots visiting your website and measure your visibility in AI-powered search results.
+              Track AI search engine bots visiting your website and measure your visibility in AI-powered search results. Learn more about <Link href="https://www.finseo.ai/bot-traffic" className="text-[#0eca7b] hover:underline" target="_blank">AI bot traffic analytics</Link>.
             </p>
           </div>
 
@@ -62,9 +62,9 @@ export default function BotAnalyticsPage() {
             <Zap className="h-4 w-4 text-[#0eca7b]" />
             <AlertTitle className="text-[#0eca7b] dark:text-[#0eca7b]">AI Visibility is the New SEO</AlertTitle>
             <AlertDescription className="text-gray-700 dark:text-gray-300">
-              Bot visits from ChatGPT, Perplexity, and other AI search engines are strong indicators of your content's 
+              Bot visits from <Link href="https://www.finseo.ai/ai-visibility-tracking/chatgpt" className="text-[#0eca7b] hover:underline" target="_blank">ChatGPT</Link>, <Link href="https://www.finseo.ai/ai-visibility-tracking/perplexity" className="text-[#0eca7b] hover:underline" target="_blank">Perplexity</Link>, and other AI search engines are strong indicators of your content's 
               visibility in AI-powered search results. When users ask AI assistants questions, these bots visit your 
-              site in real-time to fetch accurate, up-to-date information.
+              site in real-time to fetch accurate, up-to-date information. Use our <Link href="https://www.finseo.ai/ai-visibility-tracking" className="text-[#0eca7b] hover:underline" target="_blank">AI visibility tracking</Link> to monitor your presence.
             </AlertDescription>
           </Alert>
 
@@ -105,7 +105,7 @@ export default function BotAnalyticsPage() {
                     <h4 className="font-semibold">Visibility Tracking</h4>
                   </div>
                   <p className="text-sm text-muted-foreground">
-                    Monitor when AI bots visit your site, indicating your content appears in AI search results
+                    Monitor when AI bots visit your site with our <Link href="https://www.finseo.ai/ai-visibility-tracking" className="text-[#0eca7b] hover:underline" target="_blank">AI visibility tracker</Link>, indicating your content appears in AI search results
                   </p>
                 </div>
 
@@ -506,7 +506,7 @@ export default function BotAnalyticsPage() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-muted-foreground">
-                    Perplexity AI's web crawler for real-time search results
+                    Perplexity AI's web crawler for real-time search results. Track your presence with our <Link href="https://www.finseo.ai/ai-visibility-tracking/perplexity" className="text-[#0eca7b] hover:underline" target="_blank">Perplexity visibility tracker</Link>.
                   </p>
                 </CardContent>
               </Card>
@@ -517,7 +517,7 @@ export default function BotAnalyticsPage() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-muted-foreground">
-                    Anthropic's Claude AI web crawler for search queries
+                    Anthropic's Claude AI web crawler for search queries. Monitor your brand with our <Link href="https://www.finseo.ai/ai-visibility-tracking/claude" className="text-[#0eca7b] hover:underline" target="_blank">Claude visibility tracker</Link>.
                   </p>
                 </CardContent>
               </Card>

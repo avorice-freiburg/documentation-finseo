@@ -54,7 +54,7 @@ export default function SiteGroundPage() {
               SiteGround Server Log Access
             </h1>
             <p className="max-w-[750px] text-lg text-muted-foreground sm:text-xl">
-              How to download server access logs from SiteGround WordPress hosting for AI bot analytics.
+              How to download server access logs from SiteGround WordPress hosting for <Link href="https://www.finseo.ai/ai-visibility-tracking" className="text-[#0eca7b] hover:underline" target="_blank">AI visibility tracking</Link> and bot analytics.
             </p>
           </div>
 
@@ -402,9 +402,9 @@ scp -P 18765 username@yourdomain.com:~/logs/logs.tar.gz .`}</code>
               After downloading your SiteGround logs and uploading to Finseo Bot Analytics:
             </p>
             <ul className="text-sm space-y-2 ml-6 list-disc text-muted-foreground mb-4">
-              <li>Monitor AI bot traffic patterns to your WordPress sites</li>
+              <li>Monitor <Link href="https://www.finseo.ai/bot-traffic" className="text-[#0eca7b] hover:underline" target="_blank">AI bot traffic</Link> patterns to your WordPress sites</li>
               <li>Identify which content attracts the most AI crawler attention</li>
-              <li>Optimize your content strategy for better AI visibility</li>
+              <li>Optimize your content strategy for better <Link href="https://www.finseo.ai/ai-visibility-tracking" className="text-[#0eca7b] hover:underline" target="_blank">AI visibility</Link></li>
               <li>Use SiteGround's speed optimization tools to improve bot crawl efficiency</li>
             </ul>
             <Button asChild variant="outline">

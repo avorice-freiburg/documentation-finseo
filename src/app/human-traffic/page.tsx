@@ -51,7 +51,7 @@ export default function HumanTrafficPage() {
               Human Traffic Analytics
             </h1>
             <p className="max-w-[750px] text-lg text-muted-foreground sm:text-xl">
-              Track and analyze human visitors from AI search engines like ChatGPT, Perplexity, and others 
+              Track and analyze human visitors from AI search engines like <Link href="https://www.finseo.ai/ai-visibility-tracking/chatgpt" className="text-[#0eca7b] hover:underline" target="_blank">ChatGPT</Link>, <Link href="https://www.finseo.ai/ai-visibility-tracking/perplexity" className="text-[#0eca7b] hover:underline" target="_blank">Perplexity</Link>, and others 
               through our Google Analytics integration.
             </p>
           </div>
@@ -63,9 +63,9 @@ export default function HumanTrafficPage() {
               <h3 className="text-lg font-semibold">Real User Insights</h3>
             </div>
             <p className="text-sm text-muted-foreground mb-3">
-              While Bot Traffic shows you when AI crawlers visit your site to gather information, Human Traffic 
+              While <Link href="https://www.finseo.ai/bot-traffic" className="text-[#0eca7b] hover:underline" target="_blank">Bot Traffic</Link> shows you when AI crawlers visit your site to gather information, Human Traffic 
               reveals when real users click through from AI search results. This complete picture helps you 
-              understand your true AI visibility impact.
+              understand your true <Link href="https://www.finseo.ai/ai-visibility-tracking" className="text-[#0eca7b] hover:underline" target="_blank">AI visibility</Link> impact.
             </p>
             <div className="flex gap-2">
               <Badge variant="secondary">Google Analytics 4</Badge>
@@ -307,14 +307,14 @@ export default function HumanTrafficPage() {
                   <h4 className="font-semibold mb-2">ChatGPT Referrals</h4>
                   <p className="text-sm text-muted-foreground">
                     Track visitors who click through from ChatGPT conversations when your content is cited as a 
-                    source or recommended by the AI.
+                    source or recommended by the AI. See our <Link href="https://www.finseo.ai/ai-visibility-tracking/chatgpt" className="text-[#0eca7b] hover:underline" target="_blank">ChatGPT visibility tracker</Link> for more insights.
                   </p>
                 </div>
                 <div className="rounded-lg border bg-card p-4">
                   <h4 className="font-semibold mb-2">Perplexity Citations</h4>
                   <p className="text-sm text-muted-foreground">
                     Monitor traffic from Perplexity AI when your content appears in search results and users 
-                    click to read more.
+                    click to read more. Use our <Link href="https://www.finseo.ai/ai-visibility-tracking/perplexity" className="text-[#0eca7b] hover:underline" target="_blank">Perplexity visibility tracker</Link> to monitor mentions.
                   </p>
                 </div>
                 <div className="rounded-lg border bg-card p-4">

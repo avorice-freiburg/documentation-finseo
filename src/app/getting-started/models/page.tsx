@@ -48,7 +48,7 @@ export default function ModelsPage() {
               AI Models Configuration
             </h1>
             <p className="max-w-[750px] text-lg text-muted-foreground sm:text-xl">
-              Select which AI models to track for comprehensive visibility across different AI platforms.
+              Select which AI models to track for comprehensive <Link href="https://www.finseo.ai/ai-visibility-tracking" className="text-[#0eca7b] hover:underline" target="_blank">AI visibility tracking</Link> across different AI platforms.
             </p>
           </div>
 
@@ -95,7 +95,7 @@ export default function ModelsPage() {
                     <h4 className="font-semibold">ChatGPT</h4>
                   </div>
                   <p className="text-sm text-muted-foreground">
-                    OpenAI's conversational AI assistant
+                    OpenAI's conversational AI assistant. <Link href="https://www.finseo.ai/ai-visibility-tracking/chatgpt" className="text-[#0eca7b] hover:underline" target="_blank">Track ChatGPT visibility</Link>
                   </p>
                 </div>
                 
@@ -137,7 +137,7 @@ export default function ModelsPage() {
                     <h4 className="font-semibold">Perplexity</h4>
                   </div>
                   <p className="text-sm text-muted-foreground">
-                    AI search with real-time web access
+                    AI search with real-time web access. <Link href="https://www.finseo.ai/ai-visibility-tracking/perplexity" className="text-[#0eca7b] hover:underline" target="_blank">Track Perplexity visibility</Link>
                   </p>
                 </div>
                 
@@ -151,7 +151,7 @@ export default function ModelsPage() {
                     <h4 className="font-semibold">Gemini</h4>
                   </div>
                   <p className="text-sm text-muted-foreground">
-                    Google's multimodal AI assistant
+                    Google's multimodal AI assistant. <Link href="https://www.finseo.ai/ai-visibility-tracking/gemini" className="text-[#0eca7b] hover:underline" target="_blank">Track Gemini visibility</Link>
                   </p>
                 </div>
                 
@@ -207,7 +207,7 @@ export default function ModelsPage() {
                     <h4 className="font-semibold">Claude</h4>
                   </div>
                   <p className="text-sm text-muted-foreground">
-                    Anthropic's helpful AI assistant
+                    Anthropic's helpful AI assistant. <Link href="https://www.finseo.ai/ai-visibility-tracking/claude" className="text-[#0eca7b] hover:underline" target="_blank">Track Claude visibility</Link>
                   </p>
                 </div>
               </div>

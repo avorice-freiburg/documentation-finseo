@@ -52,7 +52,7 @@ export default function WebflowPage() {
               Webflow Server Log Access
             </h1>
             <p className="max-w-[750px] text-lg text-muted-foreground sm:text-xl">
-              How to access server logs from Webflow sites for AI bot analytics and visibility tracking.
+              How to access server logs from Webflow sites for AI bot analytics and <Link href="https://www.finseo.ai/ai-visibility-tracking" className="text-[#0eca7b] hover:underline" target="_blank">AI visibility tracking</Link>.
             </p>
           </div>
 
@@ -451,7 +451,7 @@ export default function handler(req, res) {
               After implementing your chosen logging method:
             </p>
             <ul className="text-sm space-y-2 ml-6 list-disc text-muted-foreground mb-4">
-              <li>Monitor which pages receive the most AI bot traffic</li>
+              <li>Monitor which pages receive the most <Link href="https://www.finseo.ai/bot-traffic" className="text-[#0eca7b] hover:underline" target="_blank">AI bot traffic</Link></li>
               <li>Optimize content structure for AI comprehension</li>
               <li>Track the impact of Webflow's built-in SEO features on bot visibility</li>
               <li>Use insights to improve your content strategy</li>

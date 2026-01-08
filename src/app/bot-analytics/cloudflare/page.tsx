@@ -52,7 +52,7 @@ export default function CloudflarePage() {
               Cloudflare Server Log Access
             </h1>
             <p className="max-w-[750px] text-lg text-muted-foreground sm:text-xl">
-              Access server logs from Cloudflare's global CDN network for comprehensive bot analytics.
+              Access server logs from Cloudflare's global CDN network for comprehensive <Link href="https://www.finseo.ai/bot-traffic" className="text-[#0eca7b] hover:underline" target="_blank">AI bot analytics</Link>.
             </p>
           </div>
 
@@ -337,7 +337,7 @@ export default function CloudflarePage() {
               Once you have access to Cloudflare logs, you can:
             </p>
             <ul className="text-sm space-y-2 ml-6 list-disc text-muted-foreground mb-4">
-              <li>Track AI bot visits across your entire CDN-cached content</li>
+              <li>Track <Link href="https://www.finseo.ai/ai-visibility-tracking" className="text-[#0eca7b] hover:underline" target="_blank">AI visibility</Link> across your entire CDN-cached content</li>
               <li>See geographic distribution of AI bot traffic</li>
               <li>Analyze cache hit rates for bot requests</li>
               <li>Identify bot behavior patterns and optimize accordingly</li>

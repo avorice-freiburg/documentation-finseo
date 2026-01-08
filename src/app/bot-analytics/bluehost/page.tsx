@@ -54,7 +54,7 @@ export default function BluehostPage() {
               Bluehost Server Log Access
             </h1>
             <p className="max-w-[750px] text-lg text-muted-foreground sm:text-xl">
-              How to download server access logs from Bluehost for AI bot analytics and visibility tracking.
+              How to download server access logs from Bluehost for AI bot analytics and <Link href="https://www.finseo.ai/ai-visibility-tracking" className="text-[#0eca7b] hover:underline" target="_blank">AI visibility tracking</Link>.
             </p>
           </div>
 
@@ -415,8 +415,8 @@ export default function BluehostPage() {
             <ul className="text-sm space-y-2 ml-6 list-disc text-muted-foreground mb-4">
               <li>Upload logs to Finseo Bot Analytics for detailed AI crawler analysis</li>
               <li>Identify which content attracts the most AI bot attention</li>
-              <li>Track ChatGPT, Perplexity, and other AI search engine visits</li>
-              <li>Optimize your content strategy based on AI visibility insights</li>
+              <li>Track <Link href="https://www.finseo.ai/ai-visibility-tracking/chatgpt" className="text-[#0eca7b] hover:underline" target="_blank">ChatGPT</Link>, <Link href="https://www.finseo.ai/ai-visibility-tracking/perplexity" className="text-[#0eca7b] hover:underline" target="_blank">Perplexity</Link>, and other AI search engine visits</li>
+              <li>Optimize your content strategy based on <Link href="https://www.finseo.ai/ai-visibility-tracking" className="text-[#0eca7b] hover:underline" target="_blank">AI visibility</Link> insights</li>
             </ul>
             <div className="flex gap-3">
               <Button asChild variant="outline">

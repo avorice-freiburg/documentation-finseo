@@ -2,6 +2,7 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { TableOfContents } from "@/components/table-of-contents"
 import { generateMetadata as getPageMetadata } from "@/lib/metadata"
 import { Metadata } from "next"
+import Link from "next/link"
 
 export const metadata: Metadata = getPageMetadata('metrics-visibility');
 
@@ -34,7 +35,7 @@ export default function VisibilityPage() {
               Visibility Metrics
             </h1>
             <p className="max-w-[750px] text-lg text-muted-foreground sm:text-xl">
-              Track how often your brand appears in AI responses across different models and prompts.
+              Track how often your brand appears in AI responses across different models and prompts. Learn more about <Link href="https://www.finseo.ai/ai-visibility-tracking" className="text-[#0eca7b] hover:underline" target="_blank">AI visibility tracking</Link>.
             </p>
           </div>
 
@@ -51,7 +52,7 @@ export default function VisibilityPage() {
                   <span className="font-semibold">Key Insight</span>
                 </div>
                 <p className="text-sm text-muted-foreground">
-                  If you track 25 prompts across 4 AI models (ChatGPT, Perplexity, Claude, Google AI Overview), 
+                  If you track 25 prompts across 4 AI models (<Link href="https://www.finseo.ai/ai-visibility-tracking/chatgpt" className="text-[#0eca7b] hover:underline" target="_blank">ChatGPT</Link>, <Link href="https://www.finseo.ai/ai-visibility-tracking/perplexity" className="text-[#0eca7b] hover:underline" target="_blank">Perplexity</Link>, <Link href="https://www.finseo.ai/ai-visibility-tracking/claude" className="text-[#0eca7b] hover:underline" target="_blank">Claude</Link>, <Link href="https://www.finseo.ai/ai-visibility-tracking/google-ai-mode" className="text-[#0eca7b] hover:underline" target="_blank">Google AI Overview</Link>), 
                   you can appear in up to 100 responses. If your brand appears in 50 of those responses, 
                   your visibility score is 50%.
                 </p>
@@ -84,10 +85,10 @@ export default function VisibilityPage() {
                 <div className="rounded-lg border bg-card p-4">
                   <h4 className="font-semibold mb-2">Tracked Models</h4>
                   <ul className="space-y-1 text-sm text-muted-foreground">
-                    <li>• ChatGPT</li>
-                    <li>• Perplexity</li>
-                    <li>• Claude</li>
-                    <li>• Google AI Overview</li>
+                    <li>• <Link href="https://www.finseo.ai/ai-visibility-tracking/chatgpt" className="text-[#0eca7b] hover:underline" target="_blank">ChatGPT</Link></li>
+                    <li>• <Link href="https://www.finseo.ai/ai-visibility-tracking/perplexity" className="text-[#0eca7b] hover:underline" target="_blank">Perplexity</Link></li>
+                    <li>• <Link href="https://www.finseo.ai/ai-visibility-tracking/claude" className="text-[#0eca7b] hover:underline" target="_blank">Claude</Link></li>
+                    <li>• <Link href="https://www.finseo.ai/ai-visibility-tracking/google-ai-mode" className="text-[#0eca7b] hover:underline" target="_blank">Google AI Overview</Link></li>
                   </ul>
                 </div>
                 

@@ -50,7 +50,7 @@ export default function CompetitorsPage() {
               Competitor Tracking
             </h1>
             <p className="max-w-[750px] text-lg text-muted-foreground sm:text-xl">
-              Monitor how AI systems position your brand against competitors and track competitive dynamics in AI responses.
+              Monitor how AI systems position your brand against competitors and track competitive dynamics in AI responses. Use our <Link href="https://www.finseo.ai/ai-visibility-tracking" className="text-[#0eca7b] hover:underline" target="_blank">AI visibility tracking</Link> to monitor your competitive position.
             </p>
           </div>
 
@@ -70,7 +70,7 @@ export default function CompetitorsPage() {
                   <span className="font-semibold">Why Track Competitors?</span>
                 </div>
                 <ul className="text-sm space-y-2 ml-8 list-disc text-muted-foreground">
-                  <li>See how often you're mentioned vs competitors</li>
+                  <li>See how often you're mentioned vs competitors with our <Link href="https://www.finseo.ai/ai-visibility-tracking" className="text-[#0eca7b] hover:underline" target="_blank">AI brand visibility tracker</Link></li>
                   <li>Understand competitive positioning in AI responses</li>
                   <li>Track share of voice in AI recommendations</li>
                   <li>Identify competitive threats and opportunities</li>

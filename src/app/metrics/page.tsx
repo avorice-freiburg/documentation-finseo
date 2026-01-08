@@ -32,7 +32,7 @@ export default function MetricsPage() {
               Metrics
             </h1>
             <p className="max-w-[750px] text-lg text-muted-foreground sm:text-xl">
-              Understand how your brand performs across AI models with comprehensive tracking metrics.
+              Understand how your brand performs across AI models with comprehensive <Link href="https://www.finseo.ai/ai-visibility-tracking" className="text-[#0eca7b] hover:underline" target="_blank">AI visibility tracking</Link> metrics.
             </p>
           </div>
 
@@ -41,7 +41,7 @@ export default function MetricsPage() {
             <h2 id="overview" className="text-2xl font-bold tracking-tight">Overview</h2>
             <div className="prose prose-gray dark:prose-invert max-w-none">
               <p className="text-muted-foreground">
-                Finseo provides four core metrics to help you understand your brand's performance across AI models like ChatGPT, Perplexity, Claude, and Google AI Overview. Each metric offers unique insights into how AI systems perceive and present your brand.
+                Finseo provides four core metrics to help you understand your brand's performance across AI models like <Link href="https://www.finseo.ai/ai-visibility-tracking/chatgpt" className="text-[#0eca7b] hover:underline" target="_blank">ChatGPT</Link>, <Link href="https://www.finseo.ai/ai-visibility-tracking/perplexity" className="text-[#0eca7b] hover:underline" target="_blank">Perplexity</Link>, <Link href="https://www.finseo.ai/ai-visibility-tracking/claude" className="text-[#0eca7b] hover:underline" target="_blank">Claude</Link>, and <Link href="https://www.finseo.ai/ai-visibility-tracking/google-ai-mode" className="text-[#0eca7b] hover:underline" target="_blank">Google AI Overview</Link>. Each metric offers unique insights into how AI systems perceive and present your brand.
               </p>
             </div>
           </section>
@@ -131,7 +131,7 @@ export default function MetricsPage() {
               <ol className="list-decimal list-inside space-y-2 text-muted-foreground">
                 <li>Set up your project with the prompts you want to track</li>
                 <li>Configure your brand synonyms in <Link href="/getting-started/synonyms" className="text-secondary hover:underline">project settings</Link></li>
-                <li>Select the AI models you want to monitor (ChatGPT, Perplexity, Claude, Google AI Overview)</li>
+                <li>Select the AI models you want to monitor (<Link href="https://www.finseo.ai/ai-visibility-tracking/chatgpt" className="text-[#0eca7b] hover:underline" target="_blank">ChatGPT</Link>, <Link href="https://www.finseo.ai/ai-visibility-tracking/perplexity" className="text-[#0eca7b] hover:underline" target="_blank">Perplexity</Link>, <Link href="https://www.finseo.ai/ai-visibility-tracking/claude" className="text-[#0eca7b] hover:underline" target="_blank">Claude</Link>, <Link href="https://www.finseo.ai/ai-visibility-tracking/google-ai-mode" className="text-[#0eca7b] hover:underline" target="_blank">Google AI Overview</Link>)</li>
                 <li>Wait for data collection to begin - metrics update regularly</li>
                 <li>Analyze your performance across all four metric types</li>
               </ol>

@@ -36,7 +36,7 @@ export default function MentionsPage() {
               Mentions Metrics
             </h1>
             <p className="max-w-[750px] text-lg text-muted-foreground sm:text-xl">
-              Track how frequently your brand or domain appears in AI responses across all models.
+              Track how frequently your brand or domain appears in AI responses across all models with our <Link href="https://www.finseo.ai/ai-visibility-tracking" className="text-[#0eca7b] hover:underline" target="_blank">AI brand visibility tracker</Link>.
             </p>
           </div>
 
@@ -225,21 +225,21 @@ export default function MentionsPage() {
                     <span>Visibility</span>
                   </div>
                   <div className="grid grid-cols-5 gap-4">
-                    <span>ChatGPT</span>
+                    <Link href="https://www.finseo.ai/ai-visibility-tracking/chatgpt" className="text-[#0eca7b] hover:underline" target="_blank">ChatGPT</Link>
                     <span className="font-mono">25</span>
                     <span className="font-mono">18</span>
                     <span className="font-mono">0.72</span>
                     <span className="font-mono text-secondary">60%</span>
                   </div>
                   <div className="grid grid-cols-5 gap-4">
-                    <span>Claude</span>
+                    <Link href="https://www.finseo.ai/ai-visibility-tracking/claude" className="text-[#0eca7b] hover:underline" target="_blank">Claude</Link>
                     <span className="font-mono">25</span>
                     <span className="font-mono">22</span>
                     <span className="font-mono">0.88</span>
                     <span className="font-mono text-secondary">68%</span>
                   </div>
                   <div className="grid grid-cols-5 gap-4">
-                    <span>Perplexity</span>
+                    <Link href="https://www.finseo.ai/ai-visibility-tracking/perplexity" className="text-[#0eca7b] hover:underline" target="_blank">Perplexity</Link>
                     <span className="font-mono">25</span>
                     <span className="font-mono">15</span>
                     <span className="font-mono">0.60</span>

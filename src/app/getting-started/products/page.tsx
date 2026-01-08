@@ -52,7 +52,7 @@ export default function ProductsPage() {
               Product Mention Tracking
             </h1>
             <p className="max-w-[750px] text-lg text-muted-foreground sm:text-xl">
-              Monitor and analyze specific product mentions in AI responses to understand market positioning and competitive dynamics.
+              Monitor and analyze specific product mentions in AI responses to understand market positioning and competitive dynamics. Part of our comprehensive <Link href="https://www.finseo.ai/ai-visibility-tracking" className="text-[#0eca7b] hover:underline" target="_blank">AI visibility tracking</Link> platform.
             </p>
           </div>
 
@@ -82,7 +82,7 @@ export default function ProductsPage() {
                   <span className="font-semibold">Why Track Products?</span>
                 </div>
                 <ul className="text-sm space-y-2 ml-8 list-disc text-muted-foreground">
-                  <li>Identify your most AI-visible products</li>
+                  <li>Identify your most AI-visible products with our <Link href="https://www.finseo.ai/ai-visibility-tracking" className="text-[#0eca7b] hover:underline" target="_blank">AI visibility tracker</Link></li>
                   <li>Track product-level competitive positioning</li>
                   <li>Understand which features AI highlights for each product</li>
                   <li>Monitor new product adoption in AI responses</li>

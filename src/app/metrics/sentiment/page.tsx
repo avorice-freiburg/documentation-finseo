@@ -2,6 +2,7 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { TableOfContents } from "@/components/table-of-contents"
 import { generateMetadata as getPageMetadata } from "@/lib/metadata"
 import { Metadata } from "next"
+import Link from "next/link"
 
 export const metadata: Metadata = getPageMetadata('metrics-sentiment');
 
@@ -35,7 +36,7 @@ export default function SentimentPage() {
               Sentiment Metrics
             </h1>
             <p className="max-w-[750px] text-lg text-muted-foreground sm:text-xl">
-              Analyze how AI models speak about your brand - positive, neutral, or negative sentiment analysis.
+              Analyze how AI models speak about your brand - positive, neutral, or negative sentiment analysis. Part of our comprehensive <Link href="https://www.finseo.ai/ai-visibility-tracking" className="text-[#0eca7b] hover:underline" target="_blank">AI visibility tracking</Link> platform.
             </p>
           </div>
 

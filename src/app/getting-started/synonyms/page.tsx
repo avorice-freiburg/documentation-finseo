@@ -37,7 +37,7 @@ export default function SynonymsPage() {
               Brand Synonyms
             </h1>
             <p className="max-w-[750px] text-lg text-muted-foreground sm:text-xl">
-              Configure brand name variations to ensure comprehensive tracking across all metrics.
+              Configure brand name variations to ensure comprehensive tracking across all <Link href="https://www.finseo.ai/ai-visibility-tracking" className="text-[#0eca7b] hover:underline" target="_blank">AI visibility tracking</Link> metrics.
             </p>
           </div>
 
@@ -54,7 +54,7 @@ export default function SynonymsPage() {
                   <span className="font-semibold">Key Insight</span>
                 </div>
                 <p className="text-sm text-muted-foreground">
-                  Without proper synonym configuration, you might miss significant brand mentions. For example, if your brand is "Mercedes-Benz" but AI models also reference "Mercedes", "Benz", or "Daimler," those mentions won't be counted without synonym setup.
+                  Without proper synonym configuration, you might miss significant brand mentions. For example, if your brand is "Mercedes-Benz" but AI models also reference "Mercedes", "Benz", or "Daimler," those mentions won't be counted without synonym setup. Use our <Link href="https://www.finseo.ai/ai-visibility-tracking" className="text-[#0eca7b] hover:underline" target="_blank">AI brand visibility tracker</Link> to monitor all variations.
                 </p>
               </div>
             </div>

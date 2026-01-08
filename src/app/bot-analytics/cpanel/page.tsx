@@ -52,7 +52,7 @@ export default function CPanelPage() {
               cPanel Server Log Access
             </h1>
             <p className="max-w-[750px] text-lg text-muted-foreground sm:text-xl">
-              Step-by-step guide to download server access logs from any cPanel hosting environment.
+              Step-by-step guide to download server access logs from any cPanel hosting environment for <Link href="https://www.finseo.ai/ai-visibility-tracking" className="text-[#0eca7b] hover:underline" target="_blank">AI visibility tracking</Link>.
             </p>
           </div>
 
@@ -426,10 +426,10 @@ export default function CPanelPage() {
               After uploading your cPanel logs to Finseo Bot Analytics:
             </p>
             <ul className="text-sm space-y-2 ml-6 list-disc text-muted-foreground mb-4">
-              <li>Track AI bot visits across all your cPanel-hosted domains</li>
+              <li>Track <Link href="https://www.finseo.ai/bot-traffic" className="text-[#0eca7b] hover:underline" target="_blank">AI bot visits</Link> across all your cPanel-hosted domains</li>
               <li>Monitor which content attracts the most AI crawler attention</li>
               <li>Analyze patterns in bot behavior and visit frequency</li>
-              <li>Optimize your content strategy for better AI search visibility</li>
+              <li>Optimize your content strategy for better <Link href="https://www.finseo.ai/ai-visibility-tracking" className="text-[#0eca7b] hover:underline" target="_blank">AI search visibility</Link></li>
             </ul>
             <Button asChild variant="outline">
               <Link href="/bot-analytics">

@@ -54,7 +54,7 @@ export default function GoDaddyPage() {
               GoDaddy Server Log Access
             </h1>
             <p className="max-w-[750px] text-lg text-muted-foreground sm:text-xl">
-              How to access server logs from GoDaddy hosting for AI bot analytics and visibility tracking.
+              How to access server logs from GoDaddy hosting for AI bot analytics and <Link href="https://www.finseo.ai/ai-visibility-tracking" className="text-[#0eca7b] hover:underline" target="_blank">AI visibility tracking</Link>.
             </p>
           </div>
 
@@ -441,8 +441,8 @@ scp root@server-ip:/var/log/apache2/logs.tar.gz .`}</code>
             </p>
             <ul className="text-sm space-y-2 ml-6 list-disc text-muted-foreground mb-4">
               <li>Upload logs to Finseo Bot Analytics for AI crawler analysis</li>
-              <li>Identify which pages receive the most AI bot traffic</li>
-              <li>Optimize your content for better AI visibility</li>
+              <li>Identify which pages receive the most <Link href="https://www.finseo.ai/bot-traffic" className="text-[#0eca7b] hover:underline" target="_blank">AI bot traffic</Link></li>
+              <li>Optimize your content for better <Link href="https://www.finseo.ai/ai-visibility-tracking" className="text-[#0eca7b] hover:underline" target="_blank">AI visibility</Link></li>
               <li>Consider upgrading your hosting plan if you need better log access</li>
             </ul>
             <Button asChild variant="outline">

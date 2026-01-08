@@ -52,7 +52,7 @@ export default function FastlyPage() {
               Fastly CDN Log Access
             </h1>
             <p className="max-w-[750px] text-lg text-muted-foreground sm:text-xl">
-              How to set up and access real-time logs from Fastly CDN for AI bot analytics and visibility tracking.
+              How to set up and access real-time logs from Fastly CDN for <Link href="https://www.finseo.ai/bot-traffic" className="text-[#0eca7b] hover:underline" target="_blank">AI bot analytics</Link> and <Link href="https://www.finseo.ai/ai-visibility-tracking" className="text-[#0eca7b] hover:underline" target="_blank">visibility tracking</Link>.
             </p>
           </div>
 
@@ -442,10 +442,10 @@ export default function FastlyPage() {
               After setting up Fastly logging and uploading to Finseo Bot Analytics:
             </p>
             <ul className="text-sm space-y-2 ml-6 list-disc text-muted-foreground mb-4">
-              <li>Monitor real-time AI bot traffic to your site</li>
+              <li>Monitor real-time <Link href="https://www.finseo.ai/bot-traffic" className="text-[#0eca7b] hover:underline" target="_blank">AI bot traffic</Link> to your site</li>
               <li>Analyze which content attracts the most AI crawler attention</li>
               <li>Track bot behavior patterns and visit frequency</li>
-              <li>Optimize your content strategy for AI search visibility</li>
+              <li>Optimize your content strategy for <Link href="https://www.finseo.ai/ai-visibility-tracking" className="text-[#0eca7b] hover:underline" target="_blank">AI search visibility</Link></li>
               <li>Use Fastly's edge caching to improve bot crawl efficiency</li>
             </ul>
             <div className="flex gap-3">

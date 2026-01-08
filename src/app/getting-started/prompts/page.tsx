@@ -50,7 +50,7 @@ export default function PromptsPage() {
               AI Search Prompts
             </h1>
             <p className="max-w-[750px] text-lg text-muted-foreground sm:text-xl">
-              Create and manage prompts to track how AI systems respond to queries about your brand, products, and industry.
+              Create and manage prompts to track how AI systems respond to queries about your brand, products, and industry. Discover more with our <Link href="https://www.finseo.ai/prompt-research" className="text-[#0eca7b] hover:underline" target="_blank">prompt research tool</Link>.
             </p>
           </div>
 
@@ -74,7 +74,7 @@ export default function PromptsPage() {
                   <li>Identify opportunities to improve AI visibility</li>
                   <li>Track competitive positioning in AI responses</li>
                   <li>Monitor sentiment and accuracy of AI-generated content</li>
-                  <li>Discover which sources AI systems cite when mentioning you</li>
+                  <li>Discover which sources AI systems cite when mentioning you using our <Link href="https://www.finseo.ai/ai-visibility-tracking" className="text-[#0eca7b] hover:underline" target="_blank">AI visibility tracker</Link></li>
                 </ul>
               </div>
             </div>

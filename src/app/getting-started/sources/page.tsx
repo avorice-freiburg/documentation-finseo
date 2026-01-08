@@ -51,7 +51,7 @@ export default function SourcesPage() {
               Source & Citation Tracking
             </h1>
             <p className="max-w-[750px] text-lg text-muted-foreground sm:text-xl">
-              Monitor which sources AI systems cite when discussing your brand and track domain authority in AI responses.
+              Monitor which sources AI systems cite when discussing your brand and track domain authority in AI responses. Use our <Link href="https://www.finseo.ai/ai-visibility-tracking" className="text-[#0eca7b] hover:underline" target="_blank">AI visibility tracking</Link> to understand source citations.
             </p>
           </div>
 

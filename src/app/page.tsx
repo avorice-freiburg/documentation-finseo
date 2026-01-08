@@ -47,8 +47,8 @@ export default function Home() {
                 Welcome to Finseo Documentation
               </h1>
               <p className="max-w-[750px] text-lg text-muted-foreground sm:text-xl">
-                Track and optimize your visibility in AI-powered search results. Monitor how ChatGPT, Perplexity, 
-                and other AI systems present your brand, products, and content.
+                Track and optimize your visibility in AI-powered search results. Monitor how <Link href="https://www.finseo.ai/ai-visibility-tracking/chatgpt" className="text-[#0eca7b] hover:underline" target="_blank">ChatGPT</Link>, <Link href="https://www.finseo.ai/ai-visibility-tracking/perplexity" className="text-[#0eca7b] hover:underline" target="_blank">Perplexity</Link>, 
+                and other AI systems present your brand, products, and content. Explore our <Link href="https://www.finseo.ai/ai-visibility-tracking" className="text-[#0eca7b] hover:underline" target="_blank">AI visibility tracking</Link> solutions.
               </p>
             </div>
 
@@ -100,10 +100,10 @@ export default function Home() {
                 <h2 id="introduction" className="text-2xl font-bold tracking-tight">Introduction</h2>
                 <div className="prose prose-gray dark:prose-invert max-w-none">
                   <p className="text-muted-foreground">
-                    Finseo is the first comprehensive AI visibility platform that helps you understand and optimize 
+                    Finseo is the first comprehensive <Link href="https://www.finseo.ai/ai-visibility-tracking" className="text-[#0eca7b] hover:underline" target="_blank">AI visibility platform</Link> that helps you understand and optimize 
                     how your brand, products, and content appear in AI-powered search results. As AI systems like 
-                    ChatGPT, Perplexity, and Claude become primary information sources, tracking your AI visibility 
-                    is as crucial as traditional SEO.
+                    <Link href="https://www.finseo.ai/ai-visibility-tracking/chatgpt" className="text-[#0eca7b] hover:underline" target="_blank"> ChatGPT</Link>, <Link href="https://www.finseo.ai/ai-visibility-tracking/perplexity" className="text-[#0eca7b] hover:underline" target="_blank">Perplexity</Link>, and <Link href="https://www.finseo.ai/ai-visibility-tracking/claude" className="text-[#0eca7b] hover:underline" target="_blank">Claude</Link> become primary information sources, tracking your AI visibility 
+                    is as crucial as traditional SEO. <Link href="https://www.finseo.ai/demo" className="text-[#0eca7b] hover:underline" target="_blank">Request a demo</Link> to see it in action.
                   </p>
                 </div>
               </section>
@@ -194,7 +194,7 @@ export default function Home() {
                 <ul className="grid gap-3 text-muted-foreground">
                   <li className="flex gap-x-3">
                     <div className="h-1.5 w-1.5 rounded-full bg-[#0eca7b] mt-2" />
-                    <span>Track visibility across ChatGPT, Claude, Perplexity, and more AI platforms</span>
+                    <span>Track visibility across <Link href="https://www.finseo.ai/ai-visibility-tracking/chatgpt" className="text-[#0eca7b] hover:underline" target="_blank">ChatGPT</Link>, <Link href="https://www.finseo.ai/ai-visibility-tracking/claude" className="text-[#0eca7b] hover:underline" target="_blank">Claude</Link>, <Link href="https://www.finseo.ai/ai-visibility-tracking/perplexity" className="text-[#0eca7b] hover:underline" target="_blank">Perplexity</Link>, and more AI platforms</span>
                   </li>
                   <li className="flex gap-x-3">
                     <div className="h-1.5 w-1.5 rounded-full bg-[#0eca7b] mt-2" />
@@ -206,7 +206,7 @@ export default function Home() {
                   </li>
                   <li className="flex gap-x-3">
                     <div className="h-1.5 w-1.5 rounded-full bg-[#0eca7b] mt-2" />
-                    <span>Track AI bot visits to your website and content</span>
+                    <span>Track <Link href="https://www.finseo.ai/bot-traffic" className="text-[#0eca7b] hover:underline" target="_blank">AI bot visits</Link> to your website and content</span>
                   </li>
                   <li className="flex gap-x-3">
                     <div className="h-1.5 w-1.5 rounded-full bg-[#0eca7b] mt-2" />

@@ -52,7 +52,7 @@ export default function HostingerPage() {
               Hostinger Server Log Access
             </h1>
             <p className="max-w-[750px] text-lg text-muted-foreground sm:text-xl">
-              Step-by-step guide to download server access logs from your Hostinger hosting account.
+              Step-by-step guide to download server access logs from your Hostinger hosting account for <Link href="https://www.finseo.ai/ai-visibility-tracking" className="text-[#0eca7b] hover:underline" target="_blank">AI visibility tracking</Link>.
             </p>
           </div>
 
@@ -336,8 +336,8 @@ export default function HostingerPage() {
               After uploading your logs to Finseo Bot Analytics, you'll gain insights into:
             </p>
             <ul className="text-sm space-y-2 ml-6 list-disc text-muted-foreground mb-4">
-              <li>AI search engine bot visits (ChatGPT, Perplexity, etc.)</li>
-              <li>Your content's visibility in AI-powered searches</li>
+              <li>AI search engine bot visits (<Link href="https://www.finseo.ai/ai-visibility-tracking/chatgpt" className="text-[#0eca7b] hover:underline" target="_blank">ChatGPT</Link>, <Link href="https://www.finseo.ai/ai-visibility-tracking/perplexity" className="text-[#0eca7b] hover:underline" target="_blank">Perplexity</Link>, etc.)</li>
+              <li>Your content's <Link href="https://www.finseo.ai/ai-visibility-tracking" className="text-[#0eca7b] hover:underline" target="_blank">visibility in AI-powered searches</Link></li>
               <li>Traffic patterns from different AI platforms</li>
               <li>Opportunities to optimize for AI visibility</li>
             </ul>

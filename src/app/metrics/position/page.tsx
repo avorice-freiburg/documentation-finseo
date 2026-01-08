@@ -36,7 +36,7 @@ export default function PositionPage() {
               Position Metrics
             </h1>
             <p className="max-w-[750px] text-lg text-muted-foreground sm:text-xl">
-              Measure where your brand appears within AI responses - earlier positioning means better visibility.
+              Measure where your brand appears within AI responses - earlier positioning means better visibility. Part of our comprehensive <Link href="https://www.finseo.ai/ai-visibility-tracking" className="text-[#0eca7b] hover:underline" target="_blank">AI visibility tracking</Link> metrics.
             </p>
           </div>
 
