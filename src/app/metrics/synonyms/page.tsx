@@ -54,7 +54,7 @@ export default function SynonymsPage() {
                   <span className="font-semibold">Key Insight</span>
                 </div>
                 <p className="text-sm text-muted-foreground">
-                  Without proper synonym configuration, you might miss significant brand mentions. For example, if your brand is "Mercedes-Benz" but AI models also reference "Mercedes", "Benz", or "Daimler," those mentions won't be counted without synonym setup. Our <Link href="https://www.finseo.ai/ai-visibility-tracking" className="text-[#0eca7b] hover:underline" target="_blank">AI mention tracking</Link> system ensures all variations are captured.
+                  Without proper synonym configuration, you might miss significant brand mentions. For example, if your brand is "Mercedes-Benz" but AI models also reference "Mercedes", "Benz", or "Daimler," those mentions won't be counted without synonym setup. Our <Link href="https://www.finseo.ai/" className="text-[#0eca7b] hover:underline" target="_blank">AI visibility platform</Link> ensures all variations are captured.
                 </p>
               </div>
             </div>

@@ -118,7 +118,7 @@ export default function Home() {
                   <ul className="space-y-2 text-muted-foreground">
                     <li className="flex gap-3">
                       <Target className="h-5 w-5 text-[#0eca7b] mt-0.5 flex-shrink-0" />
-                      <span><strong>Mentions:</strong> How often AI systems reference your brand or products</span>
+                      <span><strong>Mentions:</strong> How often AI systems reference your brand or products - tracked via our <Link href="https://www.finseo.ai/" className="text-[#0eca7b] hover:underline" target="_blank">AI visibility tracker</Link></span>
                     </li>
                     <li className="flex gap-3">
                       <BarChart3 className="h-5 w-5 text-[#0eca7b] mt-0.5 flex-shrink-0" />
@@ -214,7 +214,7 @@ export default function Home() {
                   </li>
                   <li className="flex gap-x-3">
                     <div className="h-1.5 w-1.5 rounded-full bg-[#0eca7b] mt-2" />
-                    <span>Historical tracking and trend analysis</span>
+                    <span>Historical tracking and trend analysis with <Link href="https://www.finseo.ai/ai-visibility-tracking" className="text-[#0eca7b] hover:underline" target="_blank">AI visibility tracking</Link></span>
                   </li>
                 </ul>
               </section>

@@ -270,7 +270,7 @@ export default function PositionPage() {
               <ul className="space-y-3 text-muted-foreground">
                 <li className="flex gap-x-3">
                   <div className="h-1.5 w-1.5 rounded-full bg-secondary mt-2" />
-                  <span><strong>Authority building:</strong> Create high-quality, authoritative content that AI models recognize as trustworthy sources.</span>
+                  <span><strong>Authority building:</strong> Create high-quality, authoritative content that <Link href="https://www.finseo.ai/ai-visibility-tracking/chatgpt" className="text-[#0eca7b] hover:underline" target="_blank">ChatGPT</Link> and other AI models recognize as trustworthy sources.</span>
                 </li>
                 <li className="flex gap-x-3">
                   <div className="h-1.5 w-1.5 rounded-full bg-secondary mt-2" />
@@ -282,7 +282,7 @@ export default function PositionPage() {
                 </li>
                 <li className="flex gap-x-3">
                   <div className="h-1.5 w-1.5 rounded-full bg-secondary mt-2" />
-                  <span><strong>Monitor competitors:</strong> Track competitor positions to identify opportunities for better positioning.</span>
+                  <span><strong>Monitor competitors:</strong> Track competitor positions using <Link href="https://www.finseo.ai/ai-visibility-tracking" className="text-[#0eca7b] hover:underline" target="_blank">AI visibility tracking</Link> to identify opportunities for better positioning.</span>
                 </li>
                 <li className="flex gap-x-3">
                   <div className="h-1.5 w-1.5 rounded-full bg-secondary mt-2" />

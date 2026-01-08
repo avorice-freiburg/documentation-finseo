@@ -203,7 +203,7 @@ export default function VisibilityPage() {
               <ul className="space-y-3 text-muted-foreground">
                 <li className="flex gap-x-3">
                   <div className="h-1.5 w-1.5 rounded-full bg-secondary mt-2" />
-                  <span><strong>Track relevant prompts:</strong> Choose prompts that your target audience is likely to use when searching for solutions in your industry.</span>
+                  <span><strong>Track relevant prompts:</strong> Use our <Link href="https://www.finseo.ai/prompt-research" className="text-[#0eca7b] hover:underline" target="_blank">prompt research tool</Link> to find prompts your target audience uses when searching for solutions in your industry.</span>
                 </li>
                 <li className="flex gap-x-3">
                   <div className="h-1.5 w-1.5 rounded-full bg-secondary mt-2" />
@@ -215,7 +215,7 @@ export default function VisibilityPage() {
                 </li>
                 <li className="flex gap-x-3">
                   <div className="h-1.5 w-1.5 rounded-full bg-secondary mt-2" />
-                  <span><strong>Compare with competitors:</strong> Use visibility metrics to understand your market position relative to competitors.</span>
+                  <span><strong>Compare with competitors:</strong> Use our <Link href="https://www.finseo.ai/" className="text-[#0eca7b] hover:underline" target="_blank">AI visibility platform</Link> to understand your market position relative to competitors.</span>
                 </li>
               </ul>
             </div>

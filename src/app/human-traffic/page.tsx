@@ -352,7 +352,7 @@ export default function HumanTrafficPage() {
                 <CheckCircle2 className="h-5 w-5 text-[#0eca7b] mt-0.5" />
                 <div>
                   <p className="text-sm">
-                    <strong>Combine with Bot Traffic:</strong> Use both Bot Traffic and Human Traffic data for 
+                    <strong>Combine with Bot Traffic:</strong> Use both <Link href="https://www.finseo.ai/bot-analytics" className="text-[#0eca7b] hover:underline" target="_blank">Bot Traffic analytics</Link> and Human Traffic data for 
                     a complete picture of your AI visibility.
                   </p>
                 </div>

@@ -54,7 +54,7 @@ export default function PleskPage() {
               Plesk Server Log Access
             </h1>
             <p className="max-w-[750px] text-lg text-muted-foreground sm:text-xl">
-              Step-by-step guide to download server access logs from Plesk hosting environments.
+              Step-by-step guide to download server access logs from Plesk hosting environments for <Link href="https://www.finseo.ai/bot-analytics" className="text-[#0eca7b] hover:underline" target="_blank">AI bot analytics</Link>.
             </p>
           </div>
 
@@ -83,7 +83,7 @@ export default function PleskPage() {
               <p className="text-muted-foreground mb-4">
                 Plesk offers multiple methods to access server logs, with the Log Browser being the most 
                 user-friendly option. Unlike cPanel, Plesk provides more granular control over log management 
-                and retention settings, making it excellent for detailed bot analytics.
+                and retention settings, making it excellent for detailed <Link href="https://www.finseo.ai/bot-analytics" className="text-[#0eca7b] hover:underline" target="_blank">AI bot analytics</Link>.
               </p>
               <div className="rounded-lg border bg-card p-6">
                 <div className="flex items-center gap-3 mb-4">
@@ -351,7 +351,7 @@ scp access_log local-destination/`}</code>
                     <h4 className="font-semibold">Real-time Log Viewer</h4>
                   </div>
                   <p className="text-sm text-muted-foreground">
-                    View live log entries as they happen, useful for monitoring bot activity in real-time
+                    View live log entries as they happen, useful for monitoring <Link href="https://www.finseo.ai/bot-analytics" className="text-[#0eca7b] hover:underline" target="_blank">AI bot activity</Link> in real-time
                   </p>
                 </div>
 

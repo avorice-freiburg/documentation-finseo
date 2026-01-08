@@ -52,7 +52,7 @@ export default function RaidboxesPage() {
               Raidboxes Server Log Access
             </h1>
             <p className="max-w-[750px] text-lg text-muted-foreground sm:text-xl">
-              Step-by-step guide to download server access logs from your Raidboxes hosting account.
+              Step-by-step guide to download server access logs from your Raidboxes hosting account for <Link href="https://www.finseo.ai/bot-analytics" className="text-[#0eca7b] hover:underline" target="_blank">AI bot analytics</Link>.
             </p>
           </div>
 
@@ -314,8 +314,8 @@ export default function RaidboxesPage() {
               After uploading your logs to Finseo Bot Analytics, you'll be able to:
             </p>
             <ul className="text-sm space-y-2 ml-6 list-disc text-muted-foreground mb-4">
-              <li>See which AI bots are visiting your site</li>
-              <li>Track your visibility in AI search results</li>
+              <li>See which <Link href="https://www.finseo.ai/bot-analytics" className="text-[#0eca7b] hover:underline" target="_blank">AI bots are visiting</Link> your site</li>
+              <li>Track your <Link href="https://www.finseo.ai/ai-visibility-tracking" className="text-[#0eca7b] hover:underline" target="_blank">visibility in AI search results</Link></li>
               <li>Monitor trends over time</li>
               <li>Identify opportunities to improve AI visibility</li>
             </ul>

@@ -71,7 +71,7 @@ export default function SourcesPage() {
                   <span className="font-semibold">Why Sources Matter</span>
                 </div>
                 <ul className="text-sm space-y-2 ml-8 list-disc text-muted-foreground">
-                  <li>Understand which sites influence AI's knowledge about your industry</li>
+                  <li>Understand which sites influence <Link href="https://www.finseo.ai/" className="text-[#0eca7b] hover:underline" target="_blank">AI visibility</Link> in your industry</li>
                   <li>Identify high-authority domains to target for backlinks</li>
                   <li>Discover content gaps where you're not being cited</li>
                   <li>Track which of your pages AI systems reference most</li>

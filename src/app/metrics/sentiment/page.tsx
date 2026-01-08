@@ -236,7 +236,7 @@ export default function SentimentPage() {
               <ul className="space-y-3 text-muted-foreground">
                 <li className="flex gap-x-3">
                   <div className="h-1.5 w-1.5 rounded-full bg-secondary mt-2" />
-                  <span><strong>Quality content creation:</strong> Publish high-quality, helpful content that AI models can reference positively.</span>
+                  <span><strong>Quality content creation:</strong> Publish high-quality, helpful content that AI models like <Link href="https://www.finseo.ai/ai-visibility-tracking/chatgpt" className="text-[#0eca7b] hover:underline" target="_blank">ChatGPT</Link> can reference positively.</span>
                 </li>
                 <li className="flex gap-x-3">
                   <div className="h-1.5 w-1.5 rounded-full bg-secondary mt-2" />
@@ -252,7 +252,7 @@ export default function SentimentPage() {
                 </li>
                 <li className="flex gap-x-3">
                   <div className="h-1.5 w-1.5 rounded-full bg-secondary mt-2" />
-                  <span><strong>Monitor regularly:</strong> Track sentiment changes over time to identify trends and respond accordingly.</span>
+                  <span><strong>Monitor regularly:</strong> Track sentiment changes over time using <Link href="https://www.finseo.ai/" className="text-[#0eca7b] hover:underline" target="_blank">AI visibility monitoring</Link> to identify trends and respond accordingly.</span>
                 </li>
               </ul>
             </div>

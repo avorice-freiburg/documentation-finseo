@@ -303,7 +303,7 @@ export default function PromptResearchPage() {
                 <div className="rounded-lg border bg-card p-4">
                   <h4 className="font-semibold mb-2">Competitive Analysis</h4>
                   <p className="text-sm text-muted-foreground">
-                    See which prompts your competitors dominate and find gaps to exploit
+                    See which prompts your competitors dominate using <Link href="https://www.finseo.ai/" className="text-[#0eca7b] hover:underline" target="_blank">AI visibility monitoring</Link> and find gaps to exploit
                   </p>
                 </div>
               </div>

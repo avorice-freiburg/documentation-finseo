@@ -52,7 +52,7 @@ export default function STRATOPage() {
               STRATO Server Log Access
             </h1>
             <p className="max-w-[750px] text-lg text-muted-foreground sm:text-xl">
-              How to download server access logs from STRATO hosting for AI bot analytics and visibility tracking.
+              How to download server access logs from STRATO hosting for <Link href="https://www.finseo.ai/bot-analytics" className="text-[#0eca7b] hover:underline" target="_blank">AI bot analytics</Link> and <Link href="https://www.finseo.ai/ai-visibility-tracking" className="text-[#0eca7b] hover:underline" target="_blank">visibility tracking</Link>.
             </p>
           </div>
 
@@ -65,7 +65,7 @@ export default function STRATOPage() {
             <p className="text-sm text-muted-foreground mb-3">
               STRATO is one of Germany's largest hosting providers, offering web hosting, domains, and server solutions. 
               They provide access to server logs through their customer portal with up to 6 weeks of historical data, 
-              making it suitable for tracking AI bot visits and analyzing your site's AI visibility.
+              making it suitable for tracking <Link href="https://www.finseo.ai/bot-analytics" className="text-[#0eca7b] hover:underline" target="_blank">AI bot visits</Link> and analyzing your site's <Link href="https://www.finseo.ai/" className="text-[#0eca7b] hover:underline" target="_blank">AI visibility</Link>.
             </p>
             <div className="flex gap-2">
               <Badge variant="secondary">German Provider</Badge>
@@ -91,7 +91,7 @@ export default function STRATOPage() {
               <p className="text-muted-foreground mb-4">
                 STRATO provides straightforward access to server logs through their customer portal. The process is 
                 simple and doesn't require technical knowledge, making it accessible for all users who want to 
-                analyze their AI bot traffic.
+                analyze their <Link href="https://www.finseo.ai/bot-analytics" className="text-[#0eca7b] hover:underline" target="_blank">AI bot traffic</Link>.
               </p>
               <div className="rounded-lg border bg-card p-6">
                 <div className="flex items-center gap-3 mb-4">
@@ -322,7 +322,7 @@ export default function STRATOPage() {
                   <h4 className="font-medium mb-2">6-Week Retention Only</h4>
                   <p className="text-sm text-muted-foreground">
                     STRATO only keeps logs for 6 weeks. This is shorter than many other providers. Set up a 
-                    regular download schedule to maintain historical data for long-term AI visibility analysis.
+                    regular download schedule to maintain historical data for long-term <Link href="https://www.finseo.ai/ai-visibility-tracking" className="text-[#0eca7b] hover:underline" target="_blank">AI visibility analysis</Link>.
                   </p>
                 </div>
                 <div>
